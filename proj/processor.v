@@ -8,7 +8,7 @@ module processor(
 	);
 
 	initial begin
-		address = 0;
+		address = 2;
 	end
 
 	assign result = instruction;
