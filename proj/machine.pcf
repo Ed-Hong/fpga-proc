@@ -1,4 +1,16 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Apr 26 01:56:03 2019
+// Written by: Map P.20131013 on Fri Apr 26 02:03:38 2019
 //! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "out<0>" LOCATE = SITE "U16" LEVEL 1;
+COMP "out<1>" LOCATE = SITE "V16" LEVEL 1;
+COMP "out<2>" LOCATE = SITE "U15" LEVEL 1;
+COMP "out<3>" LOCATE = SITE "V15" LEVEL 1;
+COMP "out<4>" LOCATE = SITE "M11" LEVEL 1;
+COMP "out<5>" LOCATE = SITE "N11" LEVEL 1;
+COMP "out<6>" LOCATE = SITE "R11" LEVEL 1;
+COMP "out<7>" LOCATE = SITE "T11" LEVEL 1;
+SCHEMATIC END;
 

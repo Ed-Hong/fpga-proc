@@ -4,6 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 /proj/cad/xilinx_14.7/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v
 3 -s 2 -n 3 -fastpaths -xml machine.twx machine.ncd -o machine.twr machine.pcf
+-ucf Nexys3_master.ucf
 
 Design file:              machine.ncd
 Physical constraint file: machine.pcf
@@ -33,14 +34,14 @@ No constraints were found to generate data for the Data Sheet Report section.
 Use the Advanced Analysis (-a) option or generate global constraints for each
 clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
 
-Analysis completed Fri Apr 26 01:56:27 2019 
+Analysis completed Fri Apr 26 02:04:04 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 386 MB
+Peak Memory Usage: 387 MB
 
 
 
