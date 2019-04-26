@@ -1,6 +1,9 @@
-set -tmpdir "/home/011/e/ex/exh150330/repos/fpga-proc/processor/xst/projnav.tmp"
-set -xsthdpdir "/home/011/e/ex/exh150330/repos/fpga-proc/processor/xst"
-run -compileonly yes
+set -tmpdir "xst/projnav.tmp"
+set -xsthdpdir "xst"
+run
+-ifn machine.prj
+-ofn machine
+-ofmt NGC
 -p xc6slx16-2-csg324
 -top machine
 -opt_mode Speed
@@ -47,4 +50,3 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn machine.prj

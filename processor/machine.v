@@ -19,28 +19,33 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module machine(
-	output out,
-	input clk
+		output reg [7:0] out,
+		input clk
 	);
 					
-// wire declarations
+	// wire declarations
 
 
 
 
-// module declarations
+	// module declarations
 
-// 1) processor
-processor _processor(
-	.clk(clk));
+//	// 1) processor
+//	processor proc(
+//		.clk(clk));
+//	
+//	// 2) programROM
+//	program_rom pgm(
+//		.clk(clk));
+
+
+
+	// assign I/O
+	always @ (posedge clk)
+	begin
 	
-// 2) programROM
-program_rom _program(
-	.clk(clk));
-
-
-
-// assign I/O
-
+		// test
+		out <= 8'b10100101;
+	end
 
 endmodule
