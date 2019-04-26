@@ -1,0 +1,3 @@
+verilog work "program_rom.v"
+verilog work "processor.v"
+verilog work "machine.v"

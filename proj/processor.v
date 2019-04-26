@@ -1,26 +1,17 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    22:32:58 04/14/2019 
-// Design Name: 
-// Module Name:    processor 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module processor(
-	input clk
+	input clk,
+	input [7:0] instruction,
+	output reg [1:0] address,
+	output [7:0] result
 	);
+
+	initial begin
+		address = 0;
+	end
+
+	assign result = instruction;
 
 //---wire declarations---
 //wire [31:0] instruction;

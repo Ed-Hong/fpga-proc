@@ -1,0 +1,7 @@
+[Inputs]
+clk
+[Outputs]
+[BiDir]
+[ATTRIBUTES]
+VeriModel program_rom
+
