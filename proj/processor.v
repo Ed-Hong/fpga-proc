@@ -55,18 +55,18 @@ module processor(
 			// instruction decode
 			case (opcode) 
 				// addi
-				1'h1:begin
+				4'b0001:begin
 							write_data <= immediate;
 							write_enable <= 1;
 						end
 				// add
-				1'h2:begin
+				4'b0010:begin
 							//todo - move this to ALU
 							write_data <= (data_a + data_b); 
 							write_enable <= 1;
 						end
 				// out
-				1'hF:begin
+				4'b1111:begin
 							result <= data_a;
 						end
 				// default NOP
