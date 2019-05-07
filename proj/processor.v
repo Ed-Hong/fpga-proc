@@ -4,7 +4,7 @@
 module processor(
 	input clk,
 	input [7:0] instruction,
-	output reg [1:0] address,
+	output reg [2:0] address,
 	output reg [7:0] result
 	);
 
@@ -22,7 +22,7 @@ module processor(
 		if (timer % 10000000 == 0) begin
 			address = address + 1;
 			
-			if (address == 4) begin
+			if (address == 8) begin
 				address = 0;
 			end
 		end

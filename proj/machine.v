@@ -8,7 +8,7 @@ module machine(
 	
 	// wire declarations
 	wire [7:0] instruction;
-	wire [1:0] address;
+	wire [2:0] address;
 	wire [7:0] result;
 	
 	

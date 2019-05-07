@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: machine.prj
@@ -122,7 +122,7 @@ Parsing module <machine>.
 Elaborating module <machine>.
 
 Elaborating module <processor>.
-WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 23: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 23: Result of 4-bit expression is truncated to fit in 3-bit target.
 
 Elaborating module <program_rom>.
 
@@ -139,14 +139,14 @@ Unit <machine> synthesized.
 
 Synthesizing Unit <processor>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v".
-    Found 2-bit register for signal <address>.
+    Found 3-bit register for signal <address>.
     Found 8-bit register for signal <result>.
     Found 32-bit register for signal <timer>.
-    Found 32-bit adder for signal <timer[31]_GND_2_o_add_1_OUT> created at line 21.
-    Found 2-bit adder for signal <address[1]_GND_2_o_add_4_OUT> created at line 23.
+    Found 32-bit adder for signal <timer[31]_GND_2_o_add_1_OUT> created at line 19.
+    Found 3-bit adder for signal <address[2]_GND_2_o_add_4_OUT> created at line 23.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred  42 D-type flip-flop(s).
+	inferred  43 D-type flip-flop(s).
 Unit <processor> synthesized.
 
 Synthesizing Unit <mod_32u_24u>.
@@ -227,7 +227,7 @@ Synthesizing Unit <program_rom>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v".
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:2999 - Signal 'inst_mem', unconnected in block 'program_rom', is tied to its initial value.
-    Found 4x8-bit single-port Read Only RAM <Mram_inst_mem> for signal <inst_mem>.
+    Found 8x8-bit single-port Read Only RAM <Mram_inst_mem> for signal <inst_mem>.
     Summary:
 	inferred   1 RAM(s).
 Unit <program_rom> synthesized.
@@ -237,9 +237,9 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 4x8-bit single-port Read Only RAM                     : 1
+ 8x8-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 35
- 2-bit adder                                           : 1
+ 3-bit adder                                           : 1
  32-bit adder                                          : 10
  33-bit adder                                          : 1
  34-bit adder                                          : 1
@@ -266,7 +266,7 @@ Macro Statistics
  55-bit adder                                          : 1
  56-bit adder                                          : 1
 # Registers                                            : 4
- 2-bit register                                        : 1
+ 3-bit register                                        : 1
  32-bit register                                       : 1
  8-bit register                                        : 2
 # Comparators                                          : 33
@@ -317,7 +317,7 @@ INFO:Xst:3231 - The small RAM <Mram_inst_mem> will be implemented on LUTs in ord
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 4-word x 8-bit                      |          |
+    |     aspect ratio   | 8-word x 8-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <address>       |          |
     |     diA            | connected to signal <GND>           |          |
@@ -330,12 +330,12 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 4x8-bit single-port distributed Read Only RAM         : 1
+ 8x8-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 34
  24-bit adder                                          : 1
  32-bit adder                                          : 33
 # Counters                                             : 2
- 2-bit up counter                                      : 1
+ 3-bit up counter                                      : 1
  32-bit up counter                                     : 1
 # Registers                                            : 16
  Flip-Flops                                            : 16
@@ -378,14 +378,6 @@ Macro Statistics
 Optimizing unit <machine> ...
 
 Optimizing unit <processor> ...
-WARNING:Xst:1710 - FF/Latch <_processor/result_7> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_processor/result_6> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_processor/result_3> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_processor/result_2> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_2> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_3> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_6> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_7> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -394,20 +386,18 @@ Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 6.
 Final Macro Processing ...
 
 Processing Unit <machine> :
-	Found 2-bit shift register for signal <out_0>.
-	Found 2-bit shift register for signal <out_1>.
-	Found 2-bit shift register for signal <out_4>.
-	Found 2-bit shift register for signal <out_5>.
+	Found 2-bit shift register for signal <out_3>.
+	Found 2-bit shift register for signal <out_7>.
 Unit <machine> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 34
- Flip-Flops                                            : 34
-# Shift Registers                                      : 4
- 2-bit shift register                                  : 4
+# Registers                                            : 47
+ Flip-Flops                                            : 47
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
 
 =========================================================================
 
@@ -430,24 +420,24 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1224
+# BELS                             : 1233
 #      GND                         : 1
-#      INV                         : 22
+#      INV                         : 21
 #      LUT1                        : 69
-#      LUT2                        : 14
-#      LUT3                        : 112
-#      LUT4                        : 21
-#      LUT5                        : 207
-#      LUT6                        : 258
+#      LUT2                        : 16
+#      LUT3                        : 116
+#      LUT4                        : 22
+#      LUT5                        : 208
+#      LUT6                        : 260
 #      MUXCY                       : 259
 #      MUXF7                       : 15
 #      VCC                         : 1
 #      XORCY                       : 245
-# FlipFlops/Latches                : 38
-#      FD                          : 32
-#      FDE                         : 6
-# Shift Registers                  : 4
-#      SRLC16E                     : 4
+# FlipFlops/Latches                : 49
+#      FD                          : 44
+#      FDE                         : 5
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 8
@@ -460,17 +450,17 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              38  out of  18224     0%  
- Number of Slice LUTs:                  707  out of   9112     7%  
-    Number used as Logic:               703  out of   9112     7%  
-    Number used as Memory:                4  out of   2176     0%  
-       Number used as SRL:                4
+ Number of Slice Registers:              49  out of  18224     0%  
+ Number of Slice LUTs:                  714  out of   9112     7%  
+    Number used as Logic:               712  out of   9112     7%  
+    Number used as Memory:                2  out of   2176     0%  
+       Number used as SRL:                2
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    739
-   Number with an unused Flip Flop:     701  out of    739    94%  
-   Number with an unused LUT:            32  out of    739     4%  
-   Number of fully used LUT-FF pairs:     6  out of    739     0%  
+ Number of LUT Flip Flop pairs used:    752
+   Number with an unused Flip Flop:     703  out of    752    93%  
+   Number with an unused LUT:            38  out of    752     5%  
+   Number of fully used LUT-FF pairs:    11  out of    752     1%  
    Number of unique control sets:         3
 
 IO Utilization: 
@@ -501,7 +491,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 42    |
+clk                                | BUFGP                  | 51    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -512,7 +502,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 36.651ns (Maximum Frequency: 27.285MHz)
+   Minimum period: 36.691ns (Maximum Frequency: 27.255MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 4.118ns
    Maximum combinational path delay: No path found
@@ -523,16 +513,16 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 36.651ns (frequency: 27.285MHz)
-  Total number of paths / destination ports: 39743777847958728 / 44
+  Clock period: 36.691ns (frequency: 27.255MHz)
+  Total number of paths / destination ports: 59615666771937824 / 54
 -------------------------------------------------------------------------
-Delay:               36.651ns (Levels of Logic = 76)
+Delay:               36.691ns (Levels of Logic = 76)
   Source:            _processor/timer_0 (FF)
-  Destination:       _processor/address_1 (FF)
+  Destination:       _processor/address_2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: _processor/timer_0 to _processor/address_1
+  Data Path: _processor/timer_0 to _processor/address_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -569,16 +559,16 @@ Delay:               36.651ns (Levels of Logic = 76)
      MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_1_OUT_cy<28> (_processor/Madd_timer[31]_GND_2_o_add_1_OUT_cy<28>)
      MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_1_OUT_cy<29> (_processor/Madd_timer[31]_GND_2_o_add_1_OUT_cy<29>)
      XORCY:CI->O          18   0.206   1.463  _processor/Madd_timer[31]_GND_2_o_add_1_OUT_xor<30> (_processor/timer[31]_PWR_2_o_mod_2/Madd_GND_3_o_b[23]_add_19_OUT_Madd_cy<30>)
-     LUT5:I2->O           21   0.235   1.418  _processor/timer[31]_PWR_2_o_mod_2/BUS_0025_INV_1093_o25_SW1 (N56)
+     LUT5:I2->O           21   0.235   1.418  _processor/timer[31]_PWR_2_o_mod_2/BUS_0025_INV_1093_o25_SW1 (N54)
      LUT6:I4->O           18   0.250   1.235  _processor/timer[31]_PWR_2_o_mod_2/Mmux_a[28]_a[31]_MUX_2172_o11 (_processor/timer[31]_PWR_2_o_mod_2/a[28]_a[31]_MUX_2172_o)
-     LUT4:I3->O            4   0.254   0.912  _processor/timer[31]_PWR_2_o_mod_2/BUS_0026_INV_1126_o25_SW0_SW0 (N346)
+     LUT4:I3->O            4   0.254   0.912  _processor/timer[31]_PWR_2_o_mod_2/BUS_0026_INV_1126_o25_SW0_SW0 (N349)
      LUT6:I4->O            7   0.250   0.910  _processor/timer[31]_PWR_2_o_mod_2/BUS_0026_INV_1126_o25_1 (_processor/timer[31]_PWR_2_o_mod_2/BUS_0026_INV_1126_o25)
      LUT6:I5->O            4   0.254   1.259  _processor/timer[31]_PWR_2_o_mod_2/BUS_0027_INV_1159_o31 (_processor/timer[31]_PWR_2_o_mod_2/BUS_0027_INV_1159_o3)
      LUT6:I0->O            3   0.254   0.766  _processor/timer[31]_PWR_2_o_mod_2/BUS_0027_INV_1159_o34_1 (_processor/timer[31]_PWR_2_o_mod_2/BUS_0027_INV_1159_o34)
      LUT6:I5->O            6   0.254   0.876  _processor/timer[31]_PWR_2_o_mod_2/BUS_0027_INV_1159_o35_1 (_processor/timer[31]_PWR_2_o_mod_2/BUS_0027_INV_1159_o35)
      LUT5:I4->O            1   0.254   0.910  _processor/timer[31]_PWR_2_o_mod_2/BUS_0028_INV_1192_o31_1 (_processor/timer[31]_PWR_2_o_mod_2/BUS_0028_INV_1192_o311)
-     LUT6:I3->O            1   0.235   0.682  _processor/timer[31]_PWR_2_o_mod_2/BUS_0028_INV_1192_o35_SW3_F (N517)
-     LUT3:I2->O            1   0.254   0.682  _processor/timer[31]_PWR_2_o_mod_2/BUS_0028_INV_1192_o35_SW34 (N332)
+     LUT6:I3->O            1   0.235   0.682  _processor/timer[31]_PWR_2_o_mod_2/BUS_0028_INV_1192_o35_SW3_F (N520)
+     LUT3:I2->O            1   0.254   0.682  _processor/timer[31]_PWR_2_o_mod_2/BUS_0028_INV_1192_o35_SW34 (N335)
      LUT6:I5->O            5   0.254   1.271  _processor/timer[31]_PWR_2_o_mod_2/Mmux_a[0]_a[31]_MUX_2296_o131 (_processor/timer[31]_PWR_2_o_mod_2/a[12]_a[31]_MUX_2284_o)
      LUT5:I0->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_2/Mcompar_BUS_0029_INV_1225_o_lut<0> (_processor/timer[31]_PWR_2_o_mod_2/Mcompar_BUS_0029_INV_1225_o_lut<0>)
      MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_2/Mcompar_BUS_0029_INV_1225_o_cy<0> (_processor/timer[31]_PWR_2_o_mod_2/Mcompar_BUS_0029_INV_1225_o_cy<0>)
@@ -609,30 +599,30 @@ Delay:               36.651ns (Levels of Logic = 76)
      MUXCY:CI->O          43   0.235   1.704  _processor/timer[31]_PWR_2_o_mod_2/Mcompar_BUS_0032_INV_1324_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_2/BUS_0032_INV_1324_o)
      LUT3:I2->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_2/Madd_a[31]_GND_3_o_add_65_OUT_Madd_lut<8> (_processor/timer[31]_PWR_2_o_mod_2/Madd_a[31]_GND_3_o_add_65_OUT_Madd_lut<8>)
      MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_2/Madd_a[31]_GND_3_o_add_65_OUT_Madd_cy<8> (_processor/timer[31]_PWR_2_o_mod_2/Madd_a[31]_GND_3_o_add_65_OUT_Madd_cy<8>)
-     XORCY:CI->O           2   0.206   0.726  _processor/timer[31]_PWR_2_o_mod_2/Madd_a[31]_GND_3_o_add_65_OUT_Madd_xor<9> (_processor/timer[31]_PWR_2_o_mod_2/a[31]_GND_3_o_add_65_OUT<9>)
-     LUT3:I2->O            1   0.254   0.682  _processor/_n0048<0>8_SW0 (N324)
-     LUT6:I5->O            1   0.254   0.682  _processor/_n0048<0>10_rstpot_SW3 (N183)
+     XORCY:CI->O           3   0.206   0.766  _processor/timer[31]_PWR_2_o_mod_2/Madd_a[31]_GND_3_o_add_65_OUT_Madd_xor<9> (_processor/timer[31]_PWR_2_o_mod_2/a[31]_GND_3_o_add_65_OUT<9>)
+     LUT3:I2->O            1   0.254   0.682  _processor/_n0048<0>8_SW1 (N327)
+     LUT6:I5->O            1   0.254   0.682  _processor/_n0048<0>10_rstpot_SW4 (N193)
      LUT6:I5->O            1   0.254   0.000  _processor/address_1_dpot (_processor/address_1_dpot)
      FDE:D                     0.074          _processor/address_1
     ----------------------------------------
-    Total                     36.651ns (9.992ns logic, 26.659ns route)
-                                       (27.3% logic, 72.7% route)
+    Total                     36.691ns (9.992ns logic, 26.699ns route)
+                                       (27.2% logic, 72.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 4 / 4
+  Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
 Offset:              4.118ns (Levels of Logic = 1)
-  Source:            out_5 (FF)
-  Destination:       out<5> (PAD)
+  Source:            out_7 (FF)
+  Destination:       out<7> (PAD)
   Source Clock:      clk rising
 
-  Data Path: out_5 to out<5>
+  Data Path: out_7 to out<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              1   0.525   0.681  out_5 (out_5)
-     OBUF:I->O                 2.912          out_5_OBUF (out<5>)
+     FDE:C->Q              1   0.525   0.681  out_7 (out_7)
+     OBUF:I->O                 2.912          out_7_OBUF (out<7>)
     ----------------------------------------
     Total                      4.118ns (3.437ns logic, 0.681ns route)
                                        (83.5% logic, 16.5% route)
@@ -647,21 +637,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   36.651|         |         |         |
+clk            |   36.691|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 20.00 secs
-Total CPU time to Xst completion: 18.62 secs
+Total CPU time to Xst completion: 19.10 secs
  
 --> 
 
 
-Total memory usage is 499172 kilobytes
+Total memory usage is 499136 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 
