@@ -8,13 +8,22 @@ module processor(
 	output reg [7:0] result
 	);
 
+	reg [31:0] timer;
+
 	initial begin
 		address = 0;
+	
+		// timer for manually scaling clock frequency
+		timer = 0;
 	end
 	
 	always @ (posedge clk) begin
-		if (address == 0) begin
-			address = (address + 1);
+		timer = timer + 1;
+		if (timer == 10000000) begin
+			address = address + 1;
+			if (address == 4) begin
+				address = 0;
+			end
 		end
 
 //		#1000000000;
