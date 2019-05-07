@@ -9,14 +9,14 @@ module program_rom(
 	reg [31:0] inst_mem [7:0];
 	
 	initial begin
-		inst_mem[0] = 8'h11000014;	//addi r1 20
-		inst_mem[1] = 8'h12000020;	//addi r2 32
-		inst_mem[2] = 8'h21200000;	//add r1 r2
-		inst_mem[3] = 8'hF1000000;	//out r1
-		inst_mem[4] = 8'hF1000000;	//out r1
-		inst_mem[5] = 8'hF1000000;	//out r1
-		inst_mem[6] = 8'hF1000000;	//out r1
-		inst_mem[7] = 8'hF1000000;	//out r1
+		inst_mem[0] = 32'b0001_0001_0000_0000_0000_0000_0000_1010;	//addi r1 10
+		inst_mem[1] = 32'b0001_0001_0000_0000_0000_0000_0000_1101;	//addi r2 11
+		inst_mem[2] = 32'b0010_0001_0010_0000_0000_0000_0000_0000;	//add r1 r2
+		inst_mem[3] = 32'b0000_0000_0000_0000_0000_0000_0000_0000;
+		inst_mem[4] = 32'b0000_0000_0000_0000_0000_0000_0000_0000;
+		inst_mem[5] = 32'b0000_0000_0000_0000_0000_0000_0000_0000;
+		inst_mem[6] = 32'b0000_0000_0000_0000_0000_0000_0000_0000;
+		inst_mem[7] = 32'b1111_0001_0000_0000_0000_0000_0000_0000;	// out r1
 	end 
 	
 	assign instruction = inst_mem[address];
