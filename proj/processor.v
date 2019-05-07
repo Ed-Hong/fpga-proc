@@ -12,21 +12,20 @@ module processor(
 
 	initial begin
 		address = 0;
-	
-		// timer for manually scaling clock frequency
 		timer = 0;
 	end
 	
 	always @ (posedge clk) begin
 		timer = timer + 1;
-		if (timer == 10000000) begin
+
+		// manually scale clock frequency for debugging
+		if (timer % 10000000 == 0) begin
 			address = address + 1;
+			
 			if (address == 4) begin
 				address = 0;
 			end
 		end
-
-//		#1000000000;
 
 		result <= instruction;
 
