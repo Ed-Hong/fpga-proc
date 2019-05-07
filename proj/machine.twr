@@ -43,8 +43,8 @@ out<2>      |        10.002(R)|      SLOW  |         4.697(R)|      FAST  |clk_B
 out<3>      |        10.412(R)|      SLOW  |         4.955(R)|      FAST  |clk_BUFGP         |   0.000|
 out<4>      |         9.460(R)|      SLOW  |         4.279(R)|      FAST  |clk_BUFGP         |   0.000|
 out<5>      |         9.460(R)|      SLOW  |         4.279(R)|      FAST  |clk_BUFGP         |   0.000|
-out<6>      |         9.787(R)|      SLOW  |         4.466(R)|      FAST  |clk_BUFGP         |   0.000|
-out<7>      |         9.810(R)|      SLOW  |         4.484(R)|      FAST  |clk_BUFGP         |   0.000|
+out<6>      |         9.725(R)|      SLOW  |         4.448(R)|      FAST  |clk_BUFGP         |   0.000|
+out<7>      |        10.135(R)|      SLOW  |         4.706(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -52,18 +52,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   34.890|         |         |         |
+clk            |   32.874|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue May  7 14:22:35 2019 
+Analysis completed Tue May  7 14:26:45 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 399 MB
+Peak Memory Usage: 398 MB
 
 
 

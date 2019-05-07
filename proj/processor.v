@@ -38,7 +38,7 @@ module processor(
 		timer = timer + 1;
 
 		// manually scale clock frequency for debugging
-		if (timer % 10000000 == 0) begin
+		if (timer % 30000000 == 0) begin
 			address = address + 1;
 			
 			
