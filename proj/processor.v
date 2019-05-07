@@ -18,7 +18,7 @@ module processor(
 	wire [1:0] reg_a = instruction[1:0];
 	wire [1:0] reg_b = instruction[3:2];
 	reg write_enable;
-	wire [7:0] write_data = instruction;
+	wire [7:0] write_data = 8'b10101010;
 	wire [7:0] data_a;
 	wire [7:0] data_b;
 
@@ -46,6 +46,7 @@ module processor(
 			//testing regfile WRITE
 			if (opcode == 2'b11) begin
 				write_enable <= 1;
+				result <= 8'b00000000;
 			end
 			
 			//testing regfile READ

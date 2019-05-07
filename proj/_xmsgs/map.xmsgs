@@ -8,11 +8,8 @@
 <msg type="info" file="LIT" num="243" delta="old" >Logical network <arg fmt="%s" index="1">_processor/_regfile/Mram_regs8/DPO</arg> has no load.
 </msg>
 
-<msg type="info" file="LIT" num="395" delta="old" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">4</arg> more times for the following (max. 5 shown):
-<arg fmt="%s" index="3">_processor/_regfile/Mram_regs6/DPO,
-_processor/_regfile/Mram_regs4/DPO,
-_processor/_regfile/Mram_regs2/DPO,
-_processor/_regfile/Mram_regs1/DPO</arg>
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">1</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">_processor/_regfile/Mram_regs7/DPO</arg>
 To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
 </msg>
 
