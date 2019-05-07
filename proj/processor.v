@@ -12,8 +12,12 @@ module processor(
 	end
 	
 	always @ (posedge clk) begin
-		address = (address + 1) % 4;
-		#1000000000;
+		if (address == 4) begin
+			address = 0;
+		end
+	
+		address = (address + 1);
+		#1000000;
 	end
 
 

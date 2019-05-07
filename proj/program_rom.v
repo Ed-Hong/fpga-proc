@@ -9,10 +9,10 @@ module program_rom(
 	reg [7:0] inst_mem [3:0];
 	
 	initial begin
-		inst_mem[0] = 8'b10110000;
-		inst_mem[1] = 8'b10110001;
-		inst_mem[2] = 8'b10110010;
-		inst_mem[3] = 8'b10110011;
+		inst_mem[0] = 8'b11110000;
+		inst_mem[1] = 8'b11100001;
+		inst_mem[2] = 8'b11010010;
+		inst_mem[3] = 8'b11000011;
 	end 
 	
 	assign instruction = inst_mem[address];
