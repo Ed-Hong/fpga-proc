@@ -12,7 +12,7 @@ Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 Reading design: machine.prj
@@ -138,10 +138,11 @@ Unit <machine> synthesized.
 
 Synthesizing Unit <processor>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v".
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:2935 - Signal 'address', unconnected in block 'processor', is tied to its initial value (10).
+    Found 2-bit register for signal <address>.
+    Found 2-bit adder for signal <address[1]_GND_2_o_add_1_OUT> created at line 15.
     Summary:
-	no macro.
+	inferred   1 Adder/Subtractor(s).
+	inferred   2 D-type flip-flop(s).
 Unit <processor> synthesized.
 
 Synthesizing Unit <program_rom>.
@@ -159,7 +160,10 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  4x8-bit single-port Read Only RAM                     : 1
-# Registers                                            : 1
+# Adders/Subtractors                                   : 1
+ 2-bit adder                                           : 1
+# Registers                                            : 2
+ 2-bit register                                        : 1
  8-bit register                                        : 1
 
 =========================================================================
@@ -168,6 +172,10 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+
+Synthesizing (advanced) Unit <processor>.
+The following registers are absorbed into counter <address>: 1 register on signal <address>.
+Unit <processor> synthesized (advanced).
 
 Synthesizing (advanced) Unit <program_rom>.
 INFO:Xst:3231 - The small RAM <Mram_inst_mem> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
@@ -189,6 +197,8 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  4x8-bit single-port distributed Read Only RAM         : 1
+# Counters                                             : 1
+ 2-bit up counter                                      : 1
 # Registers                                            : 8
  Flip-Flops                                            : 8
 
@@ -197,9 +207,7 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <out_0> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_1> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_2> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_2> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_3> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_4> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_5> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
@@ -217,7 +225,10 @@ Final Macro Processing ...
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
 =========================================================================
 
 =========================================================================
@@ -239,9 +250,15 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2
+# BELS                             : 4
 #      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 1
 #      VCC                         : 1
+# FlipFlops/Latches                : 4
+#      FD                          : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
 # IO Buffers                       : 8
 #      OBUF                        : 8
 
@@ -252,19 +269,23 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
+ Number of Slice Registers:               4  out of  18224     0%  
+ Number of Slice LUTs:                    2  out of   9112     0%  
+    Number used as Logic:                 2  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:      6
+   Number with an unused Flip Flop:       2  out of      6    33%  
+   Number with an unused LUT:             4  out of      6    66%  
+   Number of fully used LUT-FF pairs:     0  out of      6     0%  
+   Number of unique control sets:         1
 
 IO Utilization: 
  Number of IOs:                           9
- Number of bonded IOBs:                   8  out of    232     3%  
+ Number of bonded IOBs:                   9  out of    232     3%  
 
 Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -284,7 +305,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 4     |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -294,9 +319,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: No path found
+   Minimum period: 2.300ns (Maximum Frequency: 434.783MHz)
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
+   Maximum output required time after clock: 4.118ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -304,22 +329,71 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.300ns (frequency: 434.783MHz)
+  Total number of paths / destination ports: 5 / 4
+-------------------------------------------------------------------------
+Delay:               2.300ns (Levels of Logic = 1)
+  Source:            _processor/address_0 (FF)
+  Destination:       _processor/address_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: _processor/address_0 to _processor/address_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.525   0.765  _processor/address_0 (_processor/address_0)
+     INV:I->O              1   0.255   0.681  _processor/Mcount_address_xor<0>11_INV_0 (Result<0>)
+     FD:D                      0.074          _processor/address_0
+    ----------------------------------------
+    Total                      2.300ns (0.854ns logic, 1.446ns route)
+                                       (37.1% logic, 62.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            out_1 (FF)
+  Destination:       out<1> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: out_1 to out<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.525   0.681  out_1 (out_1)
+     OBUF:I->O                 2.912          out_1_OBUF (out<1>)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.300|         |         |         |
+---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.66 secs
+Total CPU time to Xst completion: 7.69 secs
  
 --> 
 
 
-Total memory usage is 483804 kilobytes
+Total memory usage is 483816 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   12 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
 

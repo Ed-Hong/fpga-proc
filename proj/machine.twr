@@ -30,18 +30,34 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Fri Apr 26 02:12:51 2019 
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+out<0>      |         9.586(R)|      SLOW  |         4.360(R)|      FAST  |clk_BUFGP         |   0.000|
+out<1>      |         9.586(R)|      SLOW  |         4.360(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    1.414|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Tue May  7 11:56:49 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 387 MB
+Peak Memory Usage: 388 MB
 
 
 
