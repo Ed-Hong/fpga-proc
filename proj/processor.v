@@ -2,9 +2,9 @@
 
 module processor(
 	input clk,
-	input [31:0] instruction,
+	input [15:0] instruction,
 	output reg [2:0] address,
-	output reg [31:0] result
+	output reg [15:0] result
 	);
 
 	reg [31:0] timer;
@@ -14,14 +14,14 @@ module processor(
 	end
 
 	// wires
-	wire [3:0] opcode = instruction[31:28];
-	wire [3:0] reg_a = instruction[27:24];
-	wire [3:0] reg_b = instruction[23:20];
-	wire [15:0] immediate = instruction[15:0];
+	wire [3:0] opcode = instruction[15:12];
+	wire [2:0] reg_a = instruction[11:9];
+	wire [2:0] reg_b = instruction[8:6];
+	wire [7:0] immediate = instruction[7:0];
 	reg write_enable;
-	reg [31:0] write_data;
-	wire [31:0] data_a;
-	wire [31:0] data_b;
+	reg [15:0] write_data;
+	wire [15:0] data_a;
+	wire [15:0] data_b;
 
 
 	// modules
@@ -54,7 +54,7 @@ module processor(
 			case (opcode) 
 				// addi
 				4'b0001:begin
-							write_data[15:0] <= immediate;
+							write_data <= immediate;
 							write_enable <= 1;
 							
 							//debug
@@ -77,7 +77,7 @@ module processor(
 							//result <= 32'b0111_0111_0000_0000_0000_0000_0000_0000;
 						end
 				// default NOP
-				default: result <= 32'b0000_0000_0000_0000_0000_0000_0000_0000;  
+				default: result <= 0;  
 			endcase
 			
 			write_enable <= 0;
