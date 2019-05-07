@@ -29,8 +29,7 @@ module machine(
 	// assign I/O
 	always @ (posedge clk) begin
 		//todo 32bit output
-		//debug opcode
-		out <= result[31:24];
+		out <= result[7:0];
 	end
 
 endmodule

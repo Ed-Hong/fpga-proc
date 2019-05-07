@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: machine.prj
@@ -329,14 +329,6 @@ Macro Statistics
 =========================================================================
 
 WARNING:Xst:1710 - FF/Latch <write_enable> (without init value) has a constant value of 0 in block <_processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <result_0> of sequential type is unconnected in block <_processor>.
-WARNING:Xst:2677 - Node <result_1> of sequential type is unconnected in block <_processor>.
-WARNING:Xst:2677 - Node <result_2> of sequential type is unconnected in block <_processor>.
-WARNING:Xst:2677 - Node <result_3> of sequential type is unconnected in block <_processor>.
-WARNING:Xst:2677 - Node <result_4> of sequential type is unconnected in block <_processor>.
-WARNING:Xst:2677 - Node <result_5> of sequential type is unconnected in block <_processor>.
-WARNING:Xst:2677 - Node <result_6> of sequential type is unconnected in block <_processor>.
-WARNING:Xst:2677 - Node <result_7> of sequential type is unconnected in block <_processor>.
 WARNING:Xst:2677 - Node <result_8> of sequential type is unconnected in block <_processor>.
 WARNING:Xst:2677 - Node <result_9> of sequential type is unconnected in block <_processor>.
 WARNING:Xst:2677 - Node <result_10> of sequential type is unconnected in block <_processor>.
@@ -353,6 +345,14 @@ WARNING:Xst:2677 - Node <result_20> of sequential type is unconnected in block <
 WARNING:Xst:2677 - Node <result_21> of sequential type is unconnected in block <_processor>.
 WARNING:Xst:2677 - Node <result_22> of sequential type is unconnected in block <_processor>.
 WARNING:Xst:2677 - Node <result_23> of sequential type is unconnected in block <_processor>.
+WARNING:Xst:2677 - Node <result_24> of sequential type is unconnected in block <_processor>.
+WARNING:Xst:2677 - Node <result_25> of sequential type is unconnected in block <_processor>.
+WARNING:Xst:2677 - Node <result_26> of sequential type is unconnected in block <_processor>.
+WARNING:Xst:2677 - Node <result_27> of sequential type is unconnected in block <_processor>.
+WARNING:Xst:2677 - Node <result_28> of sequential type is unconnected in block <_processor>.
+WARNING:Xst:2677 - Node <result_29> of sequential type is unconnected in block <_processor>.
+WARNING:Xst:2677 - Node <result_30> of sequential type is unconnected in block <_processor>.
+WARNING:Xst:2677 - Node <result_31> of sequential type is unconnected in block <_processor>.
 
 Synthesizing (advanced) Unit <processor>.
 The following registers are absorbed into counter <timer>: 1 register on signal <timer>.
@@ -451,6 +451,14 @@ Optimizing unit <regfile> ...
 Optimizing unit <machine> ...
 
 Optimizing unit <processor> ...
+WARNING:Xst:2677 - Node <_processor/result_31> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/result_30> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/result_29> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/result_28> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/result_27> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/result_26> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/result_25> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/result_24> of sequential type is unconnected in block <machine>.
 WARNING:Xst:2677 - Node <_processor/result_23> of sequential type is unconnected in block <machine>.
 WARNING:Xst:2677 - Node <_processor/result_22> of sequential type is unconnected in block <machine>.
 WARNING:Xst:2677 - Node <_processor/result_21> of sequential type is unconnected in block <machine>.
@@ -467,18 +475,106 @@ WARNING:Xst:2677 - Node <_processor/result_11> of sequential type is unconnected
 WARNING:Xst:2677 - Node <_processor/result_10> of sequential type is unconnected in block <machine>.
 WARNING:Xst:2677 - Node <_processor/result_9> of sequential type is unconnected in block <machine>.
 WARNING:Xst:2677 - Node <_processor/result_8> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/result_7> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/result_6> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/result_5> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/result_4> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/result_3> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/result_2> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/result_1> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/result_0> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_31> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_30> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_29> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_28> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_27> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_26> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_25> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_24> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_23> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_22> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_21> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_20> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_19> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_18> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_17> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_16> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_15> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_14> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_13> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_12> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_11> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_10> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_9> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/write_data_8> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs32> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs31> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs30> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs29> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs28> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs27> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs26> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs25> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs24> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs23> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs22> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs21> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs20> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs19> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs18> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs17> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs16> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs15> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs14> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs13> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs12> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs11> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs10> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/Mram_regs9> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_31> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_30> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_29> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_28> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_27> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_26> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_25> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_24> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_23> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_22> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_21> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_20> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_19> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_18> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_17> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_16> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_15> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_14> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_13> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_12> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_11> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_10> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_9> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_b_8> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_31> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_30> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_29> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_28> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_27> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_26> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_25> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_24> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_23> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_22> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_21> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_20> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_19> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_18> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_17> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_16> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_15> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_14> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_13> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_12> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_11> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_10> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_9> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/_regfile/data_a_8> of sequential type is unconnected in block <machine>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 7.
+Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 6.
 
 Final Macro Processing ...
 
@@ -486,8 +582,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 147
- Flip-Flops                                            : 147
+# Registers                                            : 75
+ Flip-Flops                                            : 75
 
 =========================================================================
 
@@ -510,24 +606,24 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1201
+# BELS                             : 1103
 #      GND                         : 1
 #      INV                         : 18
 #      LUT1                        : 71
-#      LUT2                        : 57
+#      LUT2                        : 33
 #      LUT3                        : 98
 #      LUT4                        : 5
-#      LUT5                        : 207
-#      LUT6                        : 199
-#      MUXCY                       : 275
+#      LUT5                        : 183
+#      LUT6                        : 197
+#      MUXCY                       : 251
 #      MUXF7                       : 8
 #      VCC                         : 1
-#      XORCY                       : 261
-# FlipFlops/Latches                : 147
-#      FD                          : 104
-#      FDE                         : 43
-# RAMS                             : 32
-#      RAM16X1D                    : 32
+#      XORCY                       : 237
+# FlipFlops/Latches                : 75
+#      FD                          : 56
+#      FDE                         : 19
+# RAMS                             : 8
+#      RAM16X1D                    : 8
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 8
@@ -540,17 +636,17 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             147  out of  18224     0%  
- Number of Slice LUTs:                  719  out of   9112     7%  
-    Number used as Logic:               655  out of   9112     7%  
-    Number used as Memory:               64  out of   2176     2%  
-       Number used as RAM:               64
+ Number of Slice Registers:              75  out of  18224     0%  
+ Number of Slice LUTs:                  621  out of   9112     6%  
+    Number used as Logic:               605  out of   9112     6%  
+    Number used as Memory:               16  out of   2176     0%  
+       Number used as RAM:               16
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    785
-   Number with an unused Flip Flop:     638  out of    785    81%  
-   Number with an unused LUT:            66  out of    785     8%  
-   Number of fully used LUT-FF pairs:    81  out of    785    10%  
+ Number of LUT Flip Flop pairs used:    663
+   Number with an unused Flip Flop:     588  out of    663    88%  
+   Number with an unused LUT:            42  out of    663     6%  
+   Number of fully used LUT-FF pairs:    33  out of    663     4%  
    Number of unique control sets:         2
 
 IO Utilization: 
@@ -581,7 +677,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 179   |
+clk                                | BUFGP                  | 83    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -592,7 +688,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 34.270ns (Maximum Frequency: 29.180MHz)
+   Minimum period: 34.292ns (Maximum Frequency: 29.161MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 4.118ns
    Maximum combinational path delay: No path found
@@ -603,16 +699,16 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 34.270ns (frequency: 29.180MHz)
-  Total number of paths / destination ports: 29231429841416020 / 318
+  Clock period: 34.292ns (frequency: 29.161MHz)
+  Total number of paths / destination ports: 12916213185741520 / 126
 -------------------------------------------------------------------------
-Delay:               34.270ns (Levels of Logic = 60)
+Delay:               34.292ns (Levels of Logic = 60)
   Source:            _processor/timer_0 (FF)
-  Destination:       _processor/write_data_31 (FF)
+  Destination:       _processor/address_2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: _processor/timer_0 to _processor/write_data_31
+  Data Path: _processor/timer_0 to _processor/address_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -674,12 +770,12 @@ Delay:               34.270ns (Levels of Logic = 60)
      MUXCY:CI->O          43   0.235   1.704  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_6/BUS_0032_INV_1350_o)
      LUT3:I2->O            2   0.254   1.156  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2506_o1231 (_processor/timer[31]_PWR_2_o_mod_6/a[8]_a[31]_MUX_2498_o)
      LUT6:I1->O            1   0.254   0.682  _processor/_n0135<0>3 (_processor/_n0135<0>2)
-     LUT3:I2->O            3   0.254   0.766  _processor/_n0135<0>10_rstpot_SW0 (N65)
-     LUT6:I5->O           15   0.254   1.155  _processor/_n0135<0>10_rstpot (_processor/_n0135<0>10_rstpot)
+     LUT3:I2->O            1   0.254   0.682  _processor/_n0135<0>10_rstpot_SW0 (N65)
+     LUT6:I5->O           19   0.254   1.261  _processor/_n0135<0>10_rstpot (_processor/_n0135<0>10_rstpot)
      LUT5:I4->O            1   0.254   0.000  _processor/write_data_1_dpot (_processor/write_data_1_dpot)
      FDE:D                     0.074          _processor/write_data_1
     ----------------------------------------
-    Total                     34.270ns (8.709ns logic, 25.561ns route)
+    Total                     34.292ns (8.709ns logic, 25.583ns route)
                                        (25.4% logic, 74.6% route)
 
 =========================================================================
@@ -711,21 +807,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   34.270|         |         |         |
+clk            |   34.292|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 22.50 secs
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 22.01 secs
  
 --> 
 
 
-Total memory usage is 500180 kilobytes
+Total memory usage is 500132 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   55 (   0 filtered)
+Number of warnings :  151 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 
