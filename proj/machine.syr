@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: machine.prj
@@ -251,7 +251,11 @@ INFO:Xst:2261 - The FF/Latch <out_5> in Unit <machine> is equivalent to the foll
 INFO:Xst:2261 - The FF/Latch <out_0> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <out_3> 
 
 Optimizing unit <machine> ...
-WARNING:Xst:1710 - FF/Latch <timer_23> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <timer_19> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_20> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_21> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_22> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_23> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_24> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_25> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_26> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
@@ -265,7 +269,7 @@ INFO:Xst:3203 - The FF/Latch <out_2> in Unit <machine> is the opposite to the fo
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 0.
 
 Final Macro Processing ...
 
@@ -273,8 +277,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 29
- Flip-Flops                                            : 29
+# Registers                                            : 25
+ Flip-Flops                                            : 25
 
 =========================================================================
 
@@ -297,22 +301,22 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 142
+# BELS                             : 124
 #      GND                         : 1
 #      INV                         : 3
-#      LUT1                        : 23
-#      LUT2                        : 24
-#      LUT3                        : 9
-#      LUT4                        : 4
-#      LUT5                        : 6
+#      LUT1                        : 18
+#      LUT2                        : 23
+#      LUT3                        : 2
+#      LUT4                        : 2
+#      LUT5                        : 12
 #      LUT6                        : 16
-#      MUXCY                       : 30
-#      MUXF7                       : 1
+#      MUXCY                       : 26
 #      VCC                         : 1
-#      XORCY                       : 24
-# FlipFlops/Latches                : 29
-#      FD                          : 24
+#      XORCY                       : 20
+# FlipFlops/Latches                : 25
+#      FD                          : 19
 #      FDR                         : 3
+#      FDRE                        : 1
 #      FDS                         : 1
 #      FDSE                        : 1
 # Clock Buffers                    : 1
@@ -327,15 +331,15 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              29  out of  18224     0%  
- Number of Slice LUTs:                   85  out of   9112     0%  
-    Number used as Logic:                85  out of   9112     0%  
+ Number of Slice Registers:              25  out of  18224     0%  
+ Number of Slice LUTs:                   76  out of   9112     0%  
+    Number used as Logic:                76  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     86
-   Number with an unused Flip Flop:      57  out of     86    66%  
-   Number with an unused LUT:             1  out of     86     1%  
-   Number of fully used LUT-FF pairs:    28  out of     86    32%  
+ Number of LUT Flip Flop pairs used:     77
+   Number with an unused Flip Flop:      52  out of     77    67%  
+   Number with an unused LUT:             1  out of     77     1%  
+   Number of fully used LUT-FF pairs:    24  out of     77    31%  
    Number of unique control sets:         3
 
 IO Utilization: 
@@ -366,7 +370,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 29    |
+clk                                | BUFGP                  | 25    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -377,9 +381,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 9.778ns (Maximum Frequency: 102.266MHz)
+   Minimum period: 9.050ns (Maximum Frequency: 110.494MHz)
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 5.176ns
+   Maximum output required time after clock: 5.138ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -388,10 +392,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 9.778ns (frequency: 102.266MHz)
-  Total number of paths / destination ports: 110051 / 35
+  Clock period: 9.050ns (frequency: 110.494MHz)
+  Total number of paths / destination ports: 40250 / 33
 -------------------------------------------------------------------------
-Delay:               9.778ns (Levels of Logic = 32)
+Delay:               9.050ns (Levels of Logic = 29)
   Source:            timer_0 (FF)
   Destination:       out_0 (FF)
   Source Clock:      clk rising
@@ -421,43 +425,40 @@ Delay:               9.778ns (Levels of Logic = 32)
      MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<15> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<15>)
      MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<16> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<16>)
      MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<17> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<17>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<18> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<18>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<19> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<19>)
-     XORCY:CI->O           8   0.206   1.374  Madd_timer[31]_GND_1_o_add_1_OUT_xor<20> (timer[31]_GND_1_o_add_1_OUT<20>)
-     LUT5:I0->O            0   0.254   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_lutdi2 (Mcompar_GND_1_o_timer[31]_LessThan_3_o_lutdi2)
-     MUXCY:DI->O           1   0.181   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<2> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<2>)
+     MUXCY:CI->O           0   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<18> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<18>)
+     XORCY:CI->O           3   0.206   1.196  Madd_timer[31]_GND_1_o_add_1_OUT_xor<19> (timer[31]_GND_1_o_add_1_OUT<19>)
+     LUT5:I0->O            1   0.254   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_lut<2> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_lut<2>)
+     MUXCY:S->O            1   0.215   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<2> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<3> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<4> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<4>)
-     MUXCY:CI->O          36   0.023   1.587  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<5> (GND_1_o_timer[31]_LessThan_3_o)
-     LUT6:I5->O            3   0.254   1.042  _n0040_inv12 (_n0040_inv12)
-     LUT6:I2->O            1   0.254   0.000  _n0040_inv2_G (N37)
-     MUXF7:I1->O           5   0.175   0.841  _n0040_inv2 (_n0040_inv2)
-     LUT6:I5->O            5   0.254   0.841  _n0040_inv3 (_n0040_inv)
-     LUT3:I2->O            1   0.254   0.000  out_0_rstpot (out_0_rstpot)
-     FDR:D                     0.074          out_0
+     MUXCY:CI->O          32   0.023   1.520  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<5> (GND_1_o_timer[31]_LessThan_3_o)
+     LUT6:I5->O            6   0.254   0.984  timer[31]_GND_1_o_equal_11_o<31>1 (timer[31]_GND_1_o_equal_11_o<31>)
+     LUT3:I1->O            2   0.250   0.726  timer[31]_GND_1_o_equal_11_o<31>3 (timer[31]_GND_1_o_equal_11_o)
+     LUT6:I5->O            2   0.254   0.725  _n0040_inv (_n0040_inv)
+     FDRE:CE                   0.302          out_0
     ----------------------------------------
-    Total                      9.778ns (3.413ns logic, 6.366ns route)
-                                       (34.9% logic, 65.1% route)
+    Total                      9.050ns (3.218ns logic, 5.832ns route)
+                                       (35.6% logic, 64.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 10 / 10
 -------------------------------------------------------------------------
-Offset:              5.176ns (Levels of Logic = 2)
-  Source:            out_0 (FF)
-  Destination:       an<1> (PAD)
+Offset:              5.138ns (Levels of Logic = 2)
+  Source:            out_2 (FF)
+  Destination:       an<2> (PAD)
   Source Clock:      clk rising
 
-  Data Path: out_0 to an<1>
+  Data Path: out_2 to an<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              4   0.525   0.803  out_0 (out_0)
-     INV:I->O              1   0.255   0.681  out<3>_inv1_INV_0 (an_1_OBUF)
-     OBUF:I->O                 2.912          an_1_OBUF (an<1>)
+     FDR:C->Q              3   0.525   0.765  out_2 (out_2)
+     INV:I->O              1   0.255   0.681  out<2>_inv1_INV_0 (an_2_OBUF)
+     OBUF:I->O                 2.912          an_2_OBUF (an<2>)
     ----------------------------------------
-    Total                      5.176ns (3.692ns logic, 1.484ns route)
-                                       (71.3% logic, 28.7% route)
+    Total                      5.138ns (3.692ns logic, 1.446ns route)
+                                       (71.9% logic, 28.1% route)
 
 =========================================================================
 
@@ -469,21 +470,21 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    9.778|         |         |         |
+clk            |    9.050|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.88 secs
+Total CPU time to Xst completion: 9.87 secs
  
 --> 
 
 
-Total memory usage is 500396 kilobytes
+Total memory usage is 500400 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   18 (   0 filtered)
+Number of warnings :   22 (   0 filtered)
 Number of infos    :    5 (   0 filtered)
 
