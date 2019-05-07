@@ -36,28 +36,28 @@ module machine(
 		//todo 7seg encoding
 		
 		// manual delay to handle 7seg anode output
-		if(timer == 10000000) begin
+		if(timer % 10000000 == 0) begin
 		
 			//out <= result[3:0];
 			out <= 8'b10000001;
 			an <= 4'b1110;
 			
 		end
-		if(timer == 20000000) begin
+		if(timer % 10000001 == 0) begin
 		
 			//out <= result[7:4];
 			out <= 8'b11000001;
 			an <= 4'b1101;
 			
 		end
-		if(timer == 30000000) begin
+		if(timer % 10000002 == 0) begin
 		
 			//out <= result[11:8];
 			out <= 8'b11100001;
 			an <= 4'b1011;
 			
 		end
-		if(timer == 40000000) begin
+		if(timer % 10000003 == 0) begin
 		
 			//out <= result[15:12];
 			out <= 8'b11110001;
