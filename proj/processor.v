@@ -13,12 +13,10 @@ module processor(
 	end
 	
 	always @ (posedge clk) begin
-//		if (address == 4) begin
-//			address = 0;
-//		end
-//	
-//		address = (address + 1);
-//		
+		if (address == 0) begin
+			address = (address + 1);
+		end
+
 //		#1000000000;
 
 		result <= instruction;
