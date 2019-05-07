@@ -5,7 +5,7 @@ module processor(
 	input clk,
 	input [7:0] instruction,
 	output reg [1:0] address,
-	output [7:0] result
+	output reg [7:0] result
 	);
 
 	initial begin
@@ -18,11 +18,11 @@ module processor(
 		end
 	
 		address = (address + 1);
-		#2000;
+		#3000;
+
+		result <= instruction;
+
 	end
-
-
-	assign result = instruction;
 
 //---wire declarations---
 //wire [31:0] instruction;
