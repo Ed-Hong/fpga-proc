@@ -1,5 +1,4 @@
-//`timescale 1ns / 1ps
-`timescale 1ms / 1ns
+`timescale 1ns / 1ps
 
 module processor(
 	input clk,
@@ -9,11 +8,31 @@ module processor(
 	);
 
 	reg [31:0] timer;
-
 	initial begin
 		address = 0;
 		timer = 0;
 	end
+
+	// wires
+	wire [1:0] opcode = instruction[7:6];
+	wire [1:0] reg_a = instruction[1:0];
+	wire [1:0] reg_b = instruction[3:2];
+	reg write_enable;
+	reg [7:0] write_data;
+	wire [7:0] data_a;
+	wire [7:0] data_b;
+
+
+	// modules
+	regfile _regfile(
+		.clk(clk),
+		.address_a(reg_a),
+		.address_b(reg_b),
+		.write_enable(write_enable),
+		.write_data(write_data),
+		.data_a(data_a),
+		.data_b(data_b)
+	);
 	
 	always @ (posedge clk) begin
 		timer = timer + 1;
@@ -21,6 +40,22 @@ module processor(
 		// manually scale clock frequency for debugging
 		if (timer % 10000000 == 0) begin
 			address = address + 1;
+			
+			
+			
+			//testing regfile WRITE
+			if (opcode == 2'b11) begin
+				write_enable <= 1;
+				write_data <= instruction;
+			end
+			
+			//testing regfile READ
+			if (opcode == 2'b00) begin
+				write_enable <= 0;
+				result <= data_a;
+			end
+			
+			
 			
 			if (address == 8) begin
 				address = 0;

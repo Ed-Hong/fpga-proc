@@ -1,5 +1,4 @@
-//`timescale 1ns / 1ps
-`timescale 1ms / 1ns
+`timescale 1ns / 1ps
 
 module machine(
 	input clk,
@@ -10,7 +9,6 @@ module machine(
 	wire [7:0] instruction;
 	wire [2:0] address;
 	wire [7:0] result;
-	
 	
 	// module declarations
 	
@@ -24,19 +22,13 @@ module machine(
 	
 	// 2) programROM
 	program_rom _program(
-		.clk(clk),
 		.address(address),
 		.instruction(instruction)
 	);
 	
 	// assign I/O
 	always @ (posedge clk) begin
-	
-		// test
-		//out <= 8'b10100101;
-		
 		out <= result;
-	
 	end
 
 endmodule

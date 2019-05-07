@@ -5,16 +5,49 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 23: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 34: Assignment to <arg fmt="%s" index="1">data_b</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">clk</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 42: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
+</msg>
+
+<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v</arg>&quot; line <arg fmt="%d" index="2">27</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">_regfile</arg>&gt; of block &lt;<arg fmt="%s" index="4">regfile</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">processor</arg>&gt;. Underlying logic will be removed.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v</arg>&quot; line <arg fmt="%s" index="2">27</arg>: Output port &lt;<arg fmt="%s" index="3">data_a</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">_regfile</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v</arg>&quot; line <arg fmt="%s" index="2">27</arg>: Output port &lt;<arg fmt="%s" index="3">data_b</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">_regfile</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="2999" delta="new" >Signal &apos;<arg fmt="%s" index="1">inst_mem</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">program_rom</arg>&apos;, is tied to its initial value.
 </msg>
 
 <msg type="info" file="Xst" num="3231" delta="new" >The small RAM &lt;<arg fmt="%s" index="1">Mram_inst_mem</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+</msg>
+
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">_processor/result_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">machine</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">_processor/result_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">machine</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">out_4</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">machine</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">out_5</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">machine</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">_processor/result_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">machine</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;_processor/result_2&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">_processor/result_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">machine</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;_processor/result_6&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">out_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">machine</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;out_3&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">out_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">machine</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;out_7&gt; </arg>
 </msg>
 
 </messages>
