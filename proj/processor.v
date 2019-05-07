@@ -8,8 +8,14 @@ module processor(
 	);
 
 	initial begin
-		address = 2;
+		address = 0;
 	end
+	
+	always @ (posedge clk) begin
+		address = (address + 1) % 4;
+		#100
+	end
+
 
 	assign result = instruction;
 
