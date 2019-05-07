@@ -122,7 +122,10 @@ Parsing module <machine>.
 Elaborating module <machine>.
 
 Elaborating module <processor>.
-WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 20: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:91 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 17: Signal <address> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:91 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 21: Signal <address> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 21: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:91 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 24: Signal <instruction> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
 
 Elaborating module <program_rom>.
 
@@ -132,6 +135,7 @@ Elaborating module <program_rom>.
 
 Synthesizing Unit <machine>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v".
+WARNING:Xst:647 - Input <btn<4:1>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 8-bit register for signal <out>.
     Summary:
 	inferred   8 D-type flip-flop(s).
@@ -139,12 +143,11 @@ Unit <machine> synthesized.
 
 Synthesizing Unit <processor>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v".
-    Found 8-bit register for signal <result>.
-    Found 2-bit register for signal <address>.
-    Found 2-bit adder for signal <address[1]_GND_2_o_add_1_OUT> created at line 20.
+WARNING:Xst:647 - Input <step> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 2-bit adder for signal <address> created at line 21.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  10 D-type flip-flop(s).
 Unit <processor> synthesized.
 
 Synthesizing Unit <program_rom>.
@@ -164,9 +167,8 @@ Macro Statistics
  4x8-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 1
  2-bit adder                                           : 1
-# Registers                                            : 3
- 2-bit register                                        : 1
- 8-bit register                                        : 2
+# Registers                                            : 1
+ 8-bit register                                        : 1
 
 =========================================================================
 
@@ -174,10 +176,6 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-
-Synthesizing (advanced) Unit <processor>.
-The following registers are absorbed into counter <address>: 1 register on signal <address>.
-Unit <processor> synthesized (advanced).
 
 Synthesizing (advanced) Unit <program_rom>.
 INFO:Xst:3231 - The small RAM <Mram_inst_mem> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
@@ -199,50 +197,39 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  4x8-bit single-port distributed Read Only RAM         : 1
-# Counters                                             : 1
- 2-bit up counter                                      : 1
-# Registers                                            : 16
- Flip-Flops                                            : 16
+# Adders/Subtractors                                   : 1
+ 2-bit adder                                           : 1
+# Registers                                            : 8
+ Flip-Flops                                            : 8
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-
-Optimizing unit <machine> ...
-
-Optimizing unit <processor> ...
-WARNING:Xst:1710 - FF/Latch <_processor/result_7> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_processor/result_6> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_processor/result_3> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <_processor/result_2> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_2> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <out_2> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_3> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_6> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_7> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-INFO:Xst:2261 - The FF/Latch <out_4> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <_processor/result_0> 
-INFO:Xst:2261 - The FF/Latch <out_5> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <_processor/address_1> 
-INFO:Xst:2261 - The FF/Latch <_processor/address_0> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <_processor/result_4> 
+INFO:Xst:2261 - The FF/Latch <out_0> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <out_4> 
+WARNING:Xst:2170 - Unit machine : the following signal(s) form a combinatorial loop: _processor/Madd_address_lut<1>.
+WARNING:Xst:2170 - Unit machine : the following signal(s) form a combinatorial loop: _processor/Madd_address_cy<0>.
+
+Optimizing unit <machine> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 0.
+FlipFlop out_0 has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
-
-Processing Unit <machine> :
-	Found 2-bit shift register for signal <out_1>.
-Unit <machine> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 5
- Flip-Flops                                            : 5
-# Shift Registers                                      : 1
- 2-bit shift register                                  : 1
+# Registers                                            : 4
+ Flip-Flops                                            : 4
 
 =========================================================================
 
@@ -265,15 +252,13 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 4
+# BELS                             : 5
 #      GND                         : 1
 #      INV                         : 2
+#      LUT2                        : 1
 #      VCC                         : 1
-# FlipFlops/Latches                : 6
-#      FD                          : 5
-#      FDE                         : 1
-# Shift Registers                  : 1
-#      SRLC16E                     : 1
+# FlipFlops/Latches                : 4
+#      FD                          : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 8
@@ -286,22 +271,20 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:               6  out of  18224     0%  
  Number of Slice LUTs:                    3  out of   9112     0%  
-    Number used as Logic:                 2  out of   9112     0%  
-    Number used as Memory:                1  out of   2176     0%  
-       Number used as SRL:                1
+    Number used as Logic:                 3  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      9
-   Number with an unused Flip Flop:       3  out of      9    33%  
-   Number with an unused LUT:             6  out of      9    66%  
-   Number of fully used LUT-FF pairs:     0  out of      9     0%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:      3
+   Number with an unused Flip Flop:       3  out of      3   100%  
+   Number with an unused LUT:             0  out of      3     0%  
+   Number of fully used LUT-FF pairs:     0  out of      3     0%  
+   Number of unique control sets:         1
 
 IO Utilization: 
- Number of IOs:                           9
+ Number of IOs:                          14
  Number of bonded IOBs:                   9  out of    232     3%  
+    IOB Flip Flops/Latches:               4
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
@@ -327,7 +310,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 7     |
+clk                                | BUFGP                  | 4     |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -338,9 +321,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.300ns (Maximum Frequency: 434.783MHz)
+   Minimum period: No path found
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 4.202ns
+   Maximum output required time after clock: 4.118ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -348,32 +331,10 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 2.300ns (frequency: 434.783MHz)
-  Total number of paths / destination ports: 7 / 7
--------------------------------------------------------------------------
-Delay:               2.300ns (Levels of Logic = 1)
-  Source:            out_5 (FF)
-  Destination:       _processor/result_5 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
-
-  Data Path: out_5 to _processor/result_5
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               3   0.525   0.765  out_5 (out_5)
-     INV:I->O              1   0.255   0.681  _program/Mram_inst_mem51_INV_0 (_program/Mram_inst_mem5)
-     FD:D                      0.074          _processor/result_5
-    ----------------------------------------
-    Total                      2.300ns (0.854ns logic, 1.446ns route)
-                                       (37.1% logic, 62.9% route)
-
-=========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 4 / 4
 -------------------------------------------------------------------------
-Offset:              4.202ns (Levels of Logic = 1)
+Offset:              4.118ns (Levels of Logic = 1)
   Source:            out_5 (FF)
   Destination:       out<5> (PAD)
   Source Clock:      clk rising
@@ -382,37 +343,29 @@ Offset:              4.202ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               3   0.525   0.765  out_5 (out_5)
+     FD:C->Q               1   0.525   0.681  out_5 (out_5)
      OBUF:I->O                 2.912          out_5_OBUF (out<5>)
     ----------------------------------------
-    Total                      4.202ns (3.437ns logic, 0.765ns route)
-                                       (81.8% logic, 18.2% route)
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    2.300|         |         |         |
----------------+---------+---------+---------+---------+
-
 =========================================================================
 
 
 Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 7.69 secs
+Total CPU time to Xst completion: 7.68 secs
  
 --> 
 
 
-Total memory usage is 483836 kilobytes
+Total memory usage is 483816 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

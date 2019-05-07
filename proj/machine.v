@@ -3,6 +3,7 @@
 
 module machine(
 	input clk,
+	input wire [4:0] btn,
 	output reg [7:0] out
 	);
 	
@@ -11,11 +12,13 @@ module machine(
 	wire [1:0] address;
 	wire [7:0] result;
 	
+	wire step = btn[0];
 	
 	// module declarations
 	
 	// 1) processor
 	processor _processor(
+		.step(step),
 		.clk(clk),
 		.instruction(instruction),
 		.address(address),
