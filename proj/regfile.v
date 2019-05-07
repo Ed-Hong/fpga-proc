@@ -2,8 +2,8 @@
 
 module regfile(
 	input clk,
-	input [1:0] address_a,
-	input [1:0] address_b,
+	input [3:0] address_a,
+	input [3:0] address_b,
 	input wire write_enable,
 	input [31:0] write_data,
 	

@@ -58,7 +58,7 @@ module processor(
 							write_enable <= 1;
 							
 							//debug
-							result[15:0] <= immediate;
+							//result[15:0] <= immediate;
 						end
 				// add
 				4'b0010:begin
@@ -67,7 +67,7 @@ module processor(
 							write_enable <= 1;
 							
 							//debug
-							result <= write_data;
+							//result <= write_data;
 						end
 				// out
 				4'b1111:begin
