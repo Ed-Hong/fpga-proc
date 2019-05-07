@@ -2,7 +2,6 @@
 `timescale 1ms / 1ns
 
 module processor(
-	input step,
 	input clk,
 	input [7:0] instruction,
 	output reg [1:0] address,
@@ -13,15 +12,17 @@ module processor(
 		address = 0;
 	end
 	
-	always @ (step) begin
-		if (address == 4) begin
-			address = 0;
-		end
-	
-		address = (address + 1);
-//		#3000;
+	always @ (posedge clk) begin
+//		if (address == 4) begin
+//			address = 0;
+//		end
+//	
+//		address = (address + 1);
+//		
+//		#1000000000;
 
 		result <= instruction;
+
 	end
 
 //---wire declarations---
