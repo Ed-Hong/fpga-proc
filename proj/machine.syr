@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Reading design: machine.prj
@@ -297,15 +297,15 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 144
+# BELS                             : 142
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 23
 #      LUT2                        : 24
-#      LUT3                        : 7
+#      LUT3                        : 9
 #      LUT4                        : 4
-#      LUT5                        : 7
-#      LUT6                        : 19
+#      LUT5                        : 6
+#      LUT6                        : 16
 #      MUXCY                       : 30
 #      MUXF7                       : 1
 #      VCC                         : 1
@@ -313,7 +313,8 @@ Primitive and Black Box Usage:
 # FlipFlops/Latches                : 29
 #      FD                          : 24
 #      FDR                         : 3
-#      FDS                         : 2
+#      FDS                         : 1
+#      FDSE                        : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 12
@@ -327,15 +328,15 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:              29  out of  18224     0%  
- Number of Slice LUTs:                   87  out of   9112     0%  
-    Number used as Logic:                87  out of   9112     0%  
+ Number of Slice LUTs:                   85  out of   9112     0%  
+    Number used as Logic:                85  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     88
-   Number with an unused Flip Flop:      59  out of     88    67%  
-   Number with an unused LUT:             1  out of     88     1%  
-   Number of fully used LUT-FF pairs:    28  out of     88    31%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:     86
+   Number with an unused Flip Flop:      57  out of     86    66%  
+   Number with an unused LUT:             1  out of     86     1%  
+   Number of fully used LUT-FF pairs:    28  out of     86    32%  
+   Number of unique control sets:         3
 
 IO Utilization: 
  Number of IOs:                          13
@@ -376,7 +377,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 9.869ns (Maximum Frequency: 101.329MHz)
+   Minimum period: 9.778ns (Maximum Frequency: 102.266MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 5.176ns
    Maximum combinational path delay: No path found
@@ -387,16 +388,16 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 9.869ns (frequency: 101.329MHz)
-  Total number of paths / destination ports: 99267 / 34
+  Clock period: 9.778ns (frequency: 102.266MHz)
+  Total number of paths / destination ports: 110051 / 35
 -------------------------------------------------------------------------
-Delay:               9.869ns (Levels of Logic = 28)
+Delay:               9.778ns (Levels of Logic = 32)
   Source:            timer_0 (FF)
-  Destination:       out_2 (FF)
+  Destination:       out_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: timer_0 to out_2
+  Data Path: timer_0 to out_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -418,21 +419,25 @@ Delay:               9.869ns (Levels of Logic = 28)
      MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<13> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<13>)
      MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<14> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<14>)
      MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<15> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<15>)
-     XORCY:CI->O          10   0.206   1.438  Madd_timer[31]_GND_1_o_add_1_OUT_xor<16> (timer[31]_GND_1_o_add_1_OUT<16>)
-     LUT5:I0->O            1   0.254   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_lut<2> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_lut<2>)
-     MUXCY:S->O            1   0.215   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<2> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<16> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<17> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<18> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<19> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<19>)
+     XORCY:CI->O           8   0.206   1.374  Madd_timer[31]_GND_1_o_add_1_OUT_xor<20> (timer[31]_GND_1_o_add_1_OUT<20>)
+     LUT5:I0->O            0   0.254   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_lutdi2 (Mcompar_GND_1_o_timer[31]_LessThan_3_o_lutdi2)
+     MUXCY:DI->O           1   0.181   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<2> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<3> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<3>)
      MUXCY:CI->O           1   0.023   0.000  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<4> (Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<4>)
-     MUXCY:CI->O          38   0.023   1.620  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<5> (GND_1_o_timer[31]_LessThan_3_o)
-     LUT6:I5->O            4   0.254   1.080  _n0040_inv12 (_n0040_inv12)
-     LUT6:I2->O            1   0.254   0.000  _n0040_inv2_G (N41)
-     MUXF7:I1->O           7   0.175   0.910  _n0040_inv2 (_n0040_inv2)
-     LUT6:I5->O            1   0.254   0.790  timer[31]_GND_1_o_equal_11_o<31>1 (timer[31]_GND_1_o_equal_11_o)
-     LUT3:I1->O            1   0.250   0.000  out_2_rstpot (out_2_rstpot)
-     FDR:D                     0.074          out_2
+     MUXCY:CI->O          36   0.023   1.587  Mcompar_GND_1_o_timer[31]_LessThan_3_o_cy<5> (GND_1_o_timer[31]_LessThan_3_o)
+     LUT6:I5->O            3   0.254   1.042  _n0040_inv12 (_n0040_inv12)
+     LUT6:I2->O            1   0.254   0.000  _n0040_inv2_G (N37)
+     MUXF7:I1->O           5   0.175   0.841  _n0040_inv2 (_n0040_inv2)
+     LUT6:I5->O            5   0.254   0.841  _n0040_inv3 (_n0040_inv)
+     LUT3:I2->O            1   0.254   0.000  out_0_rstpot (out_0_rstpot)
+     FDR:D                     0.074          out_0
     ----------------------------------------
-    Total                      9.869ns (3.350ns logic, 6.519ns route)
-                                       (33.9% logic, 66.1% route)
+    Total                      9.778ns (3.413ns logic, 6.366ns route)
+                                       (34.9% logic, 65.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -464,19 +469,19 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    9.869|         |         |         |
+clk            |    9.778|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
+Total REAL time to Xst completion: 10.00 secs
 Total CPU time to Xst completion: 9.88 secs
  
 --> 
 
 
-Total memory usage is 500448 kilobytes
+Total memory usage is 500396 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   18 (   0 filtered)
