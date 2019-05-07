@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-engnx03.utdallas.edu::  Tue May 07 12:13:00 2019
+engnx03.utdallas.edu::  Tue May 07 12:20:56 2019
 
 par -w -intstyle ise -ol high -mt off machine_map.ncd machine.ncd machine.pcf 
 
@@ -113,7 +113,7 @@ Phase  2  : 14 unrouted;      REAL time: 6 secs
 
 Phase  3  : 0 unrouted;      REAL time: 7 secs 
 
-Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
+Phase  4  : 0 unrouted; (Par is working to improve performance)     REAL time: 8 secs 
 
 Updating file: machine.ncd with current fully routed design.
 

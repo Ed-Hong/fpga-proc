@@ -1,4 +1,5 @@
-`timescale 1ns / 1ps
+//`timescale 1ns / 1ps
+`timescale 1ms / 1ns
 
 module processor(
 	input clk,
@@ -17,7 +18,7 @@ module processor(
 		end
 	
 		address = (address + 1);
-		#1000000;
+		#2000;
 	end
 
 

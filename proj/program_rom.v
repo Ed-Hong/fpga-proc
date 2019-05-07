@@ -1,4 +1,5 @@
-`timescale 1ns / 1ps
+//`timescale 1ns / 1ps
+`timescale 1ms / 1ns
 
 module program_rom(
 	input clk,
