@@ -44,7 +44,7 @@ module processor(
 		timer = timer + 1;
 
 		// manually scale clock frequency for debugging
-		if (timer % 30000000 == 0) begin
+		if (timer % 50000000 == 0) begin
 			address = address + 1;
 			if (address >= 8) begin
 				address = 0;
@@ -54,11 +54,11 @@ module processor(
 			case (opcode) 
 				// addi
 				4'b0001:begin
-							write_data <= immediate;
+							write_data[15:0] <= immediate;
 							write_enable <= 1;
 							
 							//debug
-							//result <= 32'b0001_0001_0000_0000_0000_0000_0000_0000;
+							result[15:0] <= immediate;
 						end
 				// add
 				4'b0010:begin
@@ -67,7 +67,7 @@ module processor(
 							write_enable <= 1;
 							
 							//debug
-							//result <= 32'b0011_0011_0000_0000_0000_0000_0000_0000;
+							result <= write_data;
 						end
 				// out
 				4'b1111:begin
