@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue May  7 16:31:41 2019
+Mapped Date    : Tue May  7 16:36:06 2019
 
 Design Summary
 --------------
@@ -108,7 +108,7 @@ INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-   2 block(s) optimized away
+   1 block(s) optimized away
 
 Section 5 - Removed Logic
 -------------------------
@@ -116,7 +116,6 @@ Section 5 - Removed Logic
 Optimized Block(s):
 TYPE 		BLOCK
 GND 		XST_GND
-VCC 		XST_VCC
 
 Section 6 - IOB Properties
 --------------------------
