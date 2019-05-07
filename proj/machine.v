@@ -6,6 +6,8 @@ module machine(
 	output reg [7:0] out
 	);
 	
+	reg [31:0] timer;
+	
 	// wire declarations
 	wire [2:0] address;
 	wire [15:0] instruction;
@@ -29,30 +31,40 @@ module machine(
 	
 	// assign I/O
 	always @ (posedge clk) begin
+		timer = timer + 1;
+
 		//todo 7seg encoding
 		
-		//out <= result[3:0];
-		//test 7seg display
-		out <= 8'b00000001;
-		an <= 4'b1110;
+		// manual delay to handle 7seg anode output
+		if(timer == 10000000) begin
 		
-		#1000000000
+			//out <= result[3:0];
+			out <= 8'b10000001;
+			an <= 4'b1110;
+			
+		end
+		if(timer == 20000000) begin
 		
-		//out <= result[7:4];
-		out <= 8'b00000011;
-		an <= 4'b1101;
+			//out <= result[7:4];
+			out <= 8'b11000001;
+			an <= 4'b1101;
+			
+		end
+		if(timer == 30000000) begin
 		
-		#1000000000
+			//out <= result[11:8];
+			out <= 8'b11100001;
+			an <= 4'b1011;
+			
+		end
+		if(timer == 40000000) begin
 		
-		//out <= result[11:8];
-		out <= 8'b00000111;
-		an <= 4'b1011;
+			//out <= result[15:12];
+			out <= 8'b11110001;
+			an <= 4'b0111;
+			
+		end
 		
-		#1000000000
-		
-		//out <= result[15:12];
-		out <= 8'b00001111;
-		an <= 4'b0111;
 	end
 
 endmodule

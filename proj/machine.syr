@@ -127,11 +127,11 @@ Elaborating module <processor>.
 
 Elaborating module <regfile>.
 WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 48: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:1127 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" Line 21: Assignment to result ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" Line 23: Assignment to result ignored, since the identifier is never used
 
 Elaborating module <program_rom>.
-WARNING:Xst:2972 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" line 17. All outputs of instance <_processor> of block <processor> are unconnected in block <machine>. Underlying logic will be removed.
-WARNING:Xst:2972 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" line 25. All outputs of instance <_program> of block <program_rom> are unconnected in block <machine>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" line 19. All outputs of instance <_processor> of block <processor> are unconnected in block <machine>. Underlying logic will be removed.
+WARNING:Xst:2972 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" line 27. All outputs of instance <_program> of block <program_rom> are unconnected in block <machine>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -139,13 +139,15 @@ WARNING:Xst:2972 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" lin
 
 Synthesizing Unit <machine>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v".
-INFO:Xst:3210 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" line 17: Output port <result> of the instance <_processor> is unconnected or connected to loadless signal.
-    WARNING:Xst:2404 -  FFs/Latches <an<1:1>> (without init value) have a constant value of 0 in block <machine>.
-    WARNING:Xst:2404 -  FFs/Latches <an<1:3>> (without init value) have a constant value of 1 in block <machine>.
-    WARNING:Xst:2404 -  FFs/Latches <out<1:4>> (without init value) have a constant value of 0 in block <machine>.
-    WARNING:Xst:2404 -  FFs/Latches <out<4:7>> (without init value) have a constant value of 1 in block <machine>.
+INFO:Xst:3210 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" line 19: Output port <result> of the instance <_processor> is unconnected or connected to loadless signal.
+    Found 8-bit register for signal <out>.
+    Found 4-bit register for signal <an>.
+    Found 32-bit register for signal <timer>.
+    Found 32-bit adder for signal <timer[31]_GND_1_o_add_1_OUT> created at line 34.
     Summary:
-	no macro.
+	inferred   1 Adder/Subtractor(s).
+	inferred  44 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <machine> synthesized.
 
 Synthesizing Unit <regfile>.
@@ -200,7 +202,17 @@ Unit <mod_32u_26u> synthesized.
 =========================================================================
 HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Registers                                            : 3
+ 32-bit register                                       : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 1
+# Multiplexers                                         : 2
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+
 =========================================================================
 
 =========================================================================
@@ -208,28 +220,52 @@ Found no macro
 =========================================================================
 
 
+Synthesizing (advanced) Unit <machine>.
+The following registers are absorbed into counter <timer>: 1 register on signal <timer>.
+Unit <machine> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 12
+ Flip-Flops                                            : 12
+# Multiplexers                                         : 2
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <out_0> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_1> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_2> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_3> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_7> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <out_6> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <an_0> 
 
 Optimizing unit <machine> ...
+INFO:Xst:3203 - The FF/Latch <out_4> in Unit <machine> is the opposite to the following FF/Latch, which will be removed : <an_3> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 1.
 
 Final Macro Processing ...
 
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 37
+ Flip-Flops                                            : 37
+
 =========================================================================
 
 =========================================================================
@@ -251,9 +287,23 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2
+# BELS                             : 233
 #      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 62
+#      LUT2                        : 1
+#      LUT3                        : 3
+#      LUT4                        : 7
+#      LUT5                        : 2
+#      LUT6                        : 27
+#      MUXCY                       : 62
 #      VCC                         : 1
+#      XORCY                       : 64
+# FlipFlops/Latches                : 37
+#      FD                          : 32
+#      FDS                         : 5
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
 # IO Buffers                       : 12
 #      OBUF                        : 12
 
@@ -264,19 +314,23 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
+ Number of Slice Registers:              37  out of  18224     0%  
+ Number of Slice LUTs:                  105  out of   9112     1%  
+    Number used as Logic:               105  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      0
-   Number with an unused Flip Flop:       0  out of      0         
-   Number with an unused LUT:             0  out of      0         
-   Number of fully used LUT-FF pairs:     0  out of      0         
-   Number of unique control sets:         0
+ Number of LUT Flip Flop pairs used:    111
+   Number with an unused Flip Flop:      74  out of    111    66%  
+   Number with an unused LUT:             6  out of    111     5%  
+   Number of fully used LUT-FF pairs:    31  out of    111    27%  
+   Number of unique control sets:         2
 
 IO Utilization: 
  Number of IOs:                          13
- Number of bonded IOBs:                  12  out of    232     5%  
+ Number of bonded IOBs:                  13  out of    232     5%  
 
 Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -296,7 +350,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 37    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -306,9 +364,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: No path found
+   Minimum period: 7.282ns (Maximum Frequency: 137.334MHz)
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
+   Maximum output required time after clock: 5.138ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -316,22 +374,100 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.282ns (frequency: 137.334MHz)
+  Total number of paths / destination ports: 13306 / 42
+-------------------------------------------------------------------------
+Delay:               7.282ns (Levels of Logic = 29)
+  Source:            timer_0 (FF)
+  Destination:       out_6 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: timer_0 to out_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   0.725  timer_0 (timer_0)
+     INV:I->O              1   0.255   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_lut<0>_INV_0 (Madd_timer[31]_GND_1_o_add_1_OUT_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<0> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<1> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<2> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<3> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<4> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<5> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<6> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<7> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<8> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<9> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<10> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<11> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<12> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<13> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<14> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<15> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<16> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<17> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<18> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<19> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<20> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<21> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<21>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_timer[31]_GND_1_o_add_1_OUT_cy<22> (Madd_timer[31]_GND_1_o_add_1_OUT_cy<22>)
+     XORCY:CI->O           6   0.206   1.306  Madd_timer[31]_GND_1_o_add_1_OUT_xor<23> (timer[31]_GND_1_o_add_1_OUT<23>)
+     LUT6:I1->O            1   0.254   0.682  _n0036_inv14_SW3 (N37)
+     LUT6:I5->O            6   0.254   0.984  timer[31]_GND_1_o_equal_9_o<31>_SW0 (N6)
+     LUT6:I4->O            1   0.250   0.790  an[3]_PWR_1_o_mux_10_OUT<0>1 (an[3]_PWR_1_o_mux_10_OUT<0>)
+     LUT3:I1->O            1   0.250   0.000  out_6_rstpot (out_6_rstpot)
+     FDS:D                     0.074          out_6
+    ----------------------------------------
+    Total                      7.282ns (2.795ns logic, 4.487ns route)
+                                       (38.4% logic, 61.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              5.138ns (Levels of Logic = 2)
+  Source:            out_4 (FF)
+  Destination:       an<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: out_4 to an<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              3   0.525   0.765  out_4 (out_4)
+     INV:I->O              1   0.255   0.681  out<4>_inv1_INV_0 (an_3_OBUF)
+     OBUF:I->O                 2.912          an_3_OBUF (an<3>)
+    ----------------------------------------
+    Total                      5.138ns (3.692ns logic, 1.446ns route)
+                                       (71.9% logic, 28.1% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    7.282|         |         |         |
+---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.09 secs
+Total CPU time to Xst completion: 9.86 secs
  
 --> 
 
 
-Total memory usage is 498580 kilobytes
+Total memory usage is 499864 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :   12 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 

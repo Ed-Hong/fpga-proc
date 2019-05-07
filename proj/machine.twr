@@ -30,18 +30,39 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Tue May  7 18:18:33 2019 
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+an<0>       |        10.265(R)|      SLOW  |         4.718(R)|      FAST  |clk_BUFGP         |   0.000|
+an<1>       |        10.074(R)|      SLOW  |         4.613(R)|      FAST  |clk_BUFGP         |   0.000|
+an<2>       |         9.968(R)|      SLOW  |         4.582(R)|      FAST  |clk_BUFGP         |   0.000|
+an<3>       |        10.834(R)|      SLOW  |         5.009(R)|      FAST  |clk_BUFGP         |   0.000|
+out<4>      |        10.948(R)|      SLOW  |         5.111(R)|      FAST  |clk_BUFGP         |   0.000|
+out<5>      |        10.689(R)|      SLOW  |         5.001(R)|      FAST  |clk_BUFGP         |   0.000|
+out<6>      |        10.927(R)|      SLOW  |         5.080(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.517|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Tue May  7 18:28:24 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 387 MB
+Peak Memory Usage: 389 MB
 
 
 
