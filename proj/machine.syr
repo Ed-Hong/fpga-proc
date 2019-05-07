@@ -4,14 +4,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.09 secs
  
 --> 
@@ -155,7 +155,6 @@ INFO:Xst:3210 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" line
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  44 D-type flip-flop(s).
-	inferred   1 Multiplexer(s).
 Unit <processor> synthesized.
 
 Synthesizing Unit <regfile>.
@@ -317,10 +316,9 @@ Macro Statistics
  55-bit comparator lessequal                           : 1
  56-bit comparator lessequal                           : 1
  57-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1026
+# Multiplexers                                         : 1025
  1-bit 2-to-1 multiplexer                              : 1024
  25-bit 2-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -410,10 +408,9 @@ Macro Statistics
  55-bit comparator lessequal                           : 1
  56-bit comparator lessequal                           : 1
  57-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1026
+# Multiplexers                                         : 1025
  1-bit 2-to-1 multiplexer                              : 1024
  25-bit 2-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 1
 
 =========================================================================
 
@@ -579,11 +576,11 @@ Timing constraint: Default period analysis for Clock 'clk'
 -------------------------------------------------------------------------
 Delay:               33.150ns (Levels of Logic = 62)
   Source:            _processor/timer_0 (FF)
-  Destination:       _processor/result_7 (FF)
+  Destination:       _processor/write_enable (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: _processor/timer_0 to _processor/result_7
+  Data Path: _processor/timer_0 to _processor/write_enable
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -647,7 +644,7 @@ Delay:               33.150ns (Levels of Logic = 62)
      MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_cy<8> (_processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_cy<8>)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_cy<9> (_processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_cy<9>)
      XORCY:CI->O           6   0.206   1.104  _processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_xor<10> (_processor/timer[31]_PWR_2_o_mod_6/a[31]_GND_4_o_add_65_OUT<10>)
-     LUT6:I3->O            1   0.235   0.682  _processor/_n0112<0>9_SW3 (N312)
+     LUT6:I3->O            1   0.235   0.682  _processor/_n0095<0>9_SW3 (N312)
      LUT6:I5->O            1   0.254   0.682  _processor/result_6_dpot_SW1 (N222)
      LUT6:I5->O            1   0.254   0.000  _processor/result_6_dpot (_processor/result_6_dpot)
      FDE:D                     0.074          _processor/result_6
@@ -691,12 +688,12 @@ clk            |   33.150|         |         |         |
 
 
 Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 20.94 secs
+Total CPU time to Xst completion: 20.92 secs
  
 --> 
 
 
-Total memory usage is 499748 kilobytes
+Total memory usage is 499780 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   12 (   0 filtered)

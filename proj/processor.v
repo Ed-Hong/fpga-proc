@@ -40,30 +40,26 @@ module processor(
 		// manually scale clock frequency for debugging
 		if (timer % 30000000 == 0) begin
 			address = address + 1;
-			
-			
-			
-			//testing regfile WRITE
-			if (opcode == 2'b11) begin
-				write_enable <= 1;
-				result <= 8'b00000000;
-			end
-			
-			//testing regfile READ
-			if (opcode == 2'b00) begin
-				write_enable <= 0;
-				result <= data_a;
-			end
-			
-			
-			
-			if (address == 8) begin
+			if (address >= 8) begin
 				address = 0;
 			end
+			
+			//instruction decode
+			case (opcode) 
+				//testing regfile WRITE
+				2'b00:begin
+							write_enable <= 0;
+							result <= data_a;
+						end
+				//testing regfile READ
+				2'b11:begin
+							write_enable <= 1;
+							result <= 8'b00000000;
+						end
+				default: result <= 8'b11111111;  
+			endcase
+			
 		end
-
-		//result <= instruction;
-
 	end
 
 //---wire declarations---
