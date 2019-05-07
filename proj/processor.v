@@ -13,7 +13,7 @@ module processor(
 	
 	always @ (posedge clk) begin
 		address = (address + 1) % 4;
-		#100;
+		#1000000000;
 	end
 
 
