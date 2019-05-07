@@ -49,9 +49,7 @@ module processor(
 			if (address >= 8) begin
 				address = 0;
 			end
-			
-			write_enable <= 0;
-			
+
 			// instruction decode
 			case (opcode) 
 				// addi
@@ -67,11 +65,16 @@ module processor(
 						end
 				// out
 				4'b1111:begin
-							result <= data_a;
+							//result <= data_a;
 						end
 				// default NOP
-				default: result <= 8'hFFFFFFFF;  
+				default: result <= 8'hFFFFFFAA;  
 			endcase
+			
+			write_enable <= 0;
+			
+			//debug
+			result <= instruction;
 			
 		end
 	end
