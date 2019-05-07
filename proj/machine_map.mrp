@@ -10,30 +10,30 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue May  7 17:35:40 2019
+Mapped Date    : Tue May  7 17:46:54 2019
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Slice Logic Utilization:
-  Number of Slice Registers:                    50 out of  18,224    1%
-    Number used as Flip Flops:                  50
+  Number of Slice Registers:                    60 out of  18,224    1%
+    Number used as Flip Flops:                  60
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        491 out of   9,112    5%
-    Number used as logic:                      485 out of   9,112    5%
-      Number using O6 output only:             290
+  Number of Slice LUTs:                        505 out of   9,112    5%
+    Number used as logic:                      499 out of   9,112    5%
+      Number using O6 output only:             303
       Number using O5 output only:              70
-      Number using O5 and O6:                  125
+      Number using O5 and O6:                  126
       Number used as ROM:                        0
     Number used as Memory:                       3 out of   2,176    1%
       Number used as Dual Port RAM:              0
       Number used as Single Port RAM:            3
-        Number using O6 output only:             3
-        Number using O5 output only:             0
-        Number using O5 and O6:                  0
+        Number using O6 output only:             0
+        Number using O5 output only:             1
+        Number using O5 and O6:                  2
       Number used as Shift Register:             0
     Number used exclusively as route-thrus:      3
       Number with same-slice register load:      0
@@ -41,15 +41,15 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   164 out of   2,278    7%
+  Number of occupied Slices:                   171 out of   2,278    7%
   Number of MUXCYs used:                       260 out of   4,556    5%
-  Number of LUT Flip Flop pairs used:          496
-    Number with an unused Flip Flop:           446 out of     496   89%
-    Number with an unused LUT:                   5 out of     496    1%
-    Number of fully used LUT-FF pairs:          45 out of     496    9%
-    Number of unique control sets:               3
+  Number of LUT Flip Flop pairs used:          516
+    Number with an unused Flip Flop:           456 out of     516   88%
+    Number with an unused LUT:                  11 out of     516    2%
+    Number of fully used LUT-FF pairs:          49 out of     516    9%
+    Number of unique control sets:               4
     Number of slice register sites lost
-      to control set restrictions:              11 out of  18,224    1%
+      to control set restrictions:               7 out of  18,224    1%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -86,11 +86,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                4.14
+Average Fanout of Non-Clock Nets:                4.12
 
 Peak Memory Usage:  807 MB
-Total REAL time to MAP completion:  20 secs 
-Total CPU time to MAP completion:   19 secs 
+Total REAL time to MAP completion:  23 secs 
+Total CPU time to MAP completion:   22 secs 
 
 Table of Contents
 -----------------
@@ -128,10 +128,12 @@ INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to
 '2100@engls'.
 INFO:Security:54 - 'xc6slx16' is a WebPack part.
 INFO:LIT:243 - Logical network _processor/_regfile/Mram_regs8/DPO has no load.
-INFO:LIT:395 - The above info message is repeated 2 more times for the following
+INFO:LIT:395 - The above info message is repeated 4 more times for the following
    (max. 5 shown):
    _processor/_regfile/Mram_regs4/DPO,
-   _processor/_regfile/Mram_regs3/DPO
+   _processor/_regfile/Mram_regs3/DPO,
+   _processor/_regfile/Mram_regs2/DPO,
+   _processor/_regfile/Mram_regs1/DPO
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew

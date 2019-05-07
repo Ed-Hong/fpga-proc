@@ -41,10 +41,10 @@ out<0>      |        10.132(R)|      SLOW  |         4.726(R)|      FAST  |clk_B
 out<1>      |        10.132(R)|      SLOW  |         4.726(R)|      FAST  |clk_BUFGP         |   0.000|
 out<2>      |        10.128(R)|      SLOW  |         4.754(R)|      FAST  |clk_BUFGP         |   0.000|
 out<3>      |        10.128(R)|      SLOW  |         4.754(R)|      FAST  |clk_BUFGP         |   0.000|
-out<4>      |         9.962(R)|      SLOW  |         4.540(R)|      FAST  |clk_BUFGP         |   0.000|
-out<5>      |         9.808(R)|      SLOW  |         4.467(R)|      FAST  |clk_BUFGP         |   0.000|
-out<6>      |         9.835(R)|      SLOW  |         4.499(R)|      FAST  |clk_BUFGP         |   0.000|
-out<7>      |        10.245(R)|      SLOW  |         4.757(R)|      FAST  |clk_BUFGP         |   0.000|
+out<4>      |         9.662(R)|      SLOW  |         4.386(R)|      FAST  |clk_BUFGP         |   0.000|
+out<5>      |         9.850(R)|      SLOW  |         4.477(R)|      FAST  |clk_BUFGP         |   0.000|
+out<6>      |         9.690(R)|      SLOW  |         4.423(R)|      FAST  |clk_BUFGP         |   0.000|
+out<7>      |         9.690(R)|      SLOW  |         4.423(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
@@ -52,18 +52,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   29.374|         |         |         |
+clk            |   29.238|    3.229|    4.190|         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue May  7 17:36:26 2019 
+Analysis completed Tue May  7 17:47:43 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 396 MB
+Peak Memory Usage: 397 MB
 
 
 

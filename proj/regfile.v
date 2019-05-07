@@ -18,7 +18,9 @@ module regfile(
 		if (write_enable == 1) begin
 			regs[address_a] <= write_data;
 		end
+	end
 	
+	always @ (negedge clk) begin
 		data_a <= regs[address_a];
 		data_b <= regs[address_b];
 	end
