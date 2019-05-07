@@ -8,37 +8,37 @@
 <msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 48: Result of <arg fmt="%d" index="1">4</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">3</arg>-bit target.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" Line 21: Assignment to <arg fmt="%s" index="1">result</arg> ignored, since the identifier is never used
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" Line 21: Assignment to <arg fmt="%s" index="1">result</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v</arg>&quot; line <arg fmt="%d" index="2">17</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">_processor</arg>&gt; of block &lt;<arg fmt="%s" index="4">processor</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v</arg>&quot; line <arg fmt="%d" index="2">17</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">_processor</arg>&gt; of block &lt;<arg fmt="%s" index="4">processor</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v</arg>&quot; line <arg fmt="%d" index="2">25</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">_program</arg>&gt; of block &lt;<arg fmt="%s" index="4">program_rom</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v</arg>&quot; line <arg fmt="%d" index="2">25</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">_program</arg>&gt; of block &lt;<arg fmt="%s" index="4">program_rom</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v</arg>&quot; line <arg fmt="%s" index="2">17</arg>: Output port &lt;<arg fmt="%s" index="3">result</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">_processor</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v</arg>&quot; line <arg fmt="%s" index="2">17</arg>: Output port &lt;<arg fmt="%s" index="3">result</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">_processor</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">an</arg>&lt;<arg fmt="%d" index="2">1</arg>:<arg fmt="%d" index="3">1</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;.
+<msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">an</arg>&lt;<arg fmt="%d" index="2">1</arg>:<arg fmt="%d" index="3">1</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">an</arg>&lt;<arg fmt="%d" index="2">1</arg>:<arg fmt="%d" index="3">3</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">1</arg> in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;.
+<msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">an</arg>&lt;<arg fmt="%d" index="2">1</arg>:<arg fmt="%d" index="3">3</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">1</arg> in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">out</arg>&lt;<arg fmt="%d" index="2">1</arg>:<arg fmt="%d" index="3">4</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;.
+<msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">out</arg>&lt;<arg fmt="%d" index="2">1</arg>:<arg fmt="%d" index="3">4</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">out</arg>&lt;<arg fmt="%d" index="2">4</arg>:<arg fmt="%d" index="3">7</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">1</arg> in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;.
+<msg type="warning" file="Xst" num="2404" delta="old" > FFs/Latches &lt;<arg fmt="%s" index="1">out</arg>&lt;<arg fmt="%d" index="2">4</arg>:<arg fmt="%d" index="3">7</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">1</arg> in block &lt;<arg fmt="%s" index="5">machine</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">address_a&lt;2:2&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">address_a&lt;2:2&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">address_b&lt;2:2&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">address_b&lt;2:2&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="3035" delta="new" >Index value(s) does not match array range for signal &lt;<arg fmt="%s" index="1">regs</arg>&gt;, simulation mismatch.
+<msg type="warning" file="Xst" num="3035" delta="old" >Index value(s) does not match array range for signal &lt;<arg fmt="%s" index="1">regs</arg>&gt;, simulation mismatch.
 </msg>
 
 </messages>
