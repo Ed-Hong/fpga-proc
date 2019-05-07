@@ -58,7 +58,7 @@ module processor(
 							write_enable <= 1;
 							
 							//debug
-							//result <= 8'hFFFFFF01;
+							result <= 32'b0001_0001_0000_0000_0000_0000_0000_0000;
 						end
 				// add
 				4'b0010:begin
@@ -67,23 +67,23 @@ module processor(
 							write_enable <= 1;
 							
 							//debug
-							//result <= 8'hFFFFFF03;
+							result <= 32'b0011_0011_0000_0000_0000_0000_0000_0000;
 						end
 				// out
 				4'b1111:begin
 							//result <= data_a;
 							
 							//debug
-							//result <= 8'hFFFFFF0F;
+							result <= 32'b0111_0111_0000_0000_0000_0000_0000_0000;
 						end
 				// default NOP
-				//default: result <= 8'hFFFFFFAA;  
+				default: result <= 32'b0000_0000_0000_0000_0000_0000_0000_0000;  
 			endcase
 			
 			write_enable <= 0;
 			
 			//debug
-			result <= instruction;
+			//result <= instruction;
 			
 		end
 	end
