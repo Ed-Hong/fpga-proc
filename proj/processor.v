@@ -2,9 +2,9 @@
 
 module processor(
 	input clk,
-	input [7:0] instruction,
+	input [31:0] instruction,
 	output reg [2:0] address,
-	output reg [7:0] result
+	output reg [31:0] result
 	);
 
 	reg [31:0] timer;
@@ -14,13 +14,14 @@ module processor(
 	end
 
 	// wires
-	wire [1:0] opcode = instruction[7:6];
-	wire [1:0] reg_a = instruction[1:0];
-	wire [1:0] reg_b = instruction[3:2];
+	wire [3:0] opcode = instruction[31:28];
+	wire [3:0] reg_a = instruction[27:24];
+	wire [3:0] reg_b = instruction[23:20];
+	wire [15:0] immediate = instruction[15:0];
 	reg write_enable;
-	wire [7:0] write_data = 8'b10101010;
-	wire [7:0] data_a;
-	wire [7:0] data_b;
+	reg [31:0] write_data;
+	wire [31:0] data_a;
+	wire [31:0] data_b;
 
 
 	// modules
@@ -34,6 +35,11 @@ module processor(
 		.data_b(data_b)
 	);
 	
+	//todo
+//	alu _alu(
+//		
+//	);
+	
 	always @ (posedge clk) begin
 		timer = timer + 1;
 
@@ -44,19 +50,27 @@ module processor(
 				address = 0;
 			end
 			
-			//instruction decode
+			write_enable <= 0;
+			
+			// instruction decode
 			case (opcode) 
-				//testing regfile WRITE
-				2'b00:begin
-							write_enable <= 0;
+				// addi
+				1'h1:begin
+							write_data <= immediate;
+							write_enable <= 1;
+						end
+				// add
+				1'h2:begin
+							//todo - move this to ALU
+							write_data <= (data_a + data_b); 
+							write_enable <= 1;
+						end
+				// out
+				1'hF:begin
 							result <= data_a;
 						end
-				//testing regfile READ
-				2'b11:begin
-							write_enable <= 1;
-							result <= 8'b00000000;
-						end
-				default: result <= 8'b11111111;  
+				// default NOP
+				default: result <= 8'hFFFFFFFF;  
 			endcase
 			
 		end

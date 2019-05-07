@@ -6,9 +6,9 @@ module machine(
 	);
 	
 	// wire declarations
-	wire [7:0] instruction;
+	wire [31:0] instruction;
 	wire [2:0] address;
-	wire [7:0] result;
+	wire [31:0] result;
 	
 	// module declarations
 	
@@ -28,7 +28,8 @@ module machine(
 	
 	// assign I/O
 	always @ (posedge clk) begin
-		out <= result;
+		//todo 32bit output
+		out <= result[7:0];
 	end
 
 endmodule

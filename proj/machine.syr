@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: machine.prj
@@ -112,8 +112,17 @@ Analyzing Verilog file "/home/011/e/ex/exh150330/repos/fpga-proc/proj/regfile.v"
 Parsing module <regfile>.
 Analyzing Verilog file "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" into library work
 Parsing module <program_rom>.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" Line 12: Constant value is truncated to fit in <8> bits.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" Line 13: Constant value is truncated to fit in <8> bits.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" Line 14: Constant value is truncated to fit in <8> bits.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" Line 15: Constant value is truncated to fit in <8> bits.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" Line 16: Constant value is truncated to fit in <8> bits.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" Line 17: Constant value is truncated to fit in <8> bits.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" Line 18: Constant value is truncated to fit in <8> bits.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v" Line 19: Constant value is truncated to fit in <8> bits.
 Analyzing Verilog file "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" into library work
 Parsing module <processor>.
+WARNING:HDLCompiler:568 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 73: Constant value is truncated to fit in <8> bits.
 Analyzing Verilog file "/home/011/e/ex/exh150330/repos/fpga-proc/proj/machine.v" into library work
 Parsing module <machine>.
 
@@ -126,8 +135,9 @@ Elaborating module <machine>.
 Elaborating module <processor>.
 
 Elaborating module <regfile>.
-WARNING:HDLCompiler:1127 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 34: Assignment to data_b ignored, since the identifier is never used
-WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 42: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:189 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 30: Size mismatch in connection of port <address_a>. Formal port size is 2-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 31: Size mismatch in connection of port <address_b>. Formal port size is 2-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 48: Result of 4-bit expression is truncated to fit in 3-bit target.
 
 Elaborating module <program_rom>.
 
@@ -144,27 +154,29 @@ Unit <machine> synthesized.
 
 Synthesizing Unit <processor>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v".
-WARNING:Xst:647 - Input <instruction<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" line 27: Output port <data_b> of the instance <_regfile> is unconnected or connected to loadless signal.
+WARNING:Xst:647 - Input <instruction<19:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 3-bit register for signal <address>.
     Found 1-bit register for signal <write_enable>.
-    Found 8-bit register for signal <result>.
+    Found 32-bit register for signal <write_data>.
+    Found 32-bit register for signal <result>.
     Found 32-bit register for signal <timer>.
-    Found 32-bit adder for signal <timer[31]_GND_2_o_add_5_OUT> created at line 38.
-    Found 3-bit adder for signal <address[2]_GND_2_o_add_8_OUT> created at line 42.
+    Found 32-bit adder for signal <timer[31]_GND_2_o_add_5_OUT> created at line 44.
+    Found 3-bit adder for signal <address[2]_GND_2_o_add_8_OUT> created at line 48.
+    Found 32-bit adder for signal <data_a[31]_data_b[31]_add_9_OUT> created at line 65.
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  44 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred 100 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
 Unit <processor> synthesized.
 
 Synthesizing Unit <regfile>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/regfile.v".
-    Found 4x8-bit dual-port RAM <Mram_regs> for signal <regs>.
-    Found 8-bit register for signal <data_b>.
-    Found 8-bit register for signal <data_a>.
+    Found 4x32-bit dual-port RAM <Mram_regs> for signal <regs>.
+    Found 32-bit register for signal <data_b>.
+    Found 32-bit register for signal <data_a>.
     Summary:
 	inferred   1 RAM(s).
-	inferred  16 D-type flip-flop(s).
+	inferred  64 D-type flip-flop(s).
 Unit <regfile> synthesized.
 
 Synthesizing Unit <mod_32u_25u>.
@@ -244,7 +256,7 @@ Unit <mod_32u_25u> synthesized.
 Synthesizing Unit <program_rom>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/program_rom.v".
 WARNING:Xst:2999 - Signal 'inst_mem', unconnected in block 'program_rom', is tied to its initial value.
-    Found 8x8-bit single-port Read Only RAM <Mram_inst_mem> for signal <inst_mem>.
+    Found 8x32-bit single-port Read Only RAM <Mram_inst_mem> for signal <inst_mem>.
     Summary:
 	inferred   1 RAM(s).
 Unit <program_rom> synthesized.
@@ -254,11 +266,11 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 2
- 4x8-bit dual-port RAM                                 : 1
- 8x8-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 35
+ 4x32-bit dual-port RAM                                : 1
+ 8x32-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 36
  3-bit adder                                           : 1
- 32-bit adder                                          : 9
+ 32-bit adder                                          : 10
  33-bit adder                                          : 1
  34-bit adder                                          : 1
  35-bit adder                                          : 1
@@ -284,11 +296,11 @@ Macro Statistics
  55-bit adder                                          : 1
  56-bit adder                                          : 1
  57-bit adder                                          : 1
-# Registers                                            : 7
+# Registers                                            : 8
  1-bit register                                        : 1
  3-bit register                                        : 1
- 32-bit register                                       : 1
- 8-bit register                                        : 4
+ 32-bit register                                       : 5
+ 8-bit register                                        : 1
 # Comparators                                          : 33
  32-bit comparator lessequal                           : 8
  33-bit comparator lessequal                           : 1
@@ -316,9 +328,10 @@ Macro Statistics
  55-bit comparator lessequal                           : 1
  56-bit comparator lessequal                           : 1
  57-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1025
+# Multiplexers                                         : 1029
  1-bit 2-to-1 multiplexer                              : 1024
  25-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 4
 
 =========================================================================
 
@@ -338,7 +351,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_inst_mem> will be implemented on LUT
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 8-word x 8-bit                      |          |
+    |     aspect ratio   | 8-word x 32-bit                     |          |
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <address>       |          |
     |     diA            | connected to signal <GND>           |          |
@@ -352,15 +365,15 @@ INFO:Xst:3231 - The small RAM <Mram_regs> will be implemented on LUTs in order t
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 4-word x 8-bit                      |          |
+    |     aspect ratio   | 4-word x 32-bit                     |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <write_enable>  | high     |
     |     addrA          | connected to signal <address_a>     |          |
-    |     diA            | connected to signal <"10101010">    |          |
+    |     diA            | connected to signal <write_data>    |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 4-word x 8-bit                      |          |
+    |     aspect ratio   | 4-word x 32-bit                     |          |
     |     addrB          | connected to signal <address_b>     |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -371,16 +384,16 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 2
- 4x8-bit dual-port distributed RAM                     : 1
- 8x8-bit single-port distributed Read Only RAM         : 1
-# Adders/Subtractors                                   : 34
+ 4x32-bit dual-port distributed RAM                    : 1
+ 8x32-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 35
  25-bit adder                                          : 1
- 32-bit adder                                          : 33
+ 32-bit adder                                          : 34
 # Counters                                             : 2
  3-bit up counter                                      : 1
  32-bit up counter                                     : 1
-# Registers                                            : 33
- Flip-Flops                                            : 33
+# Registers                                            : 137
+ Flip-Flops                                            : 137
 # Comparators                                          : 33
  32-bit comparator lessequal                           : 8
  33-bit comparator lessequal                           : 1
@@ -408,9 +421,10 @@ Macro Statistics
  55-bit comparator lessequal                           : 1
  56-bit comparator lessequal                           : 1
  57-bit comparator lessequal                           : 1
-# Multiplexers                                         : 1025
- 1-bit 2-to-1 multiplexer                              : 1024
+# Multiplexers                                         : 1091
+ 1-bit 2-to-1 multiplexer                              : 1088
  25-bit 2-to-1 multiplexer                             : 1
+ 32-bit 2-to-1 multiplexer                             : 2
 
 =========================================================================
 
@@ -423,40 +437,192 @@ Optimizing unit <regfile> ...
 Optimizing unit <machine> ...
 
 Optimizing unit <processor> ...
-WARNING:Xst:2677 - Node <_processor/_regfile/data_b_7> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/_regfile/data_b_6> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/_regfile/data_b_5> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/_regfile/data_b_4> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/_regfile/data_b_3> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/_regfile/data_b_2> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/_regfile/data_b_1> of sequential type is unconnected in block <machine>.
-WARNING:Xst:2677 - Node <_processor/_regfile/data_b_0> of sequential type is unconnected in block <machine>.
-INFO:Xst:2399 - RAMs <_processor/_regfile/Mram_regs8>, <_processor/_regfile/Mram_regs6> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <_processor/_regfile/Mram_regs8>, <_processor/_regfile/Mram_regs4> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <_processor/_regfile/Mram_regs8>, <_processor/_regfile/Mram_regs2> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <_processor/_regfile/Mram_regs7>, <_processor/_regfile/Mram_regs5> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <_processor/_regfile/Mram_regs7>, <_processor/_regfile/Mram_regs3> are equivalent, second RAM is removed
-INFO:Xst:2399 - RAMs <_processor/_regfile/Mram_regs7>, <_processor/_regfile/Mram_regs1> are equivalent, second RAM is removed
-INFO:Xst:2261 - The FF/Latch <_processor/_regfile/data_a_6> in Unit <machine> is equivalent to the following 3 FFs/Latches, which will be removed : <_processor/_regfile/data_a_4> <_processor/_regfile/data_a_2> <_processor/_regfile/data_a_0> 
-INFO:Xst:2261 - The FF/Latch <_processor/_regfile/data_a_7> in Unit <machine> is equivalent to the following 3 FFs/Latches, which will be removed : <_processor/_regfile/data_a_5> <_processor/_regfile/data_a_3> <_processor/_regfile/data_a_1> 
-INFO:Xst:2261 - The FF/Latch <out_0> in Unit <machine> is equivalent to the following 3 FFs/Latches, which will be removed : <out_2> <out_4> <out_6> 
-INFO:Xst:2261 - The FF/Latch <out_1> in Unit <machine> is equivalent to the following 3 FFs/Latches, which will be removed : <out_3> <out_5> <out_7> 
-INFO:Xst:2261 - The FF/Latch <_processor/result_6> in Unit <machine> is equivalent to the following 3 FFs/Latches, which will be removed : <_processor/result_4> <_processor/result_2> <_processor/result_0> 
-INFO:Xst:2261 - The FF/Latch <_processor/result_7> in Unit <machine> is equivalent to the following 3 FFs/Latches, which will be removed : <_processor/result_5> <_processor/result_3> <_processor/result_1> 
+WARNING:Xst:1710 - FF/Latch <result_31> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_30> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_29> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_28> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_27> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_26> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_25> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_24> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_23> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_22> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_21> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_20> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_19> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_18> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_17> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_16> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_15> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_14> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_13> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_12> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_11> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_10> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_9> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_8> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_7> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_6> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_5> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_4> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_3> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_2> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_1> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_0> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2973 - All outputs of instance <_regfile> of block <regfile> are unconnected in block <processor>. Underlying logic will be removed.
+WARNING:Xst:2677 - Node <write_enable> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_8> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_9> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_10> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_11> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_12> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_13> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_14> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_15> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_16> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_17> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_18> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_19> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_20> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_21> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_22> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_23> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_24> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_25> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_26> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_27> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_28> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_29> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_30> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_31> of sequential type is unconnected in block <processor>.
+WARNING:Xst:1710 - FF/Latch <result_31> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_30> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_29> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_28> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_27> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_26> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_25> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_24> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_23> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_22> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_21> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_20> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_19> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_18> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_17> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_16> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_15> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_14> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_13> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_12> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_11> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_10> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_9> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_8> (without init value) has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_7> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_6> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_5> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_4> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_3> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_2> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_1> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <result_0> (without init value) has a constant value of 1 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2973 - All outputs of instance <_regfile> of block <regfile> are unconnected in block <processor>. Underlying logic will be removed.
+WARNING:Xst:2677 - Node <write_enable> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_0> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_1> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_2> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_3> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_4> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_5> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_6> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_7> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_8> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_9> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_10> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_11> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_12> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_13> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_14> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_15> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_16> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_17> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_18> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_19> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_20> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_21> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_22> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_23> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_24> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_25> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_26> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_27> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_28> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_29> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_30> of sequential type is unconnected in block <processor>.
+WARNING:Xst:2677 - Node <write_data_31> of sequential type is unconnected in block <processor>.
+WARNING:Xst:1710 - FF/Latch <out_0> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_1> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_2> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_3> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_4> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_5> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_6> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <out_7> (without init value) has a constant value of 1 in block <machine>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <_processor/timer_31> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_30> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_29> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_28> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_27> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_26> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_25> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_24> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_23> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_22> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_21> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_20> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_19> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_18> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_17> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_16> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_15> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_14> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_13> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_12> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_11> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_10> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_9> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_8> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_7> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_6> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_5> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_4> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_3> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_2> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_1> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/timer_0> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/address_2> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/address_1> of sequential type is unconnected in block <machine>.
+WARNING:Xst:2677 - Node <_processor/address_0> of sequential type is unconnected in block <machine>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 5.
+Found area constraint ratio of 100 (+ 5) on block machine, actual ratio is 0.
 
 Final Macro Processing ...
 
 =========================================================================
 Final Register Report
 
-Macro Statistics
-# Registers                                            : 42
- Flip-Flops                                            : 42
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -478,26 +644,8 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1076
-#      GND                         : 1
-#      INV                         : 18
-#      LUT1                        : 71
-#      LUT2                        : 25
-#      LUT3                        : 92
-#      LUT4                        : 6
-#      LUT5                        : 172
-#      LUT6                        : 209
-#      MUXCY                       : 244
-#      MUXF7                       : 8
+# BELS                             : 1
 #      VCC                         : 1
-#      XORCY                       : 229
-# FlipFlops/Latches                : 42
-#      FD                          : 36
-#      FDE                         : 6
-# RAMS                             : 2
-#      RAM16X1D                    : 2
-# Clock Buffers                    : 1
-#      BUFGP                       : 1
 # IO Buffers                       : 8
 #      OBUF                        : 8
 
@@ -508,25 +656,19 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              42  out of  18224     0%  
- Number of Slice LUTs:                  597  out of   9112     6%  
-    Number used as Logic:               593  out of   9112     6%  
-    Number used as Memory:                4  out of   2176     0%  
-       Number used as RAM:                4
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    631
-   Number with an unused Flip Flop:     589  out of    631    93%  
-   Number with an unused LUT:            34  out of    631     5%  
-   Number of fully used LUT-FF pairs:     8  out of    631     1%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
 
 IO Utilization: 
  Number of IOs:                           9
- Number of bonded IOBs:                   9  out of    232     3%  
+ Number of bonded IOBs:                   8  out of    232     3%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -546,11 +688,7 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 44    |
------------------------------------+------------------------+-------+
+No clock signals found in this design
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -560,9 +698,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 33.150ns (Maximum Frequency: 30.166MHz)
+   Minimum period: No path found
    Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: 4.240ns
+   Maximum output required time after clock: No path found
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -570,132 +708,22 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 33.150ns (frequency: 30.166MHz)
-  Total number of paths / destination ports: 4078804163918659 / 58
--------------------------------------------------------------------------
-Delay:               33.150ns (Levels of Logic = 62)
-  Source:            _processor/timer_0 (FF)
-  Destination:       _processor/write_enable (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising
-
-  Data Path: _processor/timer_0 to _processor/write_enable
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               2   0.525   0.725  _processor/timer_0 (_processor/timer_0)
-     INV:I->O              1   0.255   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_lut<0>_INV_0 (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<0> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<1> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<2> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<3> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<4> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<5> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<6> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<7> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<8> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<9> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<10> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<11> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<12> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<13> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<14> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<15> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<16> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<17> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<17>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<18> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<18>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<19> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<19>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<20> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<20>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<21> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<21>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<22> (_processor/Madd_timer[31]_GND_2_o_add_5_OUT_cy<22>)
-     XORCY:CI->O           7   0.206   1.138  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_xor<23> (_processor/timer[31]_PWR_2_o_mod_6/Madd_GND_4_o_b[24]_add_33_OUT_Madd_cy<23>)
-     LUT3:I0->O            8   0.235   0.944  _processor/timer[31]_PWR_2_o_mod_6/BUS_0026_INV_1152_o26 (_processor/timer[31]_PWR_2_o_mod_6/BUS_0026_INV_1152_o25)
-     LUT6:I5->O            9   0.254   0.976  _processor/timer[31]_PWR_2_o_mod_6/BUS_0026_INV_1152_o27_SW5_2 (_processor/timer[31]_PWR_2_o_mod_6/BUS_0026_INV_1152_o27_SW51)
-     LUT6:I5->O            4   0.254   1.080  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2314_o1101 (_processor/timer[31]_PWR_2_o_mod_6/a[19]_a[31]_MUX_2295_o)
-     LUT6:I2->O            5   0.254   0.841  _processor/timer[31]_PWR_2_o_mod_6/BUS_0027_INV_1185_o35_1 (_processor/timer[31]_PWR_2_o_mod_6/BUS_0027_INV_1185_o35)
-     LUT6:I5->O            1   0.254   1.112  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2346_o161 (_processor/timer[31]_PWR_2_o_mod_6/a[15]_a[31]_MUX_2331_o)
-     LUT6:I1->O            5   0.254   0.841  _processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1218_o35_SW0 (N2)
-     LUT6:I5->O           13   0.254   1.098  _processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1218_o35_1 (_processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1218_o35)
-     LUT6:I5->O            6   0.254   1.306  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2378_o171 (_processor/timer[31]_PWR_2_o_mod_6/a[16]_a[31]_MUX_2362_o)
-     LUT5:I0->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_lut<1> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_lut<1>)
-     MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_cy<1> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_cy<2> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_cy<3>)
-     MUXCY:CI->O          80   0.235   2.054  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1251_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_6/BUS_0029_INV_1251_o)
-     LUT5:I4->O            6   0.254   1.306  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2410_o1141 (_processor/timer[31]_PWR_2_o_mod_6/a[22]_a[31]_MUX_2388_o)
-     LUT5:I0->O            0   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0030_INV_1284_o_lutdi2 (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0030_INV_1284_o_lutdi2)
-     MUXCY:DI->O           1   0.181   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0030_INV_1284_o_cy<2> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0030_INV_1284_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0030_INV_1284_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0030_INV_1284_o_cy<3>)
-     MUXCY:CI->O          78   0.235   2.038  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0030_INV_1284_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_6/BUS_0030_INV_1284_o)
-     LUT5:I4->O            6   0.254   1.306  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2442_o191 (_processor/timer[31]_PWR_2_o_mod_6/a[18]_a[31]_MUX_2424_o)
-     LUT5:I0->O            0   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_lutdi1 (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_lutdi1)
-     MUXCY:DI->O           1   0.181   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_cy<1> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_cy<2> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_cy<3>)
-     MUXCY:CI->O          81   0.235   2.062  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0031_INV_1317_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_6/BUS_0031_INV_1317_o)
-     LUT5:I4->O            5   0.254   1.271  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2474_o181 (_processor/timer[31]_PWR_2_o_mod_6/a[17]_a[31]_MUX_2457_o)
-     LUT5:I0->O            0   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_lutdi1 (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_lutdi1)
-     MUXCY:DI->O           1   0.181   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_cy<1> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_cy<2> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_cy<3>)
-     MUXCY:CI->O          43   0.235   1.704  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0032_INV_1350_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_6/BUS_0032_INV_1350_o)
-     LUT3:I2->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2506_o12311 (_processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2506_o1231)
-     MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_cy<8> (_processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_cy<9> (_processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_cy<9>)
-     XORCY:CI->O           6   0.206   1.104  _processor/timer[31]_PWR_2_o_mod_6/Madd_a[31]_GND_4_o_add_65_OUT_Madd_xor<10> (_processor/timer[31]_PWR_2_o_mod_6/a[31]_GND_4_o_add_65_OUT<10>)
-     LUT6:I3->O            1   0.235   0.682  _processor/_n0095<0>9_SW3 (N312)
-     LUT6:I5->O            1   0.254   0.682  _processor/result_6_dpot_SW1 (N222)
-     LUT6:I5->O            1   0.254   0.000  _processor/result_6_dpot (_processor/result_6_dpot)
-     FDE:D                     0.074          _processor/result_6
-    ----------------------------------------
-    Total                     33.150ns (8.881ns logic, 24.270ns route)
-                                       (26.8% logic, 73.2% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 8 / 8
--------------------------------------------------------------------------
-Offset:              4.240ns (Levels of Logic = 1)
-  Source:            out_1 (FF)
-  Destination:       out<7> (PAD)
-  Source Clock:      clk rising
-
-  Data Path: out_1 to out<7>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               4   0.525   0.803  out_1 (out_1)
-     OBUF:I->O                 2.912          out_7_OBUF (out<7>)
-    ----------------------------------------
-    Total                      4.240ns (3.437ns logic, 0.803ns route)
-                                       (81.1% logic, 18.9% route)
-
-=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |   33.150|         |         |         |
----------------+---------+---------+---------+---------+
-
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 20.92 secs
+Total REAL time to Xst completion: 14.00 secs
+Total CPU time to Xst completion: 13.92 secs
  
 --> 
 
 
-Total memory usage is 499780 kilobytes
+Total memory usage is 500060 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   12 (   0 filtered)
-Number of infos    :   15 (   0 filtered)
+Number of warnings :  189 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 
