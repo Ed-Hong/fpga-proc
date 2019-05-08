@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> 
 Reading design: machine.prj
@@ -581,15 +581,15 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1303
+# BELS                             : 1306
 #      GND                         : 1
-#      INV                         : 30
+#      INV                         : 20
 #      LUT1                        : 91
 #      LUT2                        : 51
 #      LUT3                        : 79
-#      LUT4                        : 76
-#      LUT5                        : 214
-#      LUT6                        : 169
+#      LUT4                        : 71
+#      LUT5                        : 215
+#      LUT6                        : 186
 #      MUXCY                       : 299
 #      MUXF7                       : 17
 #      VCC                         : 1
@@ -614,16 +614,16 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             136  out of  18224     0%  
- Number of Slice LUTs:                  758  out of   9112     8%  
-    Number used as Logic:               710  out of   9112     7%  
+ Number of Slice LUTs:                  761  out of   9112     8%  
+    Number used as Logic:               713  out of   9112     7%  
     Number used as Memory:               48  out of   2176     2%  
        Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    806
-   Number with an unused Flip Flop:     670  out of    806    83%  
-   Number with an unused LUT:            48  out of    806     5%  
-   Number of fully used LUT-FF pairs:    88  out of    806    10%  
+ Number of LUT Flip Flop pairs used:    808
+   Number with an unused Flip Flop:     672  out of    808    83%  
+   Number with an unused LUT:            47  out of    808     5%  
+   Number of fully used LUT-FF pairs:    89  out of    808    11%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -679,7 +679,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 31.651ns (frequency: 31.594MHz)
-  Total number of paths / destination ports: 533879637046562 / 244
+  Total number of paths / destination ports: 533879637048983 / 276
 -------------------------------------------------------------------------
 Delay:               31.651ns (Levels of Logic = 74)
   Source:            timer_0 (FF)
@@ -816,12 +816,12 @@ clk                                          |   31.651|         |         |    
 
 
 Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 22.64 secs
+Total CPU time to Xst completion: 22.55 secs
  
 --> 
 
 
-Total memory usage is 501488 kilobytes
+Total memory usage is 501528 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   24 (   0 filtered)
