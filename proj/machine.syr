@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Reading design: machine.prj
@@ -629,10 +629,10 @@ Primitive and Black Box Usage:
 #      INV                         : 23
 #      LUT1                        : 91
 #      LUT2                        : 42
-#      LUT3                        : 78
-#      LUT4                        : 36
+#      LUT3                        : 77
+#      LUT4                        : 38
 #      LUT5                        : 191
-#      LUT6                        : 170
+#      LUT6                        : 169
 #      MUXCY                       : 275
 #      MUXF7                       : 17
 #      VCC                         : 1
@@ -663,10 +663,10 @@ Slice Logic Utilization:
        Number used as RAM:               32
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    703
-   Number with an unused Flip Flop:     597  out of    703    84%  
-   Number with an unused LUT:            40  out of    703     5%  
-   Number of fully used LUT-FF pairs:    66  out of    703     9%  
+ Number of LUT Flip Flop pairs used:    704
+   Number with an unused Flip Flop:     598  out of    704    84%  
+   Number with an unused LUT:            41  out of    704     5%  
+   Number of fully used LUT-FF pairs:    65  out of    704     9%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -722,7 +722,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 30.546ns (frequency: 32.738MHz)
-  Total number of paths / destination ports: 441831423806710 / 177
+  Total number of paths / destination ports: 441831423806824 / 177
 -------------------------------------------------------------------------
 Delay:               30.546ns (Levels of Logic = 79)
   Source:            timer_0 (FF)
@@ -864,12 +864,12 @@ clk                                          |   30.546|         |         |    
 
 
 Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.20 secs
+Total CPU time to Xst completion: 23.17 secs
  
 --> 
 
 
-Total memory usage is 501456 kilobytes
+Total memory usage is 501624 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   64 (   0 filtered)
