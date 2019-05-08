@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: machine.prj
@@ -697,8 +697,8 @@ Delay:               31.343ns (Levels of Logic = 74)
      XORCY:CI->O          44   0.206   2.151  _processor/Madd_timer[31]_GND_2_o_add_5_OUT_xor<30> (_processor/timer[31]_PWR_2_o_mod_6/Madd_GND_5_o_b[25]_add_19_OUT_Madd_cy<30>)
      LUT6:I1->O           16   0.254   1.182  _processor/timer[31]_PWR_2_o_mod_6/BUS_0027_INV_1229_o24 (_processor/timer[31]_PWR_2_o_mod_6/BUS_0027_INV_1229_o3)
      LUT6:I5->O           19   0.254   1.261  _processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1262_o32 (_processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1262_o31)
-     LUT6:I5->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1262_o34_SW1_G (N244)
-     MUXF7:I1->O           1   0.175   0.682  _processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1262_o34_SW1 (N55)
+     LUT6:I5->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1262_o34_SW1_G (N242)
+     MUXF7:I1->O           1   0.175   0.682  _processor/timer[31]_PWR_2_o_mod_6/BUS_0028_INV_1262_o34_SW1 (N53)
      LUT6:I5->O            6   0.254   1.306  _processor/timer[31]_PWR_2_o_mod_6/Mmux_a[0]_a[31]_MUX_2462_o131 (_processor/timer[31]_PWR_2_o_mod_6/a[12]_a[31]_MUX_2450_o)
      LUT5:I0->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1295_o_lut<0> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1295_o_lut<0>)
      MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1295_o_cy<0> (_processor/timer[31]_PWR_2_o_mod_6/Mcompar_BUS_0029_INV_1295_o_cy<0>)
@@ -786,8 +786,8 @@ clk                                          |   31.343|         |         |    
 =========================================================================
 
 
-Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 22.81 secs
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 23.00 secs
  
 --> 
 
