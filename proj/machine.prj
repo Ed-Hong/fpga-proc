@@ -1,4 +1,5 @@
 verilog work "regfile.v"
+verilog work "alu.v"
 verilog work "program_rom.v"
 verilog work "processor.v"
 verilog work "machine.v"

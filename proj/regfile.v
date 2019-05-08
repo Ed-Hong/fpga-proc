@@ -6,7 +6,6 @@ module regfile(
 	input [2:0] address_b,
 	input wire write_enable,
 	input [15:0] write_data,
-	
 	output reg [15:0] data_a,
 	output reg [15:0] data_b
 	);

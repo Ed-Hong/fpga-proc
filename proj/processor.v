@@ -18,11 +18,13 @@ module processor(
 	wire [2:0] reg_a = instruction[11:9];
 	wire [2:0] reg_b = instruction[8:6];
 	wire [7:0] immediate = instruction[7:0];
+	
 	reg write_enable;
 	reg [15:0] write_data;
 	wire [15:0] data_a;
 	wire [15:0] data_b;
-
+	
+	wire [15:0] alu_result;
 
 	// modules
 	regfile _regfile(
@@ -35,10 +37,13 @@ module processor(
 		.data_b(data_b)
 	);
 	
-	//todo
-//	alu _alu(
-//		
-//	);
+	alu _alu(
+		.clk(clk),
+		.opcode(opcode),
+		.a(data_a),
+		.b(data_b),
+		.alu_result(alu_result)
+	);
 	
 	always @ (posedge clk) begin
 		timer = timer + 1;
@@ -61,8 +66,7 @@ module processor(
 						end
 				// add
 				4'b0010:begin
-							//todo - move this to ALU
-							write_data <= (data_a + data_b); 
+							write_data <= alu_result; 
 							write_enable <= 1;
 						end
 				// out
