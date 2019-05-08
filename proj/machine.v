@@ -8,6 +8,7 @@ module machine(
 	
 	reg [31:0] timer;
 	
+	//7seg encoding
 	reg [7:0] disp [15:0];
 	initial begin
 		disp[0] = 8'b11000000;
@@ -55,28 +56,22 @@ module machine(
 		if (timer >= 500000) begin
 			timer = 0;
 		end
-		
-		//todo 7seg encoding
-		
+				
 		// manual delay to handle 7seg anode output
 		if(timer == 100000) begin
 			out <= disp[result[3:0]];
-			//out <= 8'b11000000;
 			an <= 4'b1110;
 		end
 		if(timer == 200000) begin
 			out <= disp[result[7:4]];
-			//out <= 8'b11111001;
 			an <= 4'b1101;
 		end
 		if(timer == 300000) begin
 			out <= disp[result[11:8]];
-			//out <= 8'b10100100;
 			an <= 4'b1011;
 		end
 		if(timer == 400000) begin
 			out <= disp[result[15:12]];
-			//out <= 8'b10110000;
 			an <= 4'b0111;
 		end
 		

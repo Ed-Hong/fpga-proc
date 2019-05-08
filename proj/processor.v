@@ -56,28 +56,19 @@ module processor(
 				4'b0001:begin
 							write_data <= immediate;
 							write_enable <= 1;
-							
-							//debug
-							//result[15:0] <= immediate;
 						end
 				// add
 				4'b0010:begin
 							//todo - move this to ALU
 							write_data <= (data_a + data_b); 
 							write_enable <= 1;
-							
-							//debug
-							//result <= write_data;
 						end
 				// out
 				4'b1111:begin
 							result <= data_a;
-							
-							//debug
-							//result <= 32'b0111_0111_0000_0000_0000_0000_0000_0000;
 						end
 				// default NOP
-				default: result <= 0;  
+				//default: result <= 0;  
 			endcase
 			
 			write_enable <= 0;
