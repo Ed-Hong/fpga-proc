@@ -14,14 +14,11 @@ module regfile(
 	reg [15:0] regs [2:0];
 	
 	always @ (posedge clk) begin
-		data_a = regs[address_a];
-		data_b = regs[address_b];
-	end
-	
-	always @ (negedge clk) begin
 		if (write_enable == 1) begin
 			regs[address_a] = write_data;
 		end
+		data_a = regs[address_a];
+		data_b = regs[address_b];
 	end
 
 endmodule
