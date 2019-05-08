@@ -21,7 +21,7 @@ module alu(
 					end
 			// sub
 			4'b0011:begin
-						alu_result = a - b; 
+						alu_result = a + (-b); 
 						if (alu_result == 0) begin
 							zero = 1;
 						end
@@ -32,7 +32,7 @@ module alu(
 					end
 			// subi
 			4'b1011:begin
-						alu_result = a - immediate; 
+						alu_result = a + (-immediate); 
 						if (alu_result == 0) begin
 							zero = 1;
 						end
