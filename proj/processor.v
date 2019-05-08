@@ -74,7 +74,7 @@ module processor(
 			write_enable <= 0;
 			
 			//debug
-			result <= instruction;
+			result <= instruction[3:0];
 			
 		end
 	end
