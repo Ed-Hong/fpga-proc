@@ -4,14 +4,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> 
@@ -661,15 +661,15 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1082
+# BELS                             : 1079
 #      GND                         : 1
 #      INV                         : 17
 #      LUT1                        : 91
 #      LUT2                        : 36
-#      LUT3                        : 76
-#      LUT4                        : 34
-#      LUT5                        : 179
-#      LUT6                        : 149
+#      LUT3                        : 75
+#      LUT4                        : 35
+#      LUT5                        : 181
+#      LUT6                        : 144
 #      MUXCY                       : 254
 #      MUXF7                       : 17
 #      VCC                         : 1
@@ -694,16 +694,16 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:              71  out of  18224     0%  
- Number of Slice LUTs:                  598  out of   9112     6%  
-    Number used as Logic:               582  out of   9112     6%  
+ Number of Slice LUTs:                  595  out of   9112     6%  
+    Number used as Logic:               579  out of   9112     6%  
     Number used as Memory:               16  out of   2176     0%  
        Number used as RAM:               16
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    634
-   Number with an unused Flip Flop:     563  out of    634    88%  
-   Number with an unused LUT:            36  out of    634     5%  
-   Number of fully used LUT-FF pairs:    35  out of    634     5%  
+ Number of LUT Flip Flop pairs used:    631
+   Number with an unused Flip Flop:     560  out of    631    88%  
+   Number with an unused LUT:            36  out of    631     5%  
+   Number of fully used LUT-FF pairs:    35  out of    631     5%  
    Number of unique control sets:         4
 
 IO Utilization: 
@@ -759,15 +759,15 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 30.201ns (frequency: 33.111MHz)
-  Total number of paths / destination ports: 184096426742900 / 96
+  Total number of paths / destination ports: 184096426742894 / 96
 -------------------------------------------------------------------------
 Delay:               30.201ns (Levels of Logic = 73)
   Source:            timer_0 (FF)
-  Destination:       _processor/address_2 (FF)
+  Destination:       _processor/write_data_2 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: timer_0 to _processor/address_2
+  Data Path: timer_0 to _processor/write_data_2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -844,8 +844,8 @@ Delay:               30.201ns (Levels of Logic = 73)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<3>)
      MUXCY:CI->O           2   0.023   0.726  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_7/BUS_0033_INV_1427_o)
      LUT6:I5->O           10   0.254   1.236  _processor/_n0217<0>10 (_processor/_n0217<0>9)
-     LUT6:I3->O            1   0.235   0.000  _processor/address_2_dpot (_processor/address_2_dpot)
-     FDE:D                     0.074          _processor/address_2
+     LUT6:I3->O            1   0.235   0.000  _processor/write_data_1_dpot (_processor/write_data_1_dpot)
+     FDE:D                     0.074          _processor/write_data_1
     ----------------------------------------
     Total                     30.201ns (8.303ns logic, 21.898ns route)
                                        (27.5% logic, 72.5% route)
@@ -895,12 +895,12 @@ clk                                          |   30.201|         |         |    
 
 
 Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 22.51 secs
+Total CPU time to Xst completion: 22.55 secs
  
 --> 
 
 
-Total memory usage is 501508 kilobytes
+Total memory usage is 501536 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  101 (   0 filtered)
