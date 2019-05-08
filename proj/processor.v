@@ -64,30 +64,30 @@ module processor(
 			case (opcode) 
 				// load
 				4'b0001:begin
-							write_data = immediate;
-							write_enable = 1;
+							write_data <= immediate;
+							write_enable <= 1;
 						end
 				// add
 				4'b0010:begin
-							write_data = alu_result; 
-							write_enable = 1;
+							write_data <= alu_result; 
+							write_enable <= 1;
 						end
 				// addi
 				4'b1010:begin
-							write_data = alu_result; 
-							write_enable = 1;
+							write_data <= alu_result; 
+							write_enable <= 1;
 						end
 				// sub
 				4'b0011:begin
-							write_data = alu_result;
-							zero = alu_zero;
-							write_enable = 1;
+							write_data <= alu_result;
+							zero <= alu_zero;
+							write_enable <= 1;
 						end
 				// subi
 				4'b1011:begin
-							write_data = alu_result;
-							zero = alu_zero;
-							write_enable = 1;
+							write_data <= alu_result;
+							zero <= alu_zero;
+							write_enable <= 1;
 						end
 				// jmp
 				4'b1000:begin
@@ -101,8 +101,8 @@ module processor(
 						end
 				// mov
 				4'b1110:begin
-							write_data = data_b;
-							write_enable = 1;
+							write_data <= data_b;
+							write_enable <= 1;
 						end
 				// out
 				4'b1111:begin
