@@ -30,7 +30,7 @@ module machine(
 	end
 	
 	// wire declarations
-	wire [2:0] address;
+	wire [3:0] address;
 	wire [15:0] instruction;
 	wire [15:0] result;
 	

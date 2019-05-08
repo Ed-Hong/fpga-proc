@@ -3,15 +3,19 @@
 module processor(
 	input clk,
 	input [15:0] instruction,
-	output reg [2:0] address,
+	output reg [3:0] address,
 	output reg [15:0] result
 	);
-
+	
+	parameter rom_size = 16;
 	reg [31:0] timer;
 	initial begin
 		address = 0;
 		timer = 0;
 	end
+
+	// zero status register
+	reg zero;
 
 	// wires
 	wire [3:0] opcode = instruction[15:12];
@@ -25,6 +29,7 @@ module processor(
 	wire [15:0] data_b;
 	
 	wire [15:0] alu_result;
+	wire alu_zero;
 
 	// modules
 	regfile _regfile(
@@ -42,6 +47,7 @@ module processor(
 		.opcode(opcode),
 		.a(data_a),
 		.b(data_b),
+		.zero(alu_zero),
 		.alu_result(alu_result)
 	);
 	
@@ -51,7 +57,7 @@ module processor(
 		// manually scale clock frequency for debugging
 		if (timer % 50000000 == 0) begin
 			address = address + 1;
-			if (address >= 8) begin
+			if (address >= rom_size) begin
 				address = 0;
 			end
 
@@ -59,7 +65,7 @@ module processor(
 
 			// instruction decode
 			case (opcode) 
-				// addi
+				// addi --- todo make this actually an add not a load
 				4'b0001:begin
 							write_data <= immediate;
 							write_enable <= 1;
@@ -71,7 +77,8 @@ module processor(
 						end
 				// sub
 				4'b0011:begin
-							write_data <= alu_result; 
+							write_data <= alu_result;
+							zero <= alu_zero;
 							write_enable <= 1;
 						end	
 				// out
