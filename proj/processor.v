@@ -50,6 +50,8 @@ module processor(
 				address = 0;
 			end
 
+			write_enable <= 0;
+
 			// instruction decode
 			case (opcode) 
 				// addi
@@ -70,9 +72,7 @@ module processor(
 				// default NOP
 				//default: result <= 0;  
 			endcase
-			
-			write_enable <= 0;
-			
+						
 			//debug
 			//result <= instruction;
 			
