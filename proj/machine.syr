@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Reading design: machine.prj
@@ -631,11 +631,11 @@ Primitive and Black Box Usage:
 ------------------------------
 # BELS                             : 1169
 #      GND                         : 1
-#      INV                         : 22
+#      INV                         : 23
 #      LUT1                        : 91
 #      LUT2                        : 46
-#      LUT3                        : 84
-#      LUT4                        : 30
+#      LUT3                        : 85
+#      LUT4                        : 28
 #      LUT5                        : 191
 #      LUT6                        : 160
 #      MUXCY                       : 275
@@ -727,7 +727,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 31.355ns (frequency: 31.892MHz)
-  Total number of paths / destination ports: 349783210578894 / 175
+  Total number of paths / destination ports: 349783210578722 / 175
 -------------------------------------------------------------------------
 Delay:               31.355ns (Levels of Logic = 74)
   Source:            timer_0 (FF)
@@ -864,12 +864,12 @@ clk                                          |   31.355|         |         |    
 
 
 Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 22.56 secs
+Total CPU time to Xst completion: 22.26 secs
  
 --> 
 
 
-Total memory usage is 501592 kilobytes
+Total memory usage is 501524 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   64 (   0 filtered)
