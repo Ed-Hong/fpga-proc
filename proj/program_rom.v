@@ -9,8 +9,8 @@ module program_rom(
 	reg [15:0] inst_mem [15:0];
 	
 	initial begin
-		inst_mem[0] 	= 16'b0001_0010_0000_1111;	//addi r1 15
-		inst_mem[1] 	= 16'b0001_0100_0000_1111;	//addi r2 15
+		inst_mem[0] 	= 16'b0001_0010_0000_1001;	//addi r1 9
+		inst_mem[1] 	= 16'b0001_0100_0000_0111;	//addi r2 7
 		inst_mem[2] 	= 16'b0010_0010_0000_1111;	//add r1 r2
 		
 		inst_mem[3] 	= 16'b1111_0010_0000_0000;	//out r1
