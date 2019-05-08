@@ -16,7 +16,7 @@ module processor(
 
 	// zero status register
 	reg zero;
-
+	
 	// wires
 	wire [3:0] opcode = instruction[15:12];
 	wire [2:0] reg_a = instruction[11:9];
@@ -56,10 +56,8 @@ module processor(
 		timer = timer + 1;
 
 		// manually scale clock frequency for debugging
-		if (timer % 50000000 == 0) begin
+		if (timer % 50000000 == 0 && write_enable == 0) begin
 			address = (address + 1) % rom_size;
-
-			write_enable = 0;
 
 			// instruction decode
 			case (opcode) 
@@ -101,6 +99,8 @@ module processor(
 			result[15:12] = address;
 			//result[7:0] = data_a;
 			
+		end else begin
+			write_enable = 0;
 		end
 	end
 
