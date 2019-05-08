@@ -91,14 +91,14 @@ module processor(
 						end
 				// out
 				4'b1111:begin
-							result = data_a;
+							//result = data_a;
 						end
 				// default NOP
 				//default: result <= 0;  
 			endcase
 						
 			//debug
-			//result <= instruction;
+			result = reg_a;
 			
 		end
 	end
