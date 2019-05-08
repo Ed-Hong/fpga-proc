@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-engnx03.utdallas.edu::  Wed May 08 03:00:35 2019
+engnx03.utdallas.edu::  Wed May 08 03:04:06 2019
 
 par -w -intstyle ise -ol high -mt off machine_map.ncd machine.ncd machine.pcf 
 
@@ -63,12 +63,12 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   185 out of   2,278    8%
+  Number of occupied Slices:                   186 out of   2,278    8%
   Number of MUXCYs used:                       288 out of   4,556    6%
-  Number of LUT Flip Flop pairs used:          581
-    Number with an unused Flip Flop:           494 out of     581   85%
-    Number with an unused LUT:                   9 out of     581    1%
-    Number of fully used LUT-FF pairs:          78 out of     581   13%
+  Number of LUT Flip Flop pairs used:          579
+    Number with an unused Flip Flop:           492 out of     579   84%
+    Number with an unused LUT:                   7 out of     579    1%
+    Number of fully used LUT-FF pairs:          80 out of     579   13%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -117,13 +117,13 @@ Finished initial Timing Analysis.  REAL time: 6 secs
 Starting Router
 
 
-Phase  1  : 2784 unrouted;      REAL time: 6 secs 
+Phase  1  : 2776 unrouted;      REAL time: 6 secs 
 
-Phase  2  : 2429 unrouted;      REAL time: 7 secs 
+Phase  2  : 2421 unrouted;      REAL time: 7 secs 
 
-Phase  3  : 1181 unrouted;      REAL time: 8 secs 
+Phase  3  : 1144 unrouted;      REAL time: 8 secs 
 
-Phase  4  : 1181 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
+Phase  4  : 1144 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
 Updating file: machine.ncd with current fully routed design.
 
@@ -159,8 +159,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|    30.370ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.415ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    29.045ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.372ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 

@@ -41,7 +41,7 @@ module program_rom(
 		inst_mem[0] 	= 16'b0001_1110_0000_1000;	//load r7 9
 		inst_mem[1] 	= 16'b0001_0000_0000_0000;	//load r0 0
 		inst_mem[2] 	= 16'b1110_0001_1100_0000;	//mov r0 r7
-		inst_mem[3] 	= 16'b1111_0110_0000_0000;	//out r0
+		inst_mem[3] 	= 16'b1111_0000_0000_0000;	//out r0
 		inst_mem[4] 	= 16'b1000_0000_0000_0000;	//jmp 0
 
 

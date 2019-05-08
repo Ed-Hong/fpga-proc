@@ -642,8 +642,8 @@ Primitive and Black Box Usage:
 #      LUT1                        : 91
 #      LUT2                        : 34
 #      LUT3                        : 84
-#      LUT4                        : 33
-#      LUT5                        : 184
+#      LUT4                        : 41
+#      LUT5                        : 176
 #      LUT6                        : 149
 #      MUXCY                       : 254
 #      MUXF7                       : 17
@@ -734,7 +734,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 31.355ns (frequency: 31.892MHz)
-  Total number of paths / destination ports: 368192853186795 / 169
+  Total number of paths / destination ports: 368192853186787 / 169
 -------------------------------------------------------------------------
 Delay:               31.355ns (Levels of Logic = 74)
   Source:            timer_0 (FF)
@@ -870,8 +870,8 @@ clk                                          |   31.355|         |         |    
 =========================================================================
 
 
-Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 22.06 secs
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 22.36 secs
  
 --> 
 
