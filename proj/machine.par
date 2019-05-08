@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-engnx03.utdallas.edu::  Wed May 08 05:59:25 2019
+engnx03.utdallas.edu::  Wed May 08 06:08:44 2019
 
 par -w -intstyle ise -ol high -mt off machine_map.ncd machine.ncd machine.pcf 
 
@@ -63,7 +63,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   187 out of   2,278    8%
+  Number of occupied Slices:                   194 out of   2,278    8%
   Number of MUXCYs used:                       312 out of   4,556    6%
   Number of LUT Flip Flop pairs used:          603
     Number with an unused Flip Flop:           509 out of     603   84%
@@ -121,9 +121,9 @@ Phase  1  : 2928 unrouted;      REAL time: 6 secs
 
 Phase  2  : 2559 unrouted;      REAL time: 7 secs 
 
-Phase  3  : 1195 unrouted;      REAL time: 8 secs 
+Phase  3  : 1217 unrouted;      REAL time: 8 secs 
 
-Phase  4  : 1195 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
+Phase  4  : 1217 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
 Updating file: machine.ncd with current fully routed design.
 
@@ -159,8 +159,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|    30.370ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.438ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    30.886ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.439ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
