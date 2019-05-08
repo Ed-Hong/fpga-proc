@@ -99,6 +99,11 @@ module processor(
 								address = jmp_addr % rom_size;
 							end
 						end
+				// mov
+				4'b1110:begin
+							write_data = data_b;
+							write_enable = 1;
+						end
 				// out
 				4'b1111:begin
 							result[15:12] = address - 1;
