@@ -15,7 +15,10 @@ module alu(
 			4'b0010:begin
 						alu_result <= a + b; 
 					end
-			//
+			// sub
+			4'b0011:begin
+						alu_result <= a - b; 
+					end
 		endcase
 	end
 

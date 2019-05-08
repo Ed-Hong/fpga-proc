@@ -69,6 +69,11 @@ module processor(
 							write_data <= alu_result; 
 							write_enable <= 1;
 						end
+				// sub
+				4'b0011:begin
+							write_data <= alu_result; 
+							write_enable <= 1;
+						end	
 				// out
 				4'b1111:begin
 							result <= data_a;
