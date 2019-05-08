@@ -5,6 +5,7 @@ module alu(
 	input [3:0] opcode,
 	input [15:0] a,
 	input [15:0] b,
+	input [15:0] immediate,
 	output reg zero,
 	output reg [15:0] alu_result
    );
@@ -25,6 +26,18 @@ module alu(
 							zero = 1;
 						end
 					end
+			// addi
+			4'b1010:begin
+						alu_result = a + immediate; 
+					end
+			// subi
+			4'b1011:begin
+						alu_result = a - immediate; 
+						if (alu_result == 0) begin
+							zero = 1;
+						end
+					end
+						
 		endcase
 	end
 
