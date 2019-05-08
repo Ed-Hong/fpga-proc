@@ -8,6 +8,26 @@ module machine(
 	
 	reg [31:0] timer;
 	
+	reg [7:0] disp [15:0];
+	initial begin
+		disp[0] = 8'b11000000;
+		disp[1] = 8'b11111001;
+		disp[2] = 8'b10100100;
+		disp[3] = 8'b10110000;
+		disp[4] = 8'b10011001;
+		disp[5] = 8'b10010010;
+		disp[6] = 8'b10000010;
+		disp[7] = 8'b11111000;
+		disp[8] = 8'b10000000;
+		disp[9] = 8'b10010000;
+		disp[10] = 8'b10001000;
+		disp[11] = 8'b10000011;
+		disp[12] = 8'b11000110;
+		disp[13] = 8'b10100001;
+		disp[14] = 8'b10000110;
+		disp[15] = 8'b10001110;
+	end
+	
 	// wire declarations
 	wire [2:0] address;
 	wire [15:0] instruction;
@@ -40,23 +60,23 @@ module machine(
 		
 		// manual delay to handle 7seg anode output
 		if(timer == 100000) begin
-			//out <= result[3:0];
-			out <= 8'b11000000;
+			out <= disp[result[3:0]];
+			//out <= 8'b11000000;
 			an <= 4'b1110;
 		end
 		if(timer == 200000) begin
-			//out <= result[7:4];
-			out <= 8'b11111001;
+			out <= disp[result[7:4]];
+			//out <= 8'b11111001;
 			an <= 4'b1101;
 		end
 		if(timer == 300000) begin
-			//out <= result[11:8];
-			out <= 8'b10100100;
+			out <= disp[result[11:8]];
+			//out <= 8'b10100100;
 			an <= 4'b1011;
 		end
 		if(timer == 400000) begin
-			//out <= result[15:12];
-			out <= 8'b10110000;
+			out <= disp[result[15:12]];
+			//out <= 8'b10110000;
 			an <= 4'b0111;
 		end
 		

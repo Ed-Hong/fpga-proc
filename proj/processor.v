@@ -83,7 +83,7 @@ module processor(
 			write_enable <= 0;
 			
 			//debug
-			//result <= instruction;
+			result <= instruction;
 			
 		end
 	end
