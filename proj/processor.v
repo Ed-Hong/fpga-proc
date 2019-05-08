@@ -98,7 +98,9 @@ module processor(
 			endcase
 						
 			//debug
-			result = {reg_a, data_a};
+			result[14:12] = reg_a;
+			result[10:8] = reg_b;
+			result[7:0] = data_a;
 			
 		end
 	end
