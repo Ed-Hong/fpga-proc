@@ -16,9 +16,7 @@ module processor(
 
 	// zero status register
 	reg zero;
-	
-	reg [1:0] delay = 0;
-	
+		
 	// wires
 	wire [3:0] opcode = instruction[15:12];
 	wire [2:0] reg_a = instruction[11:9];
@@ -58,7 +56,7 @@ module processor(
 		timer = timer + 1;
 
 		// manually scale clock frequency for debugging
-		if (timer % 50000000 == 0 && delay == 0) begin
+		if (timer % 50000000 == 0) begin
 			address = (address + 1) % rom_size;
 
 			// instruction decode
@@ -67,20 +65,17 @@ module processor(
 				4'b0001:begin
 							write_data = immediate;
 							write_enable = 1;
-							delay = 2;
 						end
 				// add
 				4'b0010:begin
 							write_data = alu_result; 
 							write_enable = 1;
-							delay = 2;
 						end
 				// sub
 				4'b0011:begin
 							write_data = alu_result;
 							zero = alu_zero;
 							write_enable = 1;
-							delay = 2;
 						end
 				// jmp
 				4'b1000:begin
@@ -94,7 +89,7 @@ module processor(
 						end
 				// out
 				4'b1111:begin
-							result[7:0] = data_a;
+							//result[7:0] = data_a;
 						end
 				// default NOP
 				//default: result <= 0;  
@@ -102,10 +97,8 @@ module processor(
 						
 			//debug
 			result[15:12] = address;
-			//result[7:0] = data_a;
+			result[7:0] = data_a;
 			
-		end else begin
-			delay = delay - 1;
 		end
 	end
 
