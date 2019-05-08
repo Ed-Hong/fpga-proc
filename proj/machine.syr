@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> 
 Reading design: machine.prj
@@ -130,7 +130,7 @@ Elaborating module <processor>.
 Elaborating module <regfile>.
 
 Elaborating module <alu>.
-WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 101: Result of 23-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 101: Result of 19-bit expression is truncated to fit in 16-bit target.
 
 Elaborating module <program_rom>.
 
@@ -797,13 +797,13 @@ clk                                          |   31.369|         |         |    
 =========================================================================
 
 
-Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.05 secs
+Total REAL time to Xst completion: 25.00 secs
+Total CPU time to Xst completion: 23.62 secs
  
 --> 
 
 
-Total memory usage is 501524 kilobytes
+Total memory usage is 501220 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   21 (   0 filtered)

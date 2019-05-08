@@ -98,7 +98,7 @@ module processor(
 			endcase
 						
 			//debug
-			result = {1'b0, reg_a, 4'b000, data_a};
+			result = {reg_a, data_a};
 			
 		end
 	end
