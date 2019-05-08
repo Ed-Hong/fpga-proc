@@ -115,6 +115,7 @@ module processor(
 						
 			//debug
 			result[15:12] = address;
+			result[11:8] = zero;
 			result[7:0] = data_a;			
 		end
 	end

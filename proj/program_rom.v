@@ -10,7 +10,7 @@ module program_rom(
 	
 	initial begin
 		// compute the 2nd Fibonacci number
-		inst_mem[0] 	= 16'b0001_1110_0000_0011;	//load r7 3
+		inst_mem[0] 	= 16'b0001_1110_0000_0111;	//load r7 7
 		
 		inst_mem[1] 	= 16'b0001_0010_0000_0001;	//load r1 1
 		inst_mem[2] 	= 16'b1011_0100_0000_0001;	//subi r2 1 (r2 = -1)
