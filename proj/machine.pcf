@@ -1,11 +1,11 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue May 07 19:35:20 2019
+// Written by: Map P.20131013 on Tue May 07 19:40:23 2019
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "clk" LOCATE = SITE "V10" LEVEL 1;
-COMP "an<0>" LOCATE = SITE "N16" LEVEL 1;
-COMP "an<1>" LOCATE = SITE "N15" LEVEL 1;
+COMP "an<0>" LOCATE = SITE "N15" LEVEL 1;
+COMP "an<1>" LOCATE = SITE "N16" LEVEL 1;
 COMP "an<2>" LOCATE = SITE "P18" LEVEL 1;
 COMP "an<3>" LOCATE = SITE "P17" LEVEL 1;
 COMP "out<0>" LOCATE = SITE "T17" LEVEL 1;

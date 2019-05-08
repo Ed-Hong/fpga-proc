@@ -37,8 +37,8 @@ Clock clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-an<0>       |         9.785(R)|      SLOW  |         4.459(R)|      FAST  |clk_BUFGP         |   0.000|
-an<1>       |         9.916(R)|      SLOW  |         4.543(R)|      FAST  |clk_BUFGP         |   0.000|
+an<0>       |         9.744(R)|      SLOW  |         4.465(R)|      FAST  |clk_BUFGP         |   0.000|
+an<1>       |         9.853(R)|      SLOW  |         4.509(R)|      FAST  |clk_BUFGP         |   0.000|
 an<2>       |         9.939(R)|      SLOW  |         4.525(R)|      FAST  |clk_BUFGP         |   0.000|
 an<3>       |         9.815(R)|      SLOW  |         4.489(R)|      FAST  |clk_BUFGP         |   0.000|
 out<0>      |         9.531(R)|      SLOW  |         4.327(R)|      FAST  |clk_BUFGP         |   0.000|
@@ -60,7 +60,7 @@ clk            |   28.939|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue May  7 19:35:48 2019 
+Analysis completed Tue May  7 19:40:50 2019 
 --------------------------------------------------------------------------------
 
 Trace Settings:

@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue May  7 19:34:58 2019
+Mapped Date    : Tue May  7 19:40:01 2019
 
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to
@@ -39,49 +39,49 @@ Total REAL time at the beginning of Placer: 8 secs
 Total CPU  time at the beginning of Placer: 8 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:e47f1be0) REAL time: 9 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:e47de753) REAL time: 9 secs 
 
 Phase 2.7  Design Feasibility Check
-Phase 2.7  Design Feasibility Check (Checksum:e47f1be0) REAL time: 9 secs 
+Phase 2.7  Design Feasibility Check (Checksum:e47de753) REAL time: 9 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:e47f1be0) REAL time: 9 secs 
+Phase 3.31  Local Placement Optimization (Checksum:e47de753) REAL time: 9 secs 
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:f0c57f5e) REAL time: 11 secs 
+(Checksum:f0c44ad1) REAL time: 11 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:f0c57f5e) REAL time: 11 secs 
+Phase 5.36  Local Placement Optimization (Checksum:f0c44ad1) REAL time: 11 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:f0c57f5e) REAL time: 11 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:f0c44ad1) REAL time: 11 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:f0c57f5e) REAL time: 11 secs 
+Phase 7.3  Local Placement Optimization (Checksum:f0c44ad1) REAL time: 11 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:f0c57f5e) REAL time: 11 secs 
+Phase 8.5  Local Placement Optimization (Checksum:f0c44ad1) REAL time: 11 secs 
 
 Phase 9.8  Global Placement
 ....................................................
 ...................................................
 ............................................................................................................................................................................................................
 ............................................
-Phase 9.8  Global Placement (Checksum:8be67628) REAL time: 15 secs 
+Phase 9.8  Global Placement (Checksum:8be5419b) REAL time: 15 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:8be67628) REAL time: 15 secs 
+Phase 10.5  Local Placement Optimization (Checksum:8be5419b) REAL time: 15 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:11aee930) REAL time: 21 secs 
+Phase 11.18  Placement Optimization (Checksum:11adb4a3) REAL time: 21 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:11aee930) REAL time: 21 secs 
+Phase 12.5  Local Placement Optimization (Checksum:11adb4a3) REAL time: 21 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:11aee930) REAL time: 21 secs 
+Phase 13.34  Placement Validation (Checksum:11adb4a3) REAL time: 21 secs 
 
 Total REAL time to Placer completion: 21 secs 
 Total CPU  time to Placer completion: 21 secs 
