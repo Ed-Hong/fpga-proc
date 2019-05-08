@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Wed May  8 08:15:05 2019">
+  <application stringID="par" timeStamp="Wed May  8 08:18:41 2019">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -2249,7 +2249,7 @@
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Wed May  8 08:15:05 2019">
+  <application stringID="Par" timeStamp="Wed May  8 08:18:41 2019">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -2320,10 +2320,10 @@
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="3"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="2278" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="211">
-          <item AVAILABLE="595" dataType="int" stringID="PAR_NUM_SLICEL" value="101"/>
+        <item AVAILABLE="2278" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="217">
+          <item AVAILABLE="595" dataType="int" stringID="PAR_NUM_SLICEL" value="100"/>
           <item AVAILABLE="544" dataType="int" stringID="PAR_NUM_SLICEM" value="6"/>
-          <item AVAILABLE="1139" dataType="int" stringID="PAR_NUM_SLICEX" value="104"/>
+          <item AVAILABLE="1139" dataType="int" stringID="PAR_NUM_SLICEX" value="111"/>
         </item>
         <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="694">
           <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="565"/>

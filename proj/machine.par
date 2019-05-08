@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-engnx03.utdallas.edu::  Wed May 08 08:14:59 2019
+engnx03.utdallas.edu::  Wed May 08 08:18:35 2019
 
 par -w -intstyle ise -ol high -mt off machine_map.ncd machine.ncd machine.pcf 
 
@@ -63,7 +63,7 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   211 out of   2,278    9%
+  Number of occupied Slices:                   217 out of   2,278    9%
   Number of MUXCYs used:                       336 out of   4,556    7%
   Number of LUT Flip Flop pairs used:          694
     Number with an unused Flip Flop:           565 out of     694   81%
@@ -117,13 +117,13 @@ Finished initial Timing Analysis.  REAL time: 6 secs
 Starting Router
 
 
-Phase  1  : 3400 unrouted;      REAL time: 6 secs 
+Phase  1  : 3391 unrouted;      REAL time: 6 secs 
 
-Phase  2  : 2969 unrouted;      REAL time: 7 secs 
+Phase  2  : 2964 unrouted;      REAL time: 7 secs 
 
-Phase  3  : 1385 unrouted;      REAL time: 9 secs 
+Phase  3  : 1334 unrouted;      REAL time: 9 secs 
 
-Phase  4  : 1385 unrouted; (Par is working to improve performance)     REAL time: 10 secs 
+Phase  4  : 1334 unrouted; (Par is working to improve performance)     REAL time: 10 secs 
 
 Updating file: machine.ncd with current fully routed design.
 
@@ -159,8 +159,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|    31.494ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.349ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    29.653ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.323ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
