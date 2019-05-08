@@ -55,8 +55,9 @@ module program_rom(
 
 		// test
 		inst_mem[0] 	= 16'b1011_0100_0000_0001;	//subi r2 1 (r2 = -1)		 		
-		inst_mem[1] 	= 16'b1111_0100_0000_0000;	//out r2
-		inst_mem[2] 	= 16'b1000_0000_0000_0000;	//jmp 2
+		inst_mem[1] 	= 16'b0011_0100_1000_0001;	//sub r2 r2		 		
+		inst_mem[2] 	= 16'b1111_0100_0000_0000;	//out r2
+		inst_mem[3] 	= 16'b1000_0001_0000_0000;	//jmp 1
 
 	end 
 	
