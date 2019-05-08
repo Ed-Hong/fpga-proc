@@ -17,7 +17,7 @@ module processor(
 	// zero status register
 	reg zero;
 	
-	reg [1:0] delay;
+	reg [1:0] delay = 0;
 	
 	// wires
 	wire [3:0] opcode = instruction[15:12];
