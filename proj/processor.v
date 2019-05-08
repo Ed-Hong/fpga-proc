@@ -61,7 +61,7 @@ module processor(
 
 			// instruction decode
 			case (opcode) 
-				// addi --- todo make this actually an add not a load
+				// load
 				4'b0001:begin
 							write_data = immediate;
 							write_enable = 1;
@@ -79,12 +79,12 @@ module processor(
 						end
 				// jmp
 				4'b1000:begin
-							address = jmp_addr;
+							address = jmp_addr % rom_size;
 						end
 				// br
 				4'b1100:begin
 							if (zero == 1) begin
-								address = jmp_addr;
+								address = jmp_addr % rom_size;
 							end
 						end
 				// out
