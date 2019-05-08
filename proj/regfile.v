@@ -5,13 +5,13 @@ module regfile(
 	input [2:0] address_a,
 	input [2:0] address_b,
 	input wire write_enable,
-	input [15:0] write_data,
-	output reg [15:0] data_a,
-	output reg [15:0] data_b
+	input signed [15:0] write_data,
+	output reg signed [15:0] data_a,
+	output reg signed [15:0] data_b
 	);
 
 	// width x height
-	reg [15:0] regs [2:0];
+	reg signed [15:0] regs [2:0];
 	
 	always @ (posedge clk) begin
 		if (write_enable == 1) begin

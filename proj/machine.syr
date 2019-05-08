@@ -204,11 +204,11 @@ Synthesizing Unit <alu>.
     Related source file is "/home/011/e/ex/exh150330/repos/fpga-proc/proj/alu.v".
     Found 16-bit register for signal <alu_result>.
     Found 1-bit register for signal <zero>.
-    Found 16-bit subtractor for signal <_n0037> created at line 24.
-    Found 16-bit subtractor for signal <_n0040> created at line 35.
+    Found 16-bit subtractor for signal <a[15]_b[15]_sub_3_OUT> created at line 24.
+    Found 16-bit subtractor for signal <a[15]_immediate[15]_sub_6_OUT> created at line 35.
     Found 16-bit adder for signal <a[15]_b[15]_add_1_OUT> created at line 20.
     Found 16-bit adder for signal <a[15]_immediate[15]_add_4_OUT> created at line 31.
-    Found 16-bit 4-to-1 multiplexer for signal <_n0062> created at line 17.
+    Found 16-bit 4-to-1 multiplexer for signal <_n0056> created at line 17.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  17 D-type flip-flop(s).
@@ -387,10 +387,10 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+INFO:Xst:2261 - The FF/Latch <address_3> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_15> 
 INFO:Xst:2261 - The FF/Latch <address_0> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_12> 
 INFO:Xst:2261 - The FF/Latch <address_1> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_13> 
 INFO:Xst:2261 - The FF/Latch <address_2> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_14> 
-INFO:Xst:2261 - The FF/Latch <address_3> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_15> 
 
 Synthesizing (advanced) Unit <machine>.
 INFO:Xst:3231 - The small RAM <Mram_disp1> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
@@ -521,10 +521,10 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <address_3> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_15> 
 INFO:Xst:2261 - The FF/Latch <address_0> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_12> 
 INFO:Xst:2261 - The FF/Latch <address_1> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_13> 
 INFO:Xst:2261 - The FF/Latch <address_2> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_14> 
-INFO:Xst:2261 - The FF/Latch <address_3> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_15> 
 
 Optimizing unit <machine> ...
 
@@ -629,15 +629,15 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1168
+# BELS                             : 1170
 #      GND                         : 1
 #      INV                         : 20
 #      LUT1                        : 91
 #      LUT2                        : 45
-#      LUT3                        : 92
+#      LUT3                        : 93
 #      LUT4                        : 32
 #      LUT5                        : 188
-#      LUT6                        : 155
+#      LUT6                        : 156
 #      MUXCY                       : 275
 #      MUXF7                       : 17
 #      VCC                         : 1
@@ -662,16 +662,16 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             101  out of  18224     0%  
- Number of Slice LUTs:                  655  out of   9112     7%  
-    Number used as Logic:               623  out of   9112     6%  
+ Number of Slice LUTs:                  657  out of   9112     7%  
+    Number used as Logic:               625  out of   9112     6%  
     Number used as Memory:               32  out of   2176     1%  
        Number used as RAM:               32
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    695
-   Number with an unused Flip Flop:     594  out of    695    85%  
-   Number with an unused LUT:            40  out of    695     5%  
-   Number of fully used LUT-FF pairs:    61  out of    695     8%  
+ Number of LUT Flip Flop pairs used:    697
+   Number with an unused Flip Flop:     596  out of    697    85%  
+   Number with an unused LUT:            40  out of    697     5%  
+   Number of fully used LUT-FF pairs:    61  out of    697     8%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -727,7 +727,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 31.355ns (frequency: 31.892MHz)
-  Total number of paths / destination ports: 349783210579373 / 175
+  Total number of paths / destination ports: 349783210579381 / 175
 -------------------------------------------------------------------------
 Delay:               31.355ns (Levels of Logic = 74)
   Source:            timer_0 (FF)
@@ -811,10 +811,10 @@ Delay:               31.355ns (Levels of Logic = 74)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<2> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<3>)
      MUXCY:CI->O           2   0.023   0.726  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_7/BUS_0033_INV_1427_o)
-     LUT6:I5->O           12   0.254   1.177  _processor/_n0165<0>10 (_processor/_n0165<0>9)
-     LUT5:I3->O            8   0.250   0.944  _processor/_n0165<0>11_rstpot1 (_processor/_n0165<0>11_rstpot1)
-     LUT6:I5->O            1   0.254   0.000  _processor/write_data_0_dpot1 (_processor/write_data_0_dpot1)
-     FDE:D                     0.074          _processor/write_data_0
+     LUT6:I5->O           12   0.254   1.177  _processor/_n0169<0>10 (_processor/_n0169<0>9)
+     LUT5:I3->O            8   0.250   0.944  _processor/_n0169<0>11_rstpot1 (_processor/_n0169<0>11_rstpot1)
+     LUT6:I5->O            1   0.254   0.000  _processor/write_data_7_dpot1 (_processor/write_data_7_dpot1)
+     FDE:D                     0.074          _processor/write_data_7
     ----------------------------------------
     Total                     31.355ns (8.572ns logic, 22.783ns route)
                                        (27.3% logic, 72.7% route)
@@ -864,12 +864,12 @@ clk                                          |   31.355|         |         |    
 
 
 Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.53 secs
+Total CPU time to Xst completion: 23.44 secs
  
 --> 
 
 
-Total memory usage is 501408 kilobytes
+Total memory usage is 501420 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   64 (   0 filtered)

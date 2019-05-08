@@ -21,15 +21,15 @@ module processor(
 	wire [3:0] opcode = instruction[15:12];
 	wire [2:0] reg_a = instruction[11:9];
 	wire [2:0] reg_b = instruction[8:6];
-	wire [7:0] immediate = instruction[7:0];
+	wire signed [7:0] immediate = instruction[7:0];
 	wire [3:0] jmp_addr = instruction[11:8];
 	
 	reg write_enable;
-	reg [15:0] write_data;
-	wire [15:0] data_a;
-	wire [15:0] data_b;
+	reg signed [15:0] write_data;
+	wire signed [15:0] data_a;
+	wire signed [15:0] data_b;
 	
-	wire [15:0] alu_result;
+	wire signed [15:0] alu_result;
 	wire alu_zero;
 
 	// modules
