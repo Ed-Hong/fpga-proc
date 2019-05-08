@@ -22,6 +22,7 @@ module processor(
 	wire [2:0] reg_a = instruction[11:9];
 	wire [2:0] reg_b = instruction[8:6];
 	wire [7:0] immediate = instruction[7:0];
+	wire [3:0] jmp_addr = instruction[11:8];
 	
 	reg write_enable;
 	reg [15:0] write_data;
@@ -80,7 +81,17 @@ module processor(
 							write_data <= alu_result;
 							zero <= alu_zero;
 							write_enable <= 1;
-						end	
+						end
+				// jmp
+				4'b1000:begin
+							address = jmp_addr;
+						end
+				// br
+				4'b1100:begin
+							if (zero == 1) begin
+								address = jmp_addr;
+							end
+						end
 				// out
 				4'b1111:begin
 							result <= data_a;
