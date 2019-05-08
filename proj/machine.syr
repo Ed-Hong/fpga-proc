@@ -178,9 +178,8 @@ WARNING:Xst:653 - Signal <result<11:8>> is used but never assigned. This sourcel
     Found 32-bit register for signal <timer>.
     Found 32-bit adder for signal <timer[31]_GND_2_o_add_6_OUT> created at line 57.
     Found 4-bit adder for signal <address[3]_GND_2_o_add_9_OUT> created at line 61.
-    Found 4-bit subtractor for signal <GND_2_o_GND_2_o_sub_13_OUT<3:0>> created at line 99.
     Summary:
-	inferred   3 Adder/Subtractor(s).
+	inferred   2 Adder/Subtractor(s).
 	inferred  65 D-type flip-flop(s).
 	inferred   6 Multiplexer(s).
 Unit <processor> synthesized.
@@ -307,7 +306,7 @@ Macro Statistics
  16x8-bit dual-port Read Only RAM                      : 1
  16x8-bit single-port Read Only RAM                    : 1
  3x16-bit dual-port RAM                                : 1
-# Adders/Subtractors                                   : 40
+# Adders/Subtractors                                   : 39
  16-bit adder                                          : 1
  16-bit subtractor                                     : 2
  32-bit adder                                          : 9
@@ -319,7 +318,6 @@ Macro Statistics
  38-bit adder                                          : 1
  39-bit adder                                          : 1
  4-bit adder                                           : 1
- 4-bit subtractor                                      : 1
  40-bit adder                                          : 1
  41-bit adder                                          : 1
  42-bit adder                                          : 1
@@ -471,13 +469,12 @@ Macro Statistics
  16x8-bit dual-port distributed Read Only RAM          : 1
  16x8-bit single-port distributed Read Only RAM        : 1
  3x16-bit dual-port distributed RAM                    : 1
-# Adders/Subtractors                                   : 40
+# Adders/Subtractors                                   : 39
  16-bit adder                                          : 1
  16-bit subtractor                                     : 2
  26-bit adder                                          : 1
  32-bit adder                                          : 34
  4-bit adder                                           : 1
- 4-bit subtractor                                      : 1
 # Counters                                             : 1
  32-bit up counter                                     : 1
 # Registers                                            : 126
@@ -590,15 +587,15 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1280
+# BELS                             : 1276
 #      GND                         : 1
 #      INV                         : 30
 #      LUT1                        : 91
 #      LUT2                        : 57
-#      LUT3                        : 85
-#      LUT4                        : 33
+#      LUT3                        : 84
+#      LUT4                        : 32
 #      LUT5                        : 206
-#      LUT6                        : 185
+#      LUT6                        : 183
 #      MUXCY                       : 299
 #      MUXF7                       : 17
 #      VCC                         : 1
@@ -623,16 +620,16 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:             135  out of  18224     0%  
- Number of Slice LUTs:                  735  out of   9112     8%  
-    Number used as Logic:               687  out of   9112     7%  
+ Number of Slice LUTs:                  731  out of   9112     8%  
+    Number used as Logic:               683  out of   9112     7%  
     Number used as Memory:               48  out of   2176     2%  
        Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    782
-   Number with an unused Flip Flop:     647  out of    782    82%  
-   Number with an unused LUT:            47  out of    782     6%  
-   Number of fully used LUT-FF pairs:    88  out of    782    11%  
+ Number of LUT Flip Flop pairs used:    778
+   Number with an unused Flip Flop:     643  out of    778    82%  
+   Number with an unused LUT:            47  out of    778     6%  
+   Number of fully used LUT-FF pairs:    88  out of    778    11%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -688,7 +685,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 31.620ns (frequency: 31.625MHz)
-  Total number of paths / destination ports: 515469994399197 / 242
+  Total number of paths / destination ports: 515469994399189 / 242
 -------------------------------------------------------------------------
 Delay:               31.620ns (Levels of Logic = 74)
   Source:            timer_0 (FF)
@@ -735,8 +732,8 @@ Delay:               31.620ns (Levels of Logic = 74)
      XORCY:CI->O          44   0.206   2.151  _processor/Madd_timer[31]_GND_2_o_add_6_OUT_xor<30> (_processor/timer[31]_PWR_2_o_mod_7/Madd_GND_6_o_b[25]_add_19_OUT_Madd_cy<30>)
      LUT6:I1->O           16   0.254   1.182  _processor/timer[31]_PWR_2_o_mod_7/BUS_0027_INV_1229_o24 (_processor/timer[31]_PWR_2_o_mod_7/BUS_0027_INV_1229_o3)
      LUT6:I5->O           19   0.254   1.261  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o32 (_processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o31)
-     LUT6:I5->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1_G (N267)
-     MUXF7:I1->O           1   0.175   0.682  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1 (N74)
+     LUT6:I5->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1_G (N268)
+     MUXF7:I1->O           1   0.175   0.682  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1 (N79)
      LUT6:I5->O            6   0.254   1.306  _processor/timer[31]_PWR_2_o_mod_7/Mmux_a[0]_a[31]_MUX_2462_o131 (_processor/timer[31]_PWR_2_o_mod_7/a[12]_a[31]_MUX_2450_o)
      LUT5:I0->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_lut<0> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_lut<0>)
      MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_cy<0> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_cy<0>)
@@ -772,8 +769,8 @@ Delay:               31.620ns (Levels of Logic = 74)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<2> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<3>)
      MUXCY:CI->O           2   0.023   0.726  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_7/BUS_0033_INV_1427_o)
-     LUT6:I5->O           12   0.254   1.177  _processor/_n0174<0>10 (_processor/_n0174<0>9)
-     LUT5:I3->O           17   0.250   1.209  _processor/_n0174<0>11_rstpot1 (_processor/_n0174<0>11_rstpot1)
+     LUT6:I5->O           12   0.254   1.177  _processor/_n0171<0>10 (_processor/_n0171<0>9)
+     LUT5:I3->O           17   0.250   1.209  _processor/_n0171<0>11_rstpot1 (_processor/_n0171<0>11_rstpot1)
      LUT6:I5->O            1   0.254   0.000  _processor/zero_dpot1 (_processor/zero_dpot1)
      FDE:D                     0.074          _processor/zero
     ----------------------------------------
@@ -825,12 +822,12 @@ clk                                          |   31.620|         |         |    
 
 
 Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 22.65 secs
+Total CPU time to Xst completion: 23.19 secs
  
 --> 
 
 
-Total memory usage is 501448 kilobytes
+Total memory usage is 501460 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   22 (   0 filtered)

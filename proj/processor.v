@@ -91,12 +91,12 @@ module processor(
 						end
 				// jmp
 				4'b1000:begin
-							address = (jmp_addr - 1) % rom_size;
+							address = jmp_addr % rom_size;
 						end
 				// br
 				4'b1100:begin
 							if (zero == 1) begin
-								address = (jmp_addr - 1) % rom_size;
+								address = jmp_addr % rom_size;
 							end
 						end
 				// mov
