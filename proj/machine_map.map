@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue May  7 23:10:14 2019
+Mapped Date    : Tue May  7 23:14:41 2019
 
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to
@@ -83,7 +83,7 @@ Phase 13.34  Placement Validation
 Phase 13.34  Placement Validation (Checksum:86c46d83) REAL time: 22 secs 
 
 Total REAL time to Placer completion: 22 secs 
-Total CPU  time to Placer completion: 21 secs 
+Total CPU  time to Placer completion: 22 secs 
 Running post-placement packing...
 Writing output files...
 
@@ -166,8 +166,8 @@ Specific Feature Utilization:
 Average Fanout of Non-Clock Nets:                3.92
 
 Peak Memory Usage:  810 MB
-Total REAL time to MAP completion:  23 secs 
-Total CPU time to MAP completion:   22 secs 
+Total REAL time to MAP completion:  24 secs 
+Total CPU time to MAP completion:   23 secs 
 
 Mapping completed.
 See MAP report file "machine_map.mrp" for details.
