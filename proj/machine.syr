@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Reading design: machine.prj
@@ -131,7 +131,6 @@ Elaborating module <regfile>.
 
 Elaborating module <alu>.
 WARNING:HDLCompiler:189 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 51: Size mismatch in connection of port <immediate>. Formal port size is 16-bit while actual signal size is 8-bit.
-WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 117: Result of 32-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 118: Result of 16-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module <program_rom>.
@@ -179,9 +178,8 @@ WARNING:Xst:653 - Signal <result<11:8>> is used but never assigned. This sourcel
     Found 32-bit register for signal <timer>.
     Found 32-bit adder for signal <timer[31]_GND_2_o_add_6_OUT> created at line 57.
     Found 4-bit adder for signal <address[3]_GND_2_o_add_9_OUT> created at line 61.
-    Found 4-bit subtractor for signal <GND_2_o_GND_2_o_sub_17_OUT<3:0>> created at line 117.
     Summary:
-	inferred   3 Adder/Subtractor(s).
+	inferred   2 Adder/Subtractor(s).
 	inferred  65 D-type flip-flop(s).
 	inferred   6 Multiplexer(s).
 Unit <processor> synthesized.
@@ -308,7 +306,7 @@ Macro Statistics
  16x8-bit dual-port Read Only RAM                      : 1
  16x8-bit single-port Read Only RAM                    : 1
  3x16-bit dual-port RAM                                : 1
-# Adders/Subtractors                                   : 40
+# Adders/Subtractors                                   : 39
  16-bit adder                                          : 1
  16-bit subtractor                                     : 2
  32-bit adder                                          : 9
@@ -320,7 +318,6 @@ Macro Statistics
  38-bit adder                                          : 1
  39-bit adder                                          : 1
  4-bit adder                                           : 1
- 4-bit subtractor                                      : 1
  40-bit adder                                          : 1
  41-bit adder                                          : 1
  42-bit adder                                          : 1
@@ -340,11 +337,11 @@ Macro Statistics
  56-bit adder                                          : 1
  57-bit adder                                          : 1
  58-bit adder                                          : 1
-# Registers                                            : 20
- 1-bit register                                        : 10
+# Registers                                            : 23
+ 1-bit register                                        : 14
  16-bit register                                       : 4
  32-bit register                                       : 2
- 4-bit register                                        : 3
+ 4-bit register                                        : 2
  8-bit register                                        : 1
 # Comparators                                          : 35
  2-bit comparator equal                                : 1
@@ -390,6 +387,10 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+INFO:Xst:2261 - The FF/Latch <address_0> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_12> 
+INFO:Xst:2261 - The FF/Latch <address_1> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_13> 
+INFO:Xst:2261 - The FF/Latch <address_2> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_14> 
+INFO:Xst:2261 - The FF/Latch <address_3> in Unit <_processor> is equivalent to the following FF/Latch, which will be removed : <result_15> 
 
 Synthesizing (advanced) Unit <machine>.
 INFO:Xst:3231 - The small RAM <Mram_disp1> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
@@ -468,13 +469,12 @@ Macro Statistics
  16x8-bit dual-port distributed Read Only RAM          : 1
  16x8-bit single-port distributed Read Only RAM        : 1
  3x16-bit dual-port distributed RAM                    : 1
-# Adders/Subtractors                                   : 40
+# Adders/Subtractors                                   : 39
  16-bit adder                                          : 1
  16-bit subtractor                                     : 2
  26-bit adder                                          : 1
  32-bit adder                                          : 34
  4-bit adder                                           : 1
- 4-bit subtractor                                      : 1
 # Counters                                             : 1
  32-bit up counter                                     : 1
 # Registers                                            : 126
@@ -521,6 +521,10 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <address_0> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_12> 
+INFO:Xst:2261 - The FF/Latch <address_1> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_13> 
+INFO:Xst:2261 - The FF/Latch <address_2> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_14> 
+INFO:Xst:2261 - The FF/Latch <address_3> in Unit <processor> is equivalent to the following FF/Latch, which will be removed : <result_15> 
 
 Optimizing unit <machine> ...
 
@@ -532,9 +536,6 @@ Optimizing unit <alu> ...
 WARNING:Xst:1710 - FF/Latch <_processor/_alu/zero> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <_processor/address_2> has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <_processor/address_3> has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <_processor/result_14> has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <_processor/result_13> has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <_processor/result_12> has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_31> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_30> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_29> (without init value) has a constant value of 0 in block <machine>. This FF/Latch will be trimmed during the optimization process.
@@ -589,8 +590,7 @@ WARNING:Xst:2677 - Node <_processor/_alu/alu_result_11> of sequential type is un
 WARNING:Xst:2677 - Node <_processor/_alu/alu_result_10> of sequential type is unconnected in block <machine>.
 WARNING:Xst:2677 - Node <_processor/_alu/alu_result_9> of sequential type is unconnected in block <machine>.
 WARNING:Xst:2677 - Node <_processor/_alu/alu_result_8> of sequential type is unconnected in block <machine>.
-INFO:Xst:2261 - The FF/Latch <_processor/result_15> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <_processor/address_1> 
-INFO:Xst:2261 - The FF/Latch <_processor/result_0> in Unit <machine> is equivalent to the following 7 FFs/Latches, which will be removed : <_processor/result_2> <_processor/result_3> <_processor/result_1> <_processor/result_4> <_processor/result_5> <_processor/result_6> <_processor/result_7> 
+INFO:Xst:2261 - The FF/Latch <_processor/result_0> in Unit <machine> is equivalent to the following 7 FFs/Latches, which will be removed : <_processor/result_1> <_processor/result_2> <_processor/result_3> <_processor/result_4> <_processor/result_6> <_processor/result_7> <_processor/result_5> 
 INFO:Xst:2261 - The FF/Latch <timer_0> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <_processor/timer_0> 
 INFO:Xst:2261 - The FF/Latch <timer_1> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <_processor/timer_1> 
 INFO:Xst:2261 - The FF/Latch <timer_2> in Unit <machine> is equivalent to the following FF/Latch, which will be removed : <_processor/timer_2> 
@@ -666,15 +666,15 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1063
+# BELS                             : 1065
 #      GND                         : 1
 #      INV                         : 18
 #      LUT1                        : 91
-#      LUT2                        : 34
-#      LUT3                        : 74
-#      LUT4                        : 32
-#      LUT5                        : 177
-#      LUT6                        : 135
+#      LUT2                        : 35
+#      LUT3                        : 75
+#      LUT4                        : 29
+#      LUT5                        : 175
+#      LUT6                        : 140
 #      MUXCY                       : 254
 #      MUXF7                       : 17
 #      VCC                         : 1
@@ -699,16 +699,16 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:              65  out of  18224     0%  
- Number of Slice LUTs:                  579  out of   9112     6%  
-    Number used as Logic:               561  out of   9112     6%  
+ Number of Slice LUTs:                  581  out of   9112     6%  
+    Number used as Logic:               563  out of   9112     6%  
     Number used as Memory:               18  out of   2176     0%  
        Number used as RAM:               18
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    609
-   Number with an unused Flip Flop:     544  out of    609    89%  
-   Number with an unused LUT:            30  out of    609     4%  
-   Number of fully used LUT-FF pairs:    35  out of    609     5%  
+ Number of LUT Flip Flop pairs used:    611
+   Number with an unused Flip Flop:     546  out of    611    89%  
+   Number with an unused LUT:            30  out of    611     4%  
+   Number of fully used LUT-FF pairs:    35  out of    611     5%  
    Number of unique control sets:         5
 
 IO Utilization: 
@@ -764,15 +764,15 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 30.054ns (frequency: 33.274MHz)
-  Total number of paths / destination ports: 73638570780884 / 87
+  Total number of paths / destination ports: 73638570780890 / 87
 -------------------------------------------------------------------------
 Delay:               30.054ns (Levels of Logic = 79)
   Source:            timer_0 (FF)
-  Destination:       _processor/result_15 (FF)
+  Destination:       _processor/address_0 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: timer_0 to _processor/result_15
+  Data Path: timer_0 to _processor/address_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
@@ -811,8 +811,8 @@ Delay:               30.054ns (Levels of Logic = 79)
      XORCY:CI->O          44   0.206   2.151  _processor/Madd_timer[31]_GND_2_o_add_6_OUT_xor<30> (_processor/timer[31]_PWR_2_o_mod_7/Madd_GND_5_o_b[25]_add_19_OUT_Madd_cy<30>)
      LUT6:I1->O           16   0.254   1.182  _processor/timer[31]_PWR_2_o_mod_7/BUS_0027_INV_1229_o24 (_processor/timer[31]_PWR_2_o_mod_7/BUS_0027_INV_1229_o3)
      LUT6:I5->O           19   0.254   1.261  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o32 (_processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o31)
-     LUT6:I5->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1_G (N243)
-     MUXF7:I1->O           1   0.175   0.682  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1 (N39)
+     LUT6:I5->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1_G (N246)
+     MUXF7:I1->O           1   0.175   0.682  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1 (N46)
      LUT6:I5->O            6   0.254   1.306  _processor/timer[31]_PWR_2_o_mod_7/Mmux_a[0]_a[31]_MUX_2462_o131 (_processor/timer[31]_PWR_2_o_mod_7/a[12]_a[31]_MUX_2450_o)
      LUT5:I0->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_lut<0> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_lut<0>)
      MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_cy<0> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_cy<0>)
@@ -853,8 +853,8 @@ Delay:               30.054ns (Levels of Logic = 79)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<16> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<16>)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<17> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<17>)
      XORCY:CI->O           3   0.206   1.221  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_xor<18> (_processor/timer[31]_PWR_2_o_mod_7/a[31]_GND_5_o_add_65_OUT<18>)
-     LUT6:I0->O            2   0.254   0.726  _processor/_n0170<0>9 (_processor/_n0170<0>8)
-     LUT6:I5->O            1   0.254   0.682  _processor/_n0170<0>11_rstpot1_SW1 (N190)
+     LUT6:I0->O            2   0.254   0.726  _processor/_n0165<0>9 (_processor/_n0165<0>8)
+     LUT6:I5->O            1   0.254   0.682  _processor/_n0165<0>11_rstpot1_SW1 (N191)
      LUT6:I5->O            1   0.254   0.000  _processor/write_data_0_dpot1 (_processor/write_data_0_dpot1)
      FDE:D                     0.074          _processor/write_data_0
     ----------------------------------------
@@ -898,22 +898,22 @@ Clock to Setup on destination clock clk
                                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                 |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------------------------+---------+---------+---------+---------+
-Mcompar_GND_1_o_timer[31]_LessThan_3_o_lut<3>|    2.468|         |         |         |
+Mcompar_GND_1_o_timer[31]_LessThan_3_o_lut<3>|    2.622|         |         |         |
 clk                                          |   30.054|         |         |         |
 ---------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 23.00 secs
+Total REAL time to Xst completion: 24.00 secs
 Total CPU time to Xst completion: 22.77 secs
  
 --> 
 
 
-Total memory usage is 501592 kilobytes
+Total memory usage is 501480 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  104 (   0 filtered)
-Number of infos    :   13 (   0 filtered)
+Number of warnings :  100 (   0 filtered)
+Number of infos    :   20 (   0 filtered)
 

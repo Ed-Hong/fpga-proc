@@ -114,7 +114,7 @@ module processor(
 			endcase
 						
 			//debug
-			result[15:12] = address - 1;
+			result[15:12] = address;
 			result[7:0] = data_a;			
 		end
 	end
