@@ -10,19 +10,19 @@ module alu(
    );
 
 	always @ (posedge clk) begin
-		zero <= 0;
+		zero = 0;
 
 		// alu operation decode
 		case (opcode) 
 			// add
 			4'b0010:begin
-						alu_result <= a + b; 
+						alu_result = a + b; 
 					end
 			// sub
 			4'b0011:begin
-						alu_result <= a - b; 
+						alu_result = a - b; 
 						if (alu_result == 0) begin
-							zero <= 1;
+							zero = 1;
 						end
 					end
 		endcase

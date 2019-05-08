@@ -15,7 +15,7 @@ module regfile(
 	
 	always @ (posedge clk) begin
 		if (write_enable == 1) begin
-			regs[address_a] <= write_data;
+			regs[address_a] = write_data;
 		end
 		data_a <= regs[address_a];
 		data_b <= regs[address_b];

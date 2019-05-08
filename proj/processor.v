@@ -57,30 +57,27 @@ module processor(
 
 		// manually scale clock frequency for debugging
 		if (timer % 50000000 == 0) begin
-			address = address + 1;
-			if (address >= rom_size) begin
-				address = 0;
-			end
+			address = (address + 1) % rom_size;
 
-			write_enable <= 0;
+			write_enable = 0;
 
 			// instruction decode
 			case (opcode) 
 				// addi --- todo make this actually an add not a load
 				4'b0001:begin
-							write_data <= immediate;
-							write_enable <= 1;
+							write_data = immediate;
+							write_enable = 1;
 						end
 				// add
 				4'b0010:begin
-							write_data <= alu_result; 
-							write_enable <= 1;
+							write_data = alu_result; 
+							write_enable = 1;
 						end
 				// sub
 				4'b0011:begin
-							write_data <= alu_result;
-							zero <= alu_zero;
-							write_enable <= 1;
+							write_data = alu_result;
+							zero = alu_zero;
+							write_enable = 1;
 						end
 				// jmp
 				4'b1000:begin
@@ -94,7 +91,7 @@ module processor(
 						end
 				// out
 				4'b1111:begin
-							result <= data_a;
+							result = data_a;
 						end
 				// default NOP
 				//default: result <= 0;  
