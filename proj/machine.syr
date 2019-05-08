@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Reading design: machine.prj
@@ -130,6 +130,7 @@ Elaborating module <processor>.
 Elaborating module <regfile>.
 
 Elaborating module <alu>.
+WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 92: Result of 32-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:413 - "/home/011/e/ex/exh150330/repos/fpga-proc/proj/processor.v" Line 93: Result of 16-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module <program_rom>.
@@ -177,8 +178,9 @@ WARNING:Xst:653 - Signal <result<11:8>> is used but never assigned. This sourcel
     Found 32-bit register for signal <timer>.
     Found 32-bit adder for signal <timer[31]_GND_2_o_add_6_OUT> created at line 56.
     Found 4-bit adder for signal <address[3]_GND_2_o_add_9_OUT> created at line 60.
+    Found 4-bit subtractor for signal <GND_2_o_GND_2_o_sub_13_OUT<3:0>> created at line 92.
     Summary:
-	inferred   2 Adder/Subtractor(s).
+	inferred   3 Adder/Subtractor(s).
 	inferred  65 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <processor> synthesized.
@@ -301,7 +303,7 @@ Macro Statistics
  16x8-bit dual-port Read Only RAM                      : 1
  16x8-bit single-port Read Only RAM                    : 1
  3x16-bit dual-port RAM                                : 1
-# Adders/Subtractors                                   : 38
+# Adders/Subtractors                                   : 39
  16-bit adder                                          : 1
  16-bit subtractor                                     : 1
  32-bit adder                                          : 9
@@ -313,6 +315,7 @@ Macro Statistics
  38-bit adder                                          : 1
  39-bit adder                                          : 1
  4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
  40-bit adder                                          : 1
  41-bit adder                                          : 1
  42-bit adder                                          : 1
@@ -459,12 +462,13 @@ Macro Statistics
  16x8-bit dual-port distributed Read Only RAM          : 1
  16x8-bit single-port distributed Read Only RAM        : 1
  3x16-bit dual-port distributed RAM                    : 1
-# Adders/Subtractors                                   : 38
+# Adders/Subtractors                                   : 39
  16-bit adder                                          : 1
  16-bit subtractor                                     : 1
  26-bit adder                                          : 1
  32-bit adder                                          : 34
  4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
 # Counters                                             : 1
  32-bit up counter                                     : 1
 # Registers                                            : 126
@@ -650,15 +654,15 @@ Top Level Output File Name         : machine.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1113
+# BELS                             : 1096
 #      GND                         : 1
 #      INV                         : 17
 #      LUT1                        : 91
 #      LUT2                        : 38
-#      LUT3                        : 76
-#      LUT4                        : 48
-#      LUT5                        : 182
-#      LUT6                        : 161
+#      LUT3                        : 75
+#      LUT4                        : 42
+#      LUT5                        : 180
+#      LUT6                        : 153
 #      MUXCY                       : 254
 #      MUXF7                       : 17
 #      VCC                         : 1
@@ -683,16 +687,16 @@ Selected Device : 6slx16csg324-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:              78  out of  18224     0%  
- Number of Slice LUTs:                  629  out of   9112     6%  
-    Number used as Logic:               613  out of   9112     6%  
+ Number of Slice LUTs:                  612  out of   9112     6%  
+    Number used as Logic:               596  out of   9112     6%  
     Number used as Memory:               16  out of   2176     0%  
        Number used as RAM:               16
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    666
-   Number with an unused Flip Flop:     588  out of    666    88%  
-   Number with an unused LUT:            37  out of    666     5%  
-   Number of fully used LUT-FF pairs:    41  out of    666     6%  
+ Number of LUT Flip Flop pairs used:    649
+   Number with an unused Flip Flop:     571  out of    649    87%  
+   Number with an unused LUT:            37  out of    649     5%  
+   Number of fully used LUT-FF pairs:    41  out of    649     6%  
    Number of unique control sets:         4
 
 IO Utilization: 
@@ -724,7 +728,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 clk                                | BUFGP                  | 78    |
-_processor/_n0216                  | NONE(Mram_disp1)       | 8     |
+_processor/_n0220                  | NONE(Mram_disp1)       | 8     |
 -----------------------------------+------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -736,7 +740,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 30.405ns (Maximum Frequency: 32.890MHz)
+   Minimum period: 30.375ns (Maximum Frequency: 32.921MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 4.118ns
    Maximum combinational path delay: No path found
@@ -747,10 +751,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 30.405ns (frequency: 32.890MHz)
-  Total number of paths / destination ports: 294554282640607 / 109
+  Clock period: 30.375ns (frequency: 32.921MHz)
+  Total number of paths / destination ports: 294554282640513 / 109
 -------------------------------------------------------------------------
-Delay:               30.405ns (Levels of Logic = 79)
+Delay:               30.375ns (Levels of Logic = 73)
   Source:            timer_0 (FF)
   Destination:       _processor/result_12 (FF)
   Source Clock:      clk rising
@@ -795,8 +799,8 @@ Delay:               30.405ns (Levels of Logic = 79)
      XORCY:CI->O          44   0.206   2.151  _processor/Madd_timer[31]_GND_2_o_add_6_OUT_xor<30> (_processor/timer[31]_PWR_2_o_mod_7/Madd_GND_5_o_b[25]_add_19_OUT_Madd_cy<30>)
      LUT6:I1->O           16   0.254   1.182  _processor/timer[31]_PWR_2_o_mod_7/BUS_0027_INV_1229_o24 (_processor/timer[31]_PWR_2_o_mod_7/BUS_0027_INV_1229_o3)
      LUT6:I5->O           19   0.254   1.261  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o32 (_processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o31)
-     LUT6:I5->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1_G (N313)
-     MUXF7:I1->O           1   0.175   0.682  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1 (N85)
+     LUT6:I5->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1_G (N328)
+     MUXF7:I1->O           1   0.175   0.682  _processor/timer[31]_PWR_2_o_mod_7/BUS_0028_INV_1262_o34_SW1 (N79)
      LUT6:I5->O            6   0.254   1.306  _processor/timer[31]_PWR_2_o_mod_7/Mmux_a[0]_a[31]_MUX_2463_o131 (_processor/timer[31]_PWR_2_o_mod_7/a[12]_a[31]_MUX_2451_o)
      LUT5:I0->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_lut<0> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_lut<0>)
      MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_cy<0> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0029_INV_1295_o_cy<0>)
@@ -825,25 +829,19 @@ Delay:               30.405ns (Levels of Logic = 79)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0032_INV_1394_o_cy<2> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0032_INV_1394_o_cy<2>)
      MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0032_INV_1394_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0032_INV_1394_o_cy<3>)
      MUXCY:CI->O          41   0.235   1.671  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0032_INV_1394_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_7/BUS_0032_INV_1394_o)
-     LUT3:I2->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_lut<8> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_lut<8>)
-     MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<8> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<9> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<10> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<11> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<12> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<13> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<14> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<15> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<16> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<17> (_processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_cy<17>)
-     XORCY:CI->O           4   0.206   1.259  _processor/timer[31]_PWR_2_o_mod_7/Madd_a[31]_GND_5_o_add_65_OUT_Madd_xor<18> (_processor/timer[31]_PWR_2_o_mod_7/a[31]_GND_5_o_add_65_OUT<18>)
-     LUT6:I0->O           11   0.254   1.039  _processor/_n0266<0>9 (_processor/_n0266<0>8)
-     LUT6:I5->O            1   0.254   0.682  _processor/_n0266<0>11_rstpot_SW4 (N72)
-     LUT6:I5->O            1   0.254   0.000  _processor/write_data_2_dpot (_processor/write_data_2_dpot)
-     FDE:D                     0.074          _processor/write_data_2
+     LUT3:I2->O            2   0.254   1.156  _processor/timer[31]_PWR_2_o_mod_7/Mmux_a[0]_a[31]_MUX_2591_o1241 (_processor/timer[31]_PWR_2_o_mod_7/a[8]_a[31]_MUX_2583_o)
+     LUT5:I0->O            1   0.254   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_lut<0> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<0> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<1> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<2> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<3> (_processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<3>)
+     MUXCY:CI->O           2   0.023   0.726  _processor/timer[31]_PWR_2_o_mod_7/Mcompar_BUS_0033_INV_1427_o_cy<4> (_processor/timer[31]_PWR_2_o_mod_7/BUS_0033_INV_1427_o)
+     LUT6:I5->O           16   0.254   1.410  _processor/_n0270<0>10 (_processor/_n0270<0>9)
+     LUT6:I3->O            1   0.235   0.000  _processor/write_data_1_dpot (_processor/write_data_1_dpot)
+     FDE:D                     0.074          _processor/write_data_1
     ----------------------------------------
-    Total                     30.405ns (8.645ns logic, 21.760ns route)
-                                       (28.4% logic, 71.6% route)
+    Total                     30.375ns (8.303ns logic, 22.072ns route)
+                                       (27.3% logic, 72.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -869,7 +867,7 @@ Offset:              4.118ns (Levels of Logic = 1)
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock _processor/_n0216
+Clock to Setup on destination clock _processor/_n0220
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
@@ -882,15 +880,15 @@ Clock to Setup on destination clock clk
                  | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------+---------+---------+---------+---------+
-_processor/_n0216|    2.468|         |         |         |
-clk              |   30.405|         |         |         |
+_processor/_n0220|    2.468|         |         |         |
+clk              |   30.375|         |         |         |
 -----------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 22.81 secs
+Total CPU time to Xst completion: 23.12 secs
  
 --> 
 
@@ -898,6 +896,6 @@ Total CPU time to Xst completion: 22.81 secs
 Total memory usage is 501636 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   98 (   0 filtered)
+Number of warnings :   99 (   0 filtered)
 Number of infos    :   10 (   0 filtered)
 

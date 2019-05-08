@@ -89,7 +89,7 @@ module processor(
 						end
 				// out
 				4'b1111:begin
-							result[15:12] = address;
+							result[15:12] = address - 1;
 							result[7:0] = data_a;
 						end
 				// default NOP
