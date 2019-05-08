@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-engnx03.utdallas.edu::  Wed May 08 01:52:57 2019
+engnx03.utdallas.edu::  Wed May 08 02:16:01 2019
 
 par -w -intstyle ise -ol high -mt off machine_map.ncd machine.ncd machine.pcf 
 
@@ -39,16 +39,16 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                   101 out of  18,224    1%
-    Number used as Flip Flops:                 101
+  Number of Slice Registers:                   114 out of  18,224    1%
+    Number used as Flip Flops:                 114
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        585 out of   9,112    6%
-    Number used as logic:                      566 out of   9,112    6%
-      Number using O6 output only:             330
+  Number of Slice LUTs:                        598 out of   9,112    6%
+    Number used as logic:                      579 out of   9,112    6%
+      Number using O6 output only:             352
       Number using O5 output only:              88
-      Number using O5 and O6:                  148
+      Number using O5 and O6:                  139
       Number used as ROM:                        0
     Number used as Memory:                      16 out of   2,176    1%
       Number used as Dual Port RAM:             16
@@ -63,12 +63,12 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   185 out of   2,278    8%
+  Number of occupied Slices:                   193 out of   2,278    8%
   Number of MUXCYs used:                       296 out of   4,556    6%
-  Number of LUT Flip Flop pairs used:          588
-    Number with an unused Flip Flop:           499 out of     588   84%
-    Number with an unused LUT:                   3 out of     588    1%
-    Number of fully used LUT-FF pairs:          86 out of     588   14%
+  Number of LUT Flip Flop pairs used:          605
+    Number with an unused Flip Flop:           498 out of     605   82%
+    Number with an unused LUT:                   7 out of     605    1%
+    Number of fully used LUT-FF pairs:         100 out of     605   16%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -117,13 +117,13 @@ Finished initial Timing Analysis.  REAL time: 6 secs
 Starting Router
 
 
-Phase  1  : 2853 unrouted;      REAL time: 6 secs 
+Phase  1  : 2907 unrouted;      REAL time: 6 secs 
 
-Phase  2  : 2476 unrouted;      REAL time: 7 secs 
+Phase  2  : 2536 unrouted;      REAL time: 7 secs 
 
-Phase  3  : 1158 unrouted;      REAL time: 8 secs 
+Phase  3  : 1125 unrouted;      REAL time: 8 secs 
 
-Phase  4  : 1158 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
+Phase  4  : 1125 unrouted; (Par is working to improve performance)     REAL time: 9 secs 
 
 Updating file: machine.ncd with current fully routed design.
 
@@ -159,8 +159,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net clk | SETUP       |         N/A|    30.727ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.319ns|            |       0|           0
+  Autotimespec constraint for clock net clk | SETUP       |         N/A|    29.212ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.301ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 

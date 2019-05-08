@@ -29,6 +29,7 @@ module processor(
 	wire [15:0] data_a;
 	wire [15:0] data_b;
 	
+	reg [15:0] operand_b;
 	wire [15:0] alu_result;
 	wire alu_zero;
 
@@ -47,7 +48,7 @@ module processor(
 		.clk(clk),
 		.opcode(opcode),
 		.a(data_a),
-		.b(data_b),
+		.b(operand_b),
 		.zero(alu_zero),
 		.alu_result(alu_result)
 	);
@@ -58,6 +59,8 @@ module processor(
 		// manually scale clock frequency for debugging
 		if (timer % 50000000 == 0) begin
 			address = (address + 1) % rom_size;
+
+			operand_b = data_b;
 
 			// instruction decode
 			case (opcode) 
@@ -71,8 +74,21 @@ module processor(
 							write_data = alu_result; 
 							write_enable = 1;
 						end
+				// addi
+				4'b1010:begin
+							operand_b = immediate;
+							write_data = alu_result; 
+							write_enable = 1;
+						end
 				// sub
 				4'b0011:begin
+							write_data = alu_result;
+							zero = alu_zero;
+							write_enable = 1;
+						end
+				// subi
+				4'b1011:begin
+							operand_b = immediate;
 							write_data = alu_result;
 							zero = alu_zero;
 							write_enable = 1;
