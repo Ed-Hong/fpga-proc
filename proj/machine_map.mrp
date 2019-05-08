@@ -10,23 +10,23 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue May  7 23:59:23 2019
+Mapped Date    : Wed May  8 00:06:09 2019
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Slice Logic Utilization:
-  Number of Slice Registers:                    71 out of  18,224    1%
-    Number used as Flip Flops:                  71
+  Number of Slice Registers:                    31 out of  18,224    1%
+    Number used as Flip Flops:                  31
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        550 out of   9,112    6%
-    Number used as logic:                      539 out of   9,112    5%
-      Number using O6 output only:             313
-      Number using O5 output only:              88
-      Number using O5 and O6:                  138
+  Number of Slice LUTs:                         79 out of   9,112    1%
+    Number used as logic:                       71 out of   9,112    1%
+      Number using O6 output only:              38
+      Number using O5 output only:              18
+      Number using O5 and O6:                   15
       Number used as ROM:                        0
     Number used as Memory:                       8 out of   2,176    1%
       Number used as Dual Port RAM:              8
@@ -35,19 +35,15 @@ Slice Logic Utilization:
         Number using O5 and O6:                  8
       Number used as Single Port RAM:            0
       Number used as Shift Register:             0
-    Number used exclusively as route-thrus:      3
-      Number with same-slice register load:      0
-      Number with same-slice carry load:         3
-      Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   172 out of   2,278    7%
-  Number of MUXCYs used:                       288 out of   4,556    6%
-  Number of LUT Flip Flop pairs used:          553
-    Number with an unused Flip Flop:           489 out of     553   88%
-    Number with an unused LUT:                   3 out of     553    1%
-    Number of fully used LUT-FF pairs:          61 out of     553   11%
-    Number of unique control sets:               5
+  Number of occupied Slices:                    22 out of   2,278    1%
+  Number of MUXCYs used:                        28 out of   4,556    1%
+  Number of LUT Flip Flop pairs used:           79
+    Number with an unused Flip Flop:            55 out of      79   69%
+    Number with an unused LUT:                   0 out of      79    0%
+    Number of fully used LUT-FF pairs:          24 out of      79   30%
+    Number of unique control sets:               4
     Number of slice register sites lost
       to control set restrictions:               9 out of  18,224    1%
 
@@ -86,11 +82,11 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                3.89
+Average Fanout of Non-Clock Nets:                2.67
 
-Peak Memory Usage:  808 MB
-Total REAL time to MAP completion:  22 secs 
-Total CPU time to MAP completion:   22 secs 
+Peak Memory Usage:  797 MB
+Total REAL time to MAP completion:  10 secs 
+Total CPU time to MAP completion:   10 secs 
 
 Table of Contents
 -----------------
@@ -130,32 +126,32 @@ INFO:Security:54 - 'xc6slx16' is a WebPack part.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:MapLib:825 - RAM16X1D symbol "Mram_disp1" (output
    signal=result[3]_read_port_5_OUT<0>) INITSTATE has been changed from 2812 to
-   1212 because pin A3 is driven by GND. This pin has been connected to VCC
-   instead, in order to relieve routing congestion.
+   0000 because pins A0, A1, A2, and A3 are driven by GND. These pins have been
+   connected to VCC instead, in order to relieve routing congestion.
 INFO:MapLib:825 - RAM16X1D symbol "Mram_disp2" (output
    signal=result[3]_read_port_5_OUT<1>) INITSTATE has been changed from D860 to
-   6060 because pin A3 is driven by GND. This pin has been connected to VCC
-   instead, in order to relieve routing congestion.
+   0000 because pins A0, A1, A2, and A3 are driven by GND. These pins have been
+   connected to VCC instead, in order to relieve routing congestion.
 INFO:MapLib:825 - RAM16X1D symbol "Mram_disp3" (output
    signal=result[3]_read_port_5_OUT<2>) INITSTATE has been changed from D004 to
-   0404 because pin A3 is driven by GND. This pin has been connected to VCC
-   instead, in order to relieve routing congestion.
+   0000 because pins A0, A1, A2, and A3 are driven by GND. These pins have been
+   connected to VCC instead, in order to relieve routing congestion.
 INFO:MapLib:825 - RAM16X1D symbol "Mram_disp4" (output
    signal=result[3]_read_port_5_OUT<3>) INITSTATE has been changed from 8492 to
-   9292 because pin A3 is driven by GND. This pin has been connected to VCC
-   instead, in order to relieve routing congestion.
+   0000 because pins A0, A1, A2, and A3 are driven by GND. These pins have been
+   connected to VCC instead, in order to relieve routing congestion.
 INFO:MapLib:825 - RAM16X1D symbol "Mram_disp5" (output
    signal=result[3]_read_port_5_OUT<4>) INITSTATE has been changed from 02BA to
-   BABA because pin A3 is driven by GND. This pin has been connected to VCC
-   instead, in order to relieve routing congestion.
+   0000 because pins A0, A1, A2, and A3 are driven by GND. These pins have been
+   connected to VCC instead, in order to relieve routing congestion.
 INFO:MapLib:825 - RAM16X1D symbol "Mram_disp6" (output
    signal=result[3]_read_port_5_OUT<5>) INITSTATE has been changed from 208E to
-   8E8E because pin A3 is driven by GND. This pin has been connected to VCC
-   instead, in order to relieve routing congestion.
+   0000 because pins A0, A1, A2, and A3 are driven by GND. These pins have been
+   connected to VCC instead, in order to relieve routing congestion.
 INFO:MapLib:825 - RAM16X1D symbol "Mram_disp7" (output
    signal=result[3]_read_port_5_OUT<6>) INITSTATE has been changed from 1083 to
-   8383 because pin A3 is driven by GND. This pin has been connected to VCC
-   instead, in order to relieve routing congestion.
+   FFFF because pins A0, A1, A2, and A3 are driven by GND. These pins have been
+   connected to VCC instead, in order to relieve routing congestion.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
    rate limited output drivers. The delay on speed critical single ended outputs
    can be dramatically reduced by designating them as fast outputs.
