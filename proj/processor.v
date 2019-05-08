@@ -58,7 +58,6 @@ module processor(
 
 		// manually scale clock frequency for debugging
 		if (timer % 50000000 == 0) begin
-			address = (address + 1) % rom_size;
 
 			// instruction decode
 			case (opcode) 
@@ -107,16 +106,17 @@ module processor(
 				// out
 				4'b1111:begin
 							//result[15:12] = address - 1;
-							//result[7:0] = data_a;
+							result[7:0] = data_a;
 						end
 				// default NOP
 				//default: result <= 0;  
 			endcase
 						
 			//debug
-			result[15:12] = address - 1;
-			result[7:0] = data_a;
+			result[15:12] = address;
+			//result[7:0] = data_a;
 			
+			address = (address + 1) % rom_size;
 		end
 	end
 
