@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> 
 Reading design: machine.prj
@@ -586,9 +586,9 @@ Primitive and Black Box Usage:
 #      INV                         : 30
 #      LUT1                        : 91
 #      LUT2                        : 50
-#      LUT3                        : 78
-#      LUT4                        : 79
-#      LUT5                        : 216
+#      LUT3                        : 79
+#      LUT4                        : 61
+#      LUT5                        : 233
 #      LUT6                        : 168
 #      MUXCY                       : 299
 #      MUXF7                       : 17
@@ -679,7 +679,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 31.651ns (frequency: 31.594MHz)
-  Total number of paths / destination ports: 533879637046895 / 244
+  Total number of paths / destination ports: 533879637046799 / 244
 -------------------------------------------------------------------------
 Delay:               31.651ns (Levels of Logic = 74)
   Source:            timer_0 (FF)
@@ -816,12 +816,12 @@ clk                                          |   31.651|         |         |    
 
 
 Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.39 secs
+Total CPU time to Xst completion: 22.73 secs
  
 --> 
 
 
-Total memory usage is 501536 kilobytes
+Total memory usage is 501492 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   24 (   0 filtered)
